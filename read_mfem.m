@@ -11,8 +11,8 @@ NP = 2;
 % -ic transport2d_ics.inp -ec transport2d_ecs.inp -op 8 -l 1 
 % -visit -dt 1e-2 -tf 1 -eqn-w '1 1 1 1 1' -vs 1 -p 0 -o 3
 
-for jj=1
-    for kk=1
+for jj=1:4
+    for kk=1:5
         
         mkdir(['/Volumes/DATA/postdoc/mfem/benchmarking/sovinec_' num2str(jj-1) '_' num2str(kk)])
         cd(['/Volumes/DATA/postdoc/mfem/benchmarking/sovinec_',num2str(jj-1),'_',num2str(kk)])
@@ -20,7 +20,7 @@ for jj=1
         command = strcat(transport," -rs ",num2str(jj-1)," -o ",num2str(kk),...
             " -m ",strcat(mesh_path,'inline-quad.mesh')," -bc ",strcat(root_dir,"/transport2d_bcs.inp"),...
             " -ic ",strcat(root_dir,"/transport2d_ics.inp"), " -ec ",strcat(root_dir,"/transport2d_ecs.inp"),...
-            " -op 8 -l 1 -visit -dt 1.0e-2 -tf 100 -eqn-w '1 1 1 1 1' -vs 1 -p 0 -srtol 1e-12");
+            " -op 8 -l 1 -visit -dt 1.0e-2 -tf 100 -eqn-w '1 1 1 1 1' -vs 1 -p 0 -srtol 1e-6 -satol 1e-8");
 %         system(command);
         [status,output] = system(command);
         
