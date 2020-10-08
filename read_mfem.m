@@ -93,51 +93,51 @@ for jj=1
         % point = [0.5,0.221,0.,0.221,0.5,0];
         outfilename = 'myoutput.out';
 
-%         % command = strcat("mpirun -np ",num2str(NP)," ",get_values," -r ",fullfile(root_dir,prefix)," -c ",num2str(index)," -p ","""",num2str(point),""""," -o ",fullfile(root_dir,outfilename))
-%         for ii = 0:nt - 1
-%             fprintf('Requesting output for index %d of %d\n',ii,nt-1)
-%             index = ii;
-% %             command = strcat("mpirun -np ",num2str(NP)," ",get_values," -r ",fullfile(root_dir,prefix)," -c ",num2str(index)," -p ",'"',num2str(Xwant)," ",num2str(Ywant),'"'," -o ",fullfile(root_dir,outfilename));
-%             command = strcat(get_values," -r ",fullfile(prefix)," -c ",num2str(index)," -p ",'"',num2str(Xwant)," ",num2str(Ywant),'"'," -o ",fullfile(outfilename));
-%             [status,output] = system(command);
-% 
-%             %% parse output
-%             % fields: [ B Poloidal, B Toroidal, Electron Temperature, Ion Density, Ion Parallel Velocity, Ion Temperature, Neutral Density, n_e Chi_e Parallel, n_e Chi_e Perpendicular ]
-% %             data = dlmread(fullfile(root_dir,outfilename),'',7,0);
-%             data = dlmread(fullfile(outfilename),'',7,0);
-%             npoints = size(data,1);
-%             X(:,ii+1) = data(:,2);
-%             Y(:,ii+1) = data(:,3);
-%             Bpx(:,ii+1) = data(:,4);
-%             Bpy(:,ii+1) = data(:,5);
-%             Bt(:,ii+1) = data(:,6);
-%             Te(:,ii+1) = data(:,7);
-%             ni(:,ii+1) = data(:,8);
-%             vi(:,ii+1) = data(:,9);
-%             T_source(:,ii+1) = data(:,10);
-%             Ti(:,ii+1) = data(:,11);
-%             n0(:,ii+1) = data(:,12);
-%             chii_prl(:,ii+1) = data(:,12);
-%             chii_perp(:,ii+1) = data(:,13);
-%             
-% 
-%         end
-%         
-%         data_struct.X = X;
-%         data_struct.Y = Y;
-%         data_struct.Bpx = Bpx;
-%         data_struct.Bpy = Bpy;
-%         data_struct.Bt = Bt;
-%         data_struct.Te = Te;
-%         data_struct.ni = ni;
-%         data_struct.vi = vi;
-%         data_struct.T_source = T_source;
-%         data_struct.Ti = Ti;
-%         data_struct.n0 = n0;
-%         data_struct.chii_prl = chii_prl;
-%         data_struct.chii_perp = chii_perp;
-%         data_struct.direc = pwd;
-%         save('data.mat','-struct','data_struct')
+        % command = strcat("mpirun -np ",num2str(NP)," ",get_values," -r ",fullfile(root_dir,prefix)," -c ",num2str(index)," -p ","""",num2str(point),""""," -o ",fullfile(root_dir,outfilename))
+        for ii = 0:nt - 1
+            fprintf('Requesting output for index %d of %d\n',ii,nt-1)
+            index = ii;
+%             command = strcat("mpirun -np ",num2str(NP)," ",get_values," -r ",fullfile(root_dir,prefix)," -c ",num2str(index)," -p ",'"',num2str(Xwant)," ",num2str(Ywant),'"'," -o ",fullfile(root_dir,outfilename));
+            command = strcat(get_values," -r ",fullfile(prefix)," -c ",num2str(index)," -p ",'"',num2str(Xwant)," ",num2str(Ywant),'"'," -o ",fullfile(outfilename));
+            [status,output] = system(command);
+
+            %% parse output
+            % fields: [ B Poloidal, B Toroidal, Electron Temperature, Ion Density, Ion Parallel Velocity, Ion Temperature, Neutral Density, n_e Chi_e Parallel, n_e Chi_e Perpendicular ]
+%             data = dlmread(fullfile(root_dir,outfilename),'',7,0);
+            data = dlmread(fullfile(outfilename),'',7,0);
+            npoints = size(data,1);
+            X(:,ii+1) = data(:,2);
+            Y(:,ii+1) = data(:,3);
+            Bpx(:,ii+1) = data(:,4);
+            Bpy(:,ii+1) = data(:,5);
+            Bt(:,ii+1) = data(:,6);
+            Te(:,ii+1) = data(:,7);
+            ni(:,ii+1) = data(:,8);
+            vi(:,ii+1) = data(:,9);
+            T_source(:,ii+1) = data(:,10);
+            Ti(:,ii+1) = data(:,11);
+            n0(:,ii+1) = data(:,12);
+            chii_prl(:,ii+1) = data(:,12);
+            chii_perp(:,ii+1) = data(:,13);
+            
+
+        end
+        
+        data_struct.X = X;
+        data_struct.Y = Y;
+        data_struct.Bpx = Bpx;
+        data_struct.Bpy = Bpy;
+        data_struct.Bt = Bt;
+        data_struct.Te = Te;
+        data_struct.ni = ni;
+        data_struct.vi = vi;
+        data_struct.T_source = T_source;
+        data_struct.Ti = Ti;
+        data_struct.n0 = n0;
+        data_struct.chii_prl = chii_prl;
+        data_struct.chii_perp = chii_perp;
+        data_struct.direc = pwd;
+        save('data.mat','-struct','data_struct')
 
         cd ../
         
