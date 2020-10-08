@@ -5,30 +5,31 @@ prefix = 'Transport2D-Parallel';
 mesh_path = '~/Documents/MFEM/mfem/data/';
 
 NP = 2;
-dir_data = dir(root_dir);
+% dir_data = dir(root_dir);
 
 % -m ../../data/inline-quad.mesh -rs 2 -bc transport2d_bcs.inp 
 % -ic transport2d_ics.inp -ec transport2d_ecs.inp -op 8 -l 1 
 % -visit -dt 1e-2 -tf 1 -eqn-w '1 1 1 1 1' -vs 1 -p 0 -o 3
 
-for jj=1:5
-    for kk=1:5
+for jj=1
+    for kk=1
         
-        mkdir(['sovinec_' num2str(jj-1) '_' num2str(kk)])
-        cd(['sovinec_',num2str(jj-1),'_',num2str(kk)])
+        mkdir(['/Volumes/DATA/postdoc/mfem/benchmarking/sovinec_' num2str(jj-1) '_' num2str(kk)])
+        cd(['/Volumes/DATA/postdoc/mfem/benchmarking/sovinec_',num2str(jj-1),'_',num2str(kk)])
         
         command = strcat(transport," -rs ",num2str(jj-1)," -o ",num2str(kk),...
             " -m ",strcat(mesh_path,'inline-quad.mesh')," -bc ",strcat(root_dir,"/transport2d_bcs.inp"),...
             " -ic ",strcat(root_dir,"/transport2d_ics.inp"), " -ec ",strcat(root_dir,"/transport2d_ecs.inp"),...
-            " -op 8 -l 1 -visit -dt 1.0e-2 -tf 1 -eqn-w '1 1 1 1 1' -vs 1 -p 0");
-        system(command);
-%         [status,output] = system(command);
+            " -op 8 -l 1 -visit -dt 1.0e-2 -tf 100 -eqn-w '1 1 1 1 1' -vs 1 -p 0 -srtol 1e-12");
+%         system(command);
+        [status,output] = system(command);
         
         
         %% Initial settings
         fprintf('\nUsing root_dir = %s with prefix = %s\n',root_dir,prefix)
 
         %%  Parse dir to get nt
+        dir_data = dir(pwd);
         nt = 0;
         for ii = 1:length(dir_data)
             if dir_data(ii).isdir
@@ -92,49 +93,51 @@ for jj=1:5
         % point = [0.5,0.221,0.,0.221,0.5,0];
         outfilename = 'myoutput.out';
 
-        % command = strcat("mpirun -np ",num2str(NP)," ",get_values," -r ",fullfile(root_dir,prefix)," -c ",num2str(index)," -p ","""",num2str(point),""""," -o ",fullfile(root_dir,outfilename))
-        for ii = 0:nt - 1
-            fprintf('Requesting output for index %d of %d\n',ii,nt-1)
-            index = ii;
-%             command = strcat("mpirun -np ",num2str(NP)," ",get_values," -r ",fullfile(root_dir,prefix)," -c ",num2str(index)," -p ",'"',num2str(Xwant)," ",num2str(Ywant),'"'," -o ",fullfile(root_dir,outfilename));
-            command = strcat(get_values," -r ",fullfile(prefix)," -c ",num2str(index)," -p ",'"',num2str(Xwant)," ",num2str(Ywant),'"'," -o ",fullfile(outfilename));
-            [status,output] = system(command);
-
-            %% parse output
-            % fields: [ B Poloidal, B Toroidal, Electron Temperature, Ion Density, Ion Parallel Velocity, Ion Temperature, Neutral Density, n_e Chi_e Parallel, n_e Chi_e Perpendicular ]
-%             data = dlmread(fullfile(root_dir,outfilename),'',7,0);
-            data = dlmread(fullfile(outfilename),'',7,0);
-            npoints = size(data,1);
-            X(:,ii+1) = data(:,2);
-            Y(:,ii+1) = data(:,3);
-            Bpx(:,ii+1) = data(:,4);
-            Bpy(:,ii+1) = data(:,5);
-            Bt(:,ii+1) = data(:,6);
-            Te(:,ii+1) = data(:,7);
-            ni(:,ii+1) = data(:,8);
-            vi(:,ii+1) = data(:,9);
-            T_source(:,ii+1) = data(:,10);
-            Ti(:,ii+1) = data(:,11);
-            n0(:,ii+1) = data(:,12);
-            chii_prl(:,ii+1) = data(:,12);
-            chii_perp(:,ii+1) = data(:,13);
-
-        end
-        
-        data_struct.X = X;
-        data_struct.Y = Y;
-        data_struct.Bpx = Bpx;
-        data_struct.Bpy = Bpy;
-        data_struct.Bt = Bt;
-        data_struct.Te = Te;
-        data_struct.ni = ni;
-        data_struct.vi = vi;
-        data_struct.T_source = T_source;
-        data_struct.Ti = Ti;
-        data_struct.n0 = n0;
-        data_struct.chii_prl = chii_prl;
-        data_struct.chii_perp = chii_perp;
-        save('data.mat','-struct','data_struct')
+%         % command = strcat("mpirun -np ",num2str(NP)," ",get_values," -r ",fullfile(root_dir,prefix)," -c ",num2str(index)," -p ","""",num2str(point),""""," -o ",fullfile(root_dir,outfilename))
+%         for ii = 0:nt - 1
+%             fprintf('Requesting output for index %d of %d\n',ii,nt-1)
+%             index = ii;
+% %             command = strcat("mpirun -np ",num2str(NP)," ",get_values," -r ",fullfile(root_dir,prefix)," -c ",num2str(index)," -p ",'"',num2str(Xwant)," ",num2str(Ywant),'"'," -o ",fullfile(root_dir,outfilename));
+%             command = strcat(get_values," -r ",fullfile(prefix)," -c ",num2str(index)," -p ",'"',num2str(Xwant)," ",num2str(Ywant),'"'," -o ",fullfile(outfilename));
+%             [status,output] = system(command);
+% 
+%             %% parse output
+%             % fields: [ B Poloidal, B Toroidal, Electron Temperature, Ion Density, Ion Parallel Velocity, Ion Temperature, Neutral Density, n_e Chi_e Parallel, n_e Chi_e Perpendicular ]
+% %             data = dlmread(fullfile(root_dir,outfilename),'',7,0);
+%             data = dlmread(fullfile(outfilename),'',7,0);
+%             npoints = size(data,1);
+%             X(:,ii+1) = data(:,2);
+%             Y(:,ii+1) = data(:,3);
+%             Bpx(:,ii+1) = data(:,4);
+%             Bpy(:,ii+1) = data(:,5);
+%             Bt(:,ii+1) = data(:,6);
+%             Te(:,ii+1) = data(:,7);
+%             ni(:,ii+1) = data(:,8);
+%             vi(:,ii+1) = data(:,9);
+%             T_source(:,ii+1) = data(:,10);
+%             Ti(:,ii+1) = data(:,11);
+%             n0(:,ii+1) = data(:,12);
+%             chii_prl(:,ii+1) = data(:,12);
+%             chii_perp(:,ii+1) = data(:,13);
+%             
+% 
+%         end
+%         
+%         data_struct.X = X;
+%         data_struct.Y = Y;
+%         data_struct.Bpx = Bpx;
+%         data_struct.Bpy = Bpy;
+%         data_struct.Bt = Bt;
+%         data_struct.Te = Te;
+%         data_struct.ni = ni;
+%         data_struct.vi = vi;
+%         data_struct.T_source = T_source;
+%         data_struct.Ti = Ti;
+%         data_struct.n0 = n0;
+%         data_struct.chii_prl = chii_prl;
+%         data_struct.chii_perp = chii_perp;
+%         data_struct.direc = pwd;
+%         save('data.mat','-struct','data_struct')
 
         cd ../
         
