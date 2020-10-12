@@ -1,5 +1,5 @@
-num_refine = 3;
-num_order = 3;
+num_refine = 5;
+num_order = 5;
 
 Ti_arr = zeros(num_refine,num_order);
 
