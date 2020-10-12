@@ -7,29 +7,31 @@ mesh_path = '~/Documents/MFEM/mfem/data/';
 NP = 2;
 % dir_data = dir(root_dir);
 
-% -m ../../data/inline-quad.mesh -rs 2 -bc transport2d_bcs.inp 
-% -ic transport2d_ics.inp -ec transport2d_ecs.inp -op 8 -l 1 
-% -visit -dt 1e-2 -tf 1 -eqn-w '1 1 1 1 1' -vs 1 -p 0 -o 3
-
-for jj=1:4
-    for kk=1:5
+%%
+for jj=1
+    for kk=1
         
         mkdir(['/Volumes/DATA/postdoc/mfem/benchmarking/sovinec_' num2str(jj-1) '_' num2str(kk)])
         cd(['/Volumes/DATA/postdoc/mfem/benchmarking/sovinec_',num2str(jj-1),'_',num2str(kk)])
         
+        fprintf('Running transport2d for refinement %d and order %d\n',jj-1,kk)
+        
         command = strcat(transport," -rs ",num2str(jj-1)," -o ",num2str(kk),...
             " -m ",strcat(mesh_path,'inline-quad.mesh')," -bc ",strcat(root_dir,"/transport2d_bcs.inp"),...
             " -ic ",strcat(root_dir,"/transport2d_ics.inp"), " -ec ",strcat(root_dir,"/transport2d_ecs.inp"),...
-            " -op 8 -l 1 -visit -dt 1.0e-2 -tf 100 -eqn-w '1 1 1 1 1' -vs 1 -p 0 -srtol 1e-6 -satol 1e-8");
+            " -op 8 -l 1 -visit -dt 1.0e-2 -tf 100 -eqn-w '1 1 1 1 1' -vs 1 -p 0 -srtol 1e-7 -satol 1e-9");
 %         system(command);
         [status,output] = system(command);
         
+        dlmwrite('log_output.txt',output,'delimiter','');
+        dlmwrite('log_status.txt',status,'delimiter','');
+        
+        dir_data = dir(pwd);
         
         %% Initial settings
-        fprintf('\nUsing root_dir = %s with prefix = %s\n',root_dir,prefix)
+        fprintf('\nUsing dir = %s with prefix = %s\n',pwd,prefix)
 
         %%  Parse dir to get nt
-        dir_data = dir(pwd);
         nt = 0;
         for ii = 1:length(dir_data)
             if dir_data(ii).isdir
@@ -49,33 +51,50 @@ for jj=1:4
         %% Parse mfem_root files to get times
         time = nan(1,nt);
         for ii = 0:nt-1
-%             fname = fullfile(root_dir,strcat(prefix,'_',num2str(ii,'%06.f'),'.mfem_root'));
             fname = fullfile(strcat(prefix,'_',num2str(ii,'%06.f'),'.mfem_root'));
             fid = fileread(fname);
             time_loc = regexp(fid,'"time"');
             ind_col = strfind(fid(time_loc:time_loc+10),': ');
             ind_com = strfind(fid(time_loc:time_loc+30),',');
             time(ii+1) = str2double(fid(time_loc+ind_col+1:time_loc+ind_com-1));
-        %     [nl,file_lines] = num_lines_file(fname);
-        %     count = 0;
-        %     fid = fopen(fname);
-        %     while true
-        %       if ~ischar( fgetl(fid) ); break; end
-        %       count = count + 1;
-        %     end
-        %     fclose(fid);
-        %     title(sprintf('lines in file = %d', count));
-        %     [~,time_loc] = grep('-i -s','"time"',fname);
-        %     npart = time_loc.pcount;
-        %     if npart ~= 1
-        %         error('trouble parsing file %s,fname')
-        %     end
-        %     line = file_lines{time_loc.line};
-        %     coldex = strfind(line,':');
-        %     time(i+1) = sscanf(line(coldex+1:end-1),'%f');    
         end
 
+        %% Parse output file to get convergence information
+        
+        fname = ('log_output.txt');
+        fid = fileread(fname);
+        nlines = textscan(fid,'%s','delimiter','\n');
+%         newton_loc = regexp(fid,'Newton iteration');
+        count = 1;
+        for ii=1:length(nlines{1})
+            line = char(nlines{1}(ii));
+%             if isempty(line)
+%             elseif ~isempty(line)
+                newton_loc = regexp((line),'Newton iteration');
+                if ~isempty(newton_loc)
+                    newton_data = textscan(line,'%s %s %d : %s = %f, %s = %f');
+                    newton_iter(1,count) = newton_data{3};
+                    newton_res(1,count) = newton_data{5};
 
+                    if ~isempty(newton_data{7})
+                        newton_res_norm(1,count) = newton_data{7};
+                        count = count + 1;
+                    else
+                        newton_res_norm(1,count) = NaN;
+                        count = count + 1;
+                    end   
+
+                end
+%             end
+            
+        end
+        
+        save(strcat('newton_iter_',num2str(jj-1),'_',num2str(kk),'.mat'),newton_iter);
+        save(strcat('newton_res_',num2str(jj-1),'_',num2str(kk),'.mat'),newton_res);
+        save(strcat('newton_res__norm',num2str(jj-1),'_',num2str(kk),'.mat'),newton_res_norm);
+        
+        clear newton_iter newton_res newton_res_norm
+        
         %% Call get-values
         npoints_want = 2;
         Xwant = 0.5;
@@ -92,6 +111,8 @@ for jj=1:4
         % index = 0
         % point = [0.5,0.221,0.,0.221,0.5,0];
         outfilename = 'myoutput.out';
+        
+        fprintf('\nUsing dir = %s with prefix = %s\n',pwd,prefix)
 
         % command = strcat("mpirun -np ",num2str(NP)," ",get_values," -r ",fullfile(root_dir,prefix)," -c ",num2str(index)," -p ","""",num2str(point),""""," -o ",fullfile(root_dir,outfilename))
         for ii = 0:nt - 1
@@ -120,6 +141,8 @@ for jj=1:4
             chii_prl(:,ii+1) = data(:,12);
             chii_perp(:,ii+1) = data(:,13);
             
+            clear data
+            
 
         end
         
@@ -138,6 +161,9 @@ for jj=1:4
         data_struct.chii_perp = chii_perp;
         data_struct.direc = pwd;
         save('data.mat','-struct','data_struct')
+        
+        clear data_struct
+        clear X Y Bpx Bpy Bt Te ni vi T_source Ti n0 chii_prl chii_perp 
 
         cd ../
         
