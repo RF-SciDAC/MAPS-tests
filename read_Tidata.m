@@ -1,5 +1,5 @@
-num_refine = 4;
-num_order = 5;
+num_refine = 3;
+num_order = 3;
 
 Ti_arr = zeros(num_refine,num_order);
 
@@ -20,7 +20,7 @@ end
 
 err_arr = abs((1.0./Ti_arr) - 1.0);
 
-refine = [1,2,3,4];
+refine = [1,2,3];
 xmin = 0.0;
 xmax = 1.0;
 ymin = 0.0;
