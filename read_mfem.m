@@ -8,8 +8,8 @@ NP = 2;
 % dir_data = dir(root_dir);
 
 %%
-for jj=1
-    for kk=1
+for jj=1:5
+    for kk=1:5
         
         mkdir(['/Volumes/DATA/postdoc/mfem/benchmarking/sovinec_' num2str(jj-1) '_' num2str(kk)])
         cd(['/Volumes/DATA/postdoc/mfem/benchmarking/sovinec_',num2str(jj-1),'_',num2str(kk)])
@@ -19,7 +19,7 @@ for jj=1
         command = strcat(transport," -rs ",num2str(jj-1)," -o ",num2str(kk),...
             " -m ",strcat(mesh_path,'inline-quad.mesh')," -bc ",strcat(root_dir,"/transport2d_bcs.inp"),...
             " -ic ",strcat(root_dir,"/transport2d_ics.inp"), " -ec ",strcat(root_dir,"/transport2d_ecs.inp"),...
-            " -op 8 -l 1 -visit -dt 1.0e-2 -tf 100 -eqn-w '1 1 1 1 1' -vs 1 -p 0 -srtol 1e-7 -satol 1e-9");
+            " -op 8 -l 1 -visit -dt 1.0e-2 -tf 100 -eqn-w '1 1 1 1 1' -vs 1 -p 0 -srtol 1e-1 -satol 1e-1");
 %         system(command);
         [status,output] = system(command);
         
@@ -89,9 +89,9 @@ for jj=1
             
         end
         
-        save(strcat('newton_iter_',num2str(jj-1),'_',num2str(kk),'.mat'),newton_iter);
-        save(strcat('newton_res_',num2str(jj-1),'_',num2str(kk),'.mat'),newton_res);
-        save(strcat('newton_res__norm',num2str(jj-1),'_',num2str(kk),'.mat'),newton_res_norm);
+        save(strcat('newton_iter_',num2str(jj-1),'_',num2str(kk),'.mat'),'newton_iter');
+        save(strcat('newton_res_',num2str(jj-1),'_',num2str(kk),'.mat'),'newton_res');
+        save(strcat('newton_res__norm',num2str(jj-1),'_',num2str(kk),'.mat'),'newton_res_norm');
         
         clear newton_iter newton_res newton_res_norm
         
