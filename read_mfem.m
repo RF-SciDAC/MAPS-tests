@@ -5,6 +5,11 @@ prefix = 'Transport2D-Parallel';
 mesh_path = '~/Documents/MFEM/mfem/data/';
 
 NP = 2;
+[status,git_hash] = system('git rev-parse HEAD');
+s1 = '# Created from matlab git hash ';
+s2 = git_hash;
+header = [s1 s2];
+
 % dir_data = dir(root_dir);
 
 %%
@@ -160,6 +165,7 @@ for jj=1:5
         data_struct.chii_prl = chii_prl;
         data_struct.chii_perp = chii_perp;
         data_struct.direc = pwd;
+        data_struct.header = header;
         save('data.mat','-struct','data_struct')
         
         clear data_struct
