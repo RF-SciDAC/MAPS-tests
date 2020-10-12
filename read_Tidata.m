@@ -1,9 +1,9 @@
-num_refine = 5;
+num_refine = 4;
 num_order = 5;
 
 Ti_arr = zeros(num_refine,num_order);
 
-file_path = '/Volumes/DATA/postdoc/mfem/benchmarking/srtol_1e-12/';
+file_path = '/Volumes/DATA/postdoc/mfem/benchmarking/';
 
 for ii=1:num_refine
     
@@ -12,6 +12,7 @@ for ii=1:num_refine
         fid = strcat(file_path,'sovinec_',num2str(ii-1),'_',num2str(jj),'/data.mat');        
         data = load(fid);
         Ti_arr(ii,jj) = data.Ti(1,end);
+        clear data
         
     end
     
@@ -19,7 +20,7 @@ end
 
 err_arr = abs((1.0./Ti_arr) - 1.0);
 
-refine = [1,2,3,4,5];
+refine = [1,2,3,4];
 xmin = 0.0;
 xmax = 1.0;
 ymin = 0.0;
