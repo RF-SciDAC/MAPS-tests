@@ -20,7 +20,7 @@ end
 
 err_arr = abs((1.0./Ti_arr) - 1.0);
 
-refine = [1,2,3];
+refine = [1,2,3,4,5];
 xmin = 0.0;
 xmax = 1.0;
 ymin = 0.0;
