@@ -1,9 +1,9 @@
-num_refine = 5;
+num_refine = 4;
 num_order = 5;
 
 Ti_arr = zeros(num_refine,num_order);
 
-file_path = '/Volumes/DATA/postdoc/mfem/benchmarking/';
+file_path = '/Volumes/DATA/postdoc/mfem/benchmarking/srtol_1e-7_satol_1e-9/';
 
 for ii=1:num_refine
     
@@ -20,7 +20,7 @@ end
 
 err_arr = abs((1.0./Ti_arr) - 1.0);
 
-refine = [1,2,3,4,5];
+refine = [1,2,3,4];
 xmin = 0.0;
 xmax = 1.0;
 ymin = 0.0;
