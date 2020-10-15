@@ -13,8 +13,8 @@ header = [s1 s2];
 % dir_data = dir(root_dir);
 
 %%
-for jj=4:5
-    for kk=1:5
+for jj=5
+    for kk=5
         
         mkdir(['/Volumes/DATA/postdoc/mfem/benchmarking/sovinec_' num2str(jj-1) '_' num2str(kk)])
         cd(['/Volumes/DATA/postdoc/mfem/benchmarking/sovinec_',num2str(jj-1),'_',num2str(kk)])
@@ -26,7 +26,7 @@ for jj=4:5
             " -ic ",strcat(root_dir,"/transport2d_ics.inp"), " -ec ",strcat(root_dir,"/transport2d_ecs.inp"),...
             " -op 8 -l 1 -visit -dt 1.0e-2 -tf 100 -eqn-w '1 1 1 1 1' -vs 1 -p 0 -es ",...
             strcat(root_dir,"/transport2d_ess.inp"),...
-            " -srtol 1e-6 -satol 1e-8 -natol 1e-9 -nrtol 1e-9");
+            " -srtol 1e-6 -satol 1e-8 -natol 1e-7 -nrtol 1e-7");
 %         system(command);
         [status,output] = system(command);
         
