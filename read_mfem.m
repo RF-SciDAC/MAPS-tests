@@ -13,8 +13,8 @@ header = [s1 s2];
 % dir_data = dir(root_dir);
 
 %%
-for jj=5
-    for kk=5
+for jj=1:5
+    for kk=1:5
         
         mkdir(['/Volumes/DATA/postdoc/mfem/benchmarking/sovinec_' num2str(jj-1) '_' num2str(kk)])
         cd(['/Volumes/DATA/postdoc/mfem/benchmarking/sovinec_',num2str(jj-1),'_',num2str(kk)])
