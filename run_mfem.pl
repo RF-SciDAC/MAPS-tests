@@ -16,7 +16,7 @@ for ($o = 1; $o < 4; $o = $o + 1) {
 	
 		next if($o == 3 && ($r == 2 || $r == 3 || $r == 4 || $r == 5));
 		next if($o == 2 && ($r == 4 || $r == 5));
-		next if($o == 1 && {$r == 0);
+		next if($o == 1 && $r == 0);
 
 		my $folder = "r".$r."_o".$o."";
 		mkdir($folder, 0755);
