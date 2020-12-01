@@ -11,12 +11,13 @@ $root_dir = '../../mfem/miniapps/plasma/';
 $input_path = '~/mfem-analysis/input-files/';
 $mesh_path = '../../mfem/data/';
 
-for ($o = 1; $o < 4; $o = $o + 1) {
-	for ($r = 0; $r < 6; $r = $r + 1) {
-	
-		next if($o == 3 && ($r == 2 || $r == 3 || $r == 4 || $r == 5));
-		next if($o == 2 && ($r == 4 || $r == 5));
-		next if($o == 1 && $r == 0);
+for ($o = 3; $o < 6; $o = $o + 1) {
+	for ($r = 0; $r < 4; $r = $r + 1) {
+		
+		next if($o == 4 && ($r == 3));
+		#next if($o == 3 && ($r == 4));
+		next if($o == 5 && ($r == 2 || $r == 3));
+		#next if($o == 1 && $r == 0);
 
 		my $folder = "r".$r."_o".$o."";
 		mkdir($folder, 0755);
