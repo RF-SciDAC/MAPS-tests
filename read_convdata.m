@@ -125,42 +125,6 @@ end
 
 %%
 
-refineMesh = meshgrid(refine)';
-refineMesh(:,5) = refineMesh(:,4);
-orderMesh = meshgrid(order);
-% orderMesh(5,:) = [];
-abortPlot = reshape(abort_arr(:,:,5),[],1);
-noconvPlot = reshape(noconv_arr(:,:,5),[],1);
-noconvC = zeros(20,3);
-abortC = zeros(20,3);
-for ii=1:20
-    if abortPlot(ii)==0
-        abortC(ii,:) = [0,0,0];
-    elseif abortPlot(ii)==1
-        abortC(ii,:) = [0,0,1];
-    end
-    if noconvPlot(ii)==0
-        noconvC(ii,:) = [0,0,0];
-    elseif noconvPlot(ii)==1
-        noconvC(ii,:) = [0,0,1];
-    end
-end
-        
-
-figure(1)
-scatter3(reshape(refineMesh,[],1),reshape(orderMesh,[],1),abortPlot,100,abortC,...
-    'filled')
-hold on
-scatter3(reshape(refineMesh,[],1),reshape(orderMesh,[],1),noconvPlot,500,noconvC,...
-    'x','linewidth',2)
-ylim([1,5])
-xlabel('Number of Refinements')
-ylabel('Element Order')
-% legend('MPI error','GMRES no convergence')
-title('$\chi_{\parallel} = 10^7$','interpreter','latex')
-
-%%
-
 for ii=1:length(chiPara)
     
     chiMesh = chiPara(ii)*ones(5,5);
