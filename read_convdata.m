@@ -132,7 +132,7 @@ orderMesh(end+1,:) = orderMesh(end,:);
 
 for ii=1:length(chiPara)
     
-    chiMesh = chiPara(ii)*ones(5,5);
+    chiMesh = chiPara(ii)*ones(length(refine),length(order));
     
     ncIdx = noconv_arr(:,:,ii) == 1;
     coIdx = noconv_arr(:,:,ii) == 0;
