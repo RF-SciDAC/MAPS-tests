@@ -125,6 +125,10 @@ end
 
 %%
 
+refineMesh = meshgrid(refine)';
+refineMesh(:,5) = refineMesh(:,4);
+orderMesh = meshgrid(order);
+
 for ii=1:length(chiPara)
     
     chiMesh = chiPara(ii)*ones(5,5);
