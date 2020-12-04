@@ -1,0 +1,4281 @@
+Options used:
+   --mesh ../../mfem/data/inline-quad.mesh
+   --bc-file ../../mfem/miniapps/plasma/transport2d_bcs.inp
+   --ic-file ../../mfem/miniapps/plasma/transport2d_ics.inp
+   --ec-file /home/gz6/mfem-analysis/input-files/transport2d_ecs.inp
+   --es-file ../../mfem/miniapps/plasma/transport2d_ess.inp
+   --eqdsk-file 
+   --logging 1
+   --operator-test 8
+   --equation-weights '1 1 1 1 1'
+   --problem 0
+   --refine-serial 1
+   --refine-parallel 0
+   --enable-amr
+   --max-err -1
+   --hysteresis 0.25
+   --nc-limit 3
+   --amr-weights '1 1 1 1 1'
+   --order 3
+   --dg-sigma -1
+   --dg-kappa 16
+   --linear-abs-tolerance 1e-06
+   --linear-rel-tolerance 1e-06
+   --linear-max-iterations 300
+   --linear-logging-level 3
+   --newton-abs-tolerance 1e-10
+   --newton-rel-tolerance 1e-10
+   --newton-max-iterations 1
+   --newton-logging-level 1
+   --steady-state-abs-tolerance 1e-08
+   --steady-state-rel-tolerance 1e-08
+   --prec-type 2
+   --prec-logging-level 0
+   --initial-tolerance 1e-05
+   --ode-tolerance 0.001
+   --ode-solver 2
+   --err-per-step
+   --ode-weights '1 1 1 1 1'
+   --kP 0
+   --kI 0.6
+   --kD 0
+   --theta-max 2
+   --t-minimum 0
+   --t-final 100
+   --time-step 0.01
+   --cfl-number 0.3
+   --ion-charge 1
+   --ion-mass 2.0141018
+   --neutral-mass 2.0141018
+   --neutral-temp 3
+   --min-neutral-density 9e+14
+   --max-neutral-density 1e+15
+   --neutral-density-exp 0
+   --min-ion-density 1e+16
+   --max-ion-density 1e+18
+   --ion-density-exp 0
+   --min-ion-temp 1
+   --max-ion-temp 10
+   --ion-temp-exp 0
+   --min-electron-temp 10
+   --max-electron-temp 440
+   --electron-temp-exp 0
+   --total-B-magnitude 5
+   --poloidal-B-magnitude 0.5
+   --velocity 1000
+   --Di-perp 1
+   --Xi-perp 1
+   --Xe-perp 1
+   --equation-term-flags '-1 -1 -1 -1 -1'
+   --visualization-flags '-1 -1 -1 -1 -1'
+   --visualization
+   --visit-datafiles
+   --ascii-datafiles
+   --visualization-steps 4
+Device configuration: cpu
+Memory configuration: host-std
+Number of elements in initial mesh: 16
+Number of elements after serial refinement: 64
+0: Number of elements in parallel mesh: 64
+0: Number of elements after parallel refinement: 64
+Configuring initial conditions
+Reading initial conditions from ../../mfem/miniapps/plasma/transport2d_ics.inp
+Configuring exact solutions
+Reading exact solutions from ../../mfem/miniapps/plasma/transport2d_ess.inp
+
+AMR iteration 0
+Number of unknowns: 1024
+Stopping criterion satisfied. Stop.
+Number of unknowns per field: 1024
+Total number of unknowns:     5120
+Configuring boundary conditions
+Reading boundary conditions from ../../mfem/miniapps/plasma/transport2d_bcs.inp
+Configuring equation coefficients
+Reading equation coefficients from /home/gz6/mfem-analysis/input-files/transport2d_ecs.inp
+|mn| = 3.3444946e-27
+|ni| = 1
+|ne| = 1
+
+|Dn|     = -nan
+|Di|     = -nan
+|Eta|    = -nan
+|nXi|    = -nan
+|nXe|    = -nan
+
+|Eta/mn| = -nan
+|nXi/ni| = -nan
+|nXe/ne| = -nan
+Ion Static Pressure: Adding time derivative term proportional to d n_i / dt
+Ion Static Pressure: Adding time derivative term proportional to d T_i / dt
+Ion Static Pressure: Adding anisotropic diffusion term
+Ion Static Pressure: Adding source term
+Opening GLVis sockets.
+Range of error estimates for initial condition: -nan < elem err < -nan
+
+Begin time stepping at t = 0
+Setting time step: 0.0025 in DGTransportTDO
+Setting time step: 0.0025 in CombinedOp
+Setting time step: 0.0025 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.33698302
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.336983
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 203.846 ...
+   Pass :  1   Iteration :   1  ||B r|| = 3.01342e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 6.6035511e-13
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 6.60355e-13, ||r||/||r_0|| = 1.95961e-12
+Setting time step: 0.0025 in DGTransportTDO
+Setting time step: 0.0025 in CombinedOp
+Setting time step: 0.0025 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.31551339
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.315513
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 190.861 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.60393e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 9.5746174e-13
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 9.57462e-13, ||r||/||r_0|| = 3.03462e-12
+Setting time step: 0.0025 in DGTransportTDO
+Setting time step: 0.0025 in CombinedOp
+Setting time step: 0.0025 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.32399135
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.323991
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 195.989 ...
+   Pass :  1   Iteration :   1  ||B r|| = 2.69333e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.3842786e-13
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.38428e-13, ||r||/||r_0|| = 2.58781e-12
+Setting time step: 0.0025 in DGTransportTDO
+Setting time step: 0.0025 in CombinedOp
+Setting time step: 0.0025 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.32615572
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.326156
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 197.298 ...
+   Pass :  1   Iteration :   1  ||B r|| = 2.97727e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.7189229e-13
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.71892e-13, ||r||/||r_0|| = 2.36664e-12
+Setting time step: 0.0025 in DGTransportTDO
+Setting time step: 0.0025 in CombinedOp
+Setting time step: 0.0025 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.30515271
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.305153
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 184.591 ...
+   Pass :  1   Iteration :   1  ||B r|| = 3.1655e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.1209314e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.12093e-12, ||r||/||r_0|| = 3.67335e-12
+Setting time step: 0.005 in DGTransportTDO
+Setting time step: 0.005 in CombinedOp
+Setting time step: 0.005 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.29543014
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.29543
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 173.195 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.07897e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.744389e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.74439e-12, ||r||/||r_0|| = 5.90457e-12
+Setting time step: 0.005 in DGTransportTDO
+Setting time step: 0.005 in CombinedOp
+Setting time step: 0.005 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.2589528
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.258953
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 151.81 ...
+   Pass :  1   Iteration :   1  ||B r|| = 4.76356e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.4198889e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 2.41989e-12, ||r||/||r_0|| = 9.3449e-12
+Setting time step: 0.005 in DGTransportTDO
+Setting time step: 0.005 in CombinedOp
+Setting time step: 0.005 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.2731834
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.273183
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 160.153 ...
+   Pass :  1   Iteration :   1  ||B r|| = 4.97942e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.1054727e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 2.10547e-12, ||r||/||r_0|| = 7.70718e-12
+Setting time step: 0.005 in DGTransportTDO
+Setting time step: 0.005 in CombinedOp
+Setting time step: 0.005 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.27688923
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.276889
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 162.325 ...
+   Pass :  1   Iteration :   1  ||B r|| = 2.91684e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.1474989e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 2.1475e-12, ||r||/||r_0|| = 7.75581e-12
+Setting time step: 0.005 in DGTransportTDO
+Setting time step: 0.005 in CombinedOp
+Setting time step: 0.005 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.24200696
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.242007
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 141.876 ...
+   Pass :  1   Iteration :   1  ||B r|| = 3.88771e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.5732172e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 2.57322e-12, ||r||/||r_0|| = 1.06328e-11
+Setting time step: 0.01 in DGTransportTDO
+Setting time step: 0.01 in CombinedOp
+Setting time step: 0.01 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.22706632
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.227066
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 125.377 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.10194e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.5564379e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.55644e-12, ||r||/||r_0|| = 1.56626e-11
+Setting time step: 0.01 in DGTransportTDO
+Setting time step: 0.01 in CombinedOp
+Setting time step: 0.01 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.17425431
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.174254
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 96.216 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.01512e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 4.4289623e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 4.42896e-12, ||r||/||r_0|| = 2.54167e-11
+Setting time step: 0.01 in DGTransportTDO
+Setting time step: 0.01 in CombinedOp
+Setting time step: 0.01 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.19439645
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.194396
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 107.338 ...
+   Pass :  1   Iteration :   1  ||B r|| = 2.09707e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.7872923e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.78729e-12, ||r||/||r_0|| = 1.94823e-11
+Setting time step: 0.01 in DGTransportTDO
+Setting time step: 0.01 in CombinedOp
+Setting time step: 0.01 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.19984199
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.199842
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 110.344 ...
+   Pass :  1   Iteration :   1  ||B r|| = 7.5689e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 4.0519882e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 4.05199e-12, ||r||/||r_0|| = 2.0276e-11
+Setting time step: 0.01 in DGTransportTDO
+Setting time step: 0.01 in CombinedOp
+Setting time step: 0.01 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.15179393
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.151794
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 83.8143 ...
+   Pass :  1   Iteration :   1  ||B r|| = 2.15709e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 4.5205835e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 4.52058e-12, ||r||/||r_0|| = 2.97811e-11
+Setting time step: 0.02 in DGTransportTDO
+Setting time step: 0.02 in CombinedOp
+Setting time step: 0.02 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.13414149
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.134141
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 66.3513 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.19008e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 5.2686219e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 5.26862e-12, ||r||/||r_0|| = 3.92766e-11
+Setting time step: 0.02 in DGTransportTDO
+Setting time step: 0.02 in CombinedOp
+Setting time step: 0.02 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.078243628
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0782436
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 38.7021 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.29667e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 6.4696508e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 6.46965e-12, ||r||/||r_0|| = 8.2686e-11
+Setting time step: 0.02 in DGTransportTDO
+Setting time step: 0.02 in CombinedOp
+Setting time step: 0.02 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.098739325
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0987393
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 48.8401 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.47068e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 5.7321503e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 5.73215e-12, ||r||/||r_0|| = 5.80534e-11
+Setting time step: 0.02 in DGTransportTDO
+Setting time step: 0.02 in CombinedOp
+Setting time step: 0.02 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.10465967
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.10466
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 51.7685 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.31312e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 5.9691811e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 5.96918e-12, ||r||/||r_0|| = 5.70342e-11
+Setting time step: 0.02 in DGTransportTDO
+Setting time step: 0.02 in CombinedOp
+Setting time step: 0.02 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.059201811
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0592018
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 29.2834 ...
+   Pass :  1   Iteration :   1  ||B r|| = 5.35634e-12
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 6.6949061e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 6.69491e-12, ||r||/||r_0|| = 1.13086e-10
+Time stepping paused at t = 0.15
+
+Estimating errors.
+No refinements necessary.
+No derefinements needed.
+
+AMR iteration 1
+Number of unknowns: 1024
+Setting time step: 0.019714525 in DGTransportTDO
+Setting time step: 0.019714525 in CombinedOp
+Setting time step: 0.019714525 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.046866869
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0468669
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 23.2512 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.34028e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.0999829e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.09998e-12, ||r||/||r_0|| = 1.51493e-10
+Setting time step: 0.019714525 in DGTransportTDO
+Setting time step: 0.019714525 in CombinedOp
+Setting time step: 0.019714525 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0275584
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0275584
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 13.672 ...
+   Pass :  1   Iteration :   1  ||B r|| = 3.71265e-12
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.4349658e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.43497e-12, ||r||/||r_0|| = 2.69789e-10
+Setting time step: 0.019714525 in DGTransportTDO
+Setting time step: 0.019714525 in CombinedOp
+Setting time step: 0.019714525 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.034645403
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0346454
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 17.188 ...
+   Pass :  1   Iteration :   1  ||B r|| = 7.04874e-12
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.373081e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.37308e-12, ||r||/||r_0|| = 2.12816e-10
+Setting time step: 0.019714525 in DGTransportTDO
+Setting time step: 0.019714525 in CombinedOp
+Setting time step: 0.019714525 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.036688974
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.036689
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 18.2018 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.00729e-11
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.1504942e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.15049e-12, ||r||/||r_0|| = 1.94895e-10
+Setting time step: 0.019714525 in DGTransportTDO
+Setting time step: 0.019714525 in CombinedOp
+Setting time step: 0.019714525 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.020933124
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0209331
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 10.3852 ...
+   Pass :  1   Iteration :   1  ||B r|| = 5.38005e-12
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.292058e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.29206e-12, ||r||/||r_0|| = 3.4835e-10
+Setting time step: 0.038632666 in DGTransportTDO
+Setting time step: 0.038632666 in CombinedOp
+Setting time step: 0.038632666 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.016621052
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0166211
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 6.88494 ...
+   Pass :  1   Iteration :   1  ||B r|| = 3.19245e-12
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.5195751e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.51958e-12, ||r||/||r_0|| = 4.52413e-10
+Setting time step: 0.038632666 in DGTransportTDO
+Setting time step: 0.038632666 in CombinedOp
+Setting time step: 0.038632666 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0054171047
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0054171
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.24393 ...
+   Pass :  1   Iteration :   1  ||B r|| = 6.81724e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.4719263e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.47193e-12, ||r||/||r_0|| = 1.37932e-09
+Setting time step: 0.038632666 in DGTransportTDO
+Setting time step: 0.038632666 in CombinedOp
+Setting time step: 0.038632666 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0092944937
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00929449
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 3.85006 ...
+   Pass :  1   Iteration :   1  ||B r|| = 2.67106e-12
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.658539e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.65854e-12, ||r||/||r_0|| = 8.23987e-10
+Setting time step: 0.038632666 in DGTransportTDO
+Setting time step: 0.038632666 in CombinedOp
+Setting time step: 0.038632666 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.010530642
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0105306
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 4.36211 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.07605e-12
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.0434835e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.04348e-12, ||r||/||r_0|| = 7.63817e-10
+Setting time step: 0.038632666 in DGTransportTDO
+Setting time step: 0.038632666 in CombinedOp
+Setting time step: 0.038632666 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0034025573
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00340256
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 1.40944 ...
+   Pass :  1   Iteration :   1  ||B r|| = 8.90015e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.1874672e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.18747e-12, ||r||/||r_0|| = 2.40627e-09
+Setting time step: 0.042518041 in DGTransportTDO
+Setting time step: 0.042518041 in CombinedOp
+Setting time step: 0.042518041 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0022557564
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00225576
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 0.903768 ...
+   Pass :  1   Iteration :   1  ||B r|| = 2.98876e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.1297161e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.12972e-12, ||r||/||r_0|| = 3.60399e-09
+Setting time step: 0.042518041 in DGTransportTDO
+Setting time step: 0.042518041 in CombinedOp
+Setting time step: 0.042518041 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00063713211
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000637132
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 0.255267 ...
+   Pass :  1   Iteration :   1  ||B r|| = 5.9133e-14
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.3470691e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.34707e-12, ||r||/||r_0|| = 1.15315e-08
+Setting time step: 0.042518041 in DGTransportTDO
+Setting time step: 0.042518041 in CombinedOp
+Setting time step: 0.042518041 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001191666
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00119167
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 0.47744 ...
+   Pass :  1   Iteration :   1  ||B r|| = 7.32845e-14
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.3812101e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.38121e-12, ||r||/||r_0|| = 6.19403e-09
+Setting time step: 0.042518041 in DGTransportTDO
+Setting time step: 0.042518041 in CombinedOp
+Setting time step: 0.042518041 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0013715525
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00137155
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 0.549512 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.5781e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.2663439e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.26634e-12, ||r||/||r_0|| = 6.027e-09
+Setting time step: 0.042518041 in DGTransportTDO
+Setting time step: 0.042518041 in CombinedOp
+Setting time step: 0.042518041 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00039863276
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000398633
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 0.159712 ...
+   Pass :  1   Iteration :   1  ||B r|| = 4.04322e-14
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.0877742e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.08777e-12, ||r||/||r_0|| = 2.02888e-08
+Setting time step: 0.085036082 in DGTransportTDO
+Setting time step: 0.085036082 in CombinedOp
+Setting time step: 0.085036082 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00025561274
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000255613
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 0.0753701 ...
+   Pass :  1   Iteration :   1  ||B r|| = 3.10326e-14
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.0461868e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.04619e-12, ||r||/||r_0|| = 3.1478e-08
+Setting time step: 0.085036082 in DGTransportTDO
+Setting time step: 0.085036082 in CombinedOp
+Setting time step: 0.085036082 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4359031e-05
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.4359e-05
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 0.00423391 ...
+   Pass :  1   Iteration :   1  ||B r|| = 2.30102e-15
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.2678814e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.26788e-12, ||r||/||r_0|| = 5.75797e-07
+Setting time step: 0.085036082 in DGTransportTDO
+Setting time step: 0.085036082 in CombinedOp
+Setting time step: 0.085036082 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.0818683e-05
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 7.08187e-05
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 0.0208816 ...
+   Pass :  1   Iteration :   1  ||B r|| = 6.16548e-15
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.6783461e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.67835e-12, ||r||/||r_0|| = 1.08423e-07
+Setting time step: 0.085036082 in DGTransportTDO
+Setting time step: 0.085036082 in CombinedOp
+Setting time step: 0.085036082 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00010266677
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000102667
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 0.0302724 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.7604e-14
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.9675388e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.96754e-12, ||r||/||r_0|| = 7.76058e-08
+Setting time step: 0.085036082 in DGTransportTDO
+Setting time step: 0.085036082 in CombinedOp
+Setting time step: 0.085036082 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.9655834e-05
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 2.96558e-05
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 0.00874433 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.37657e-15
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.4298545e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.42985e-12, ||r||/||r_0|| = 2.84256e-07
+Time stepping paused at t = 0.89360526
+
+Estimating errors.
+No refinements necessary.
+No derefinements needed.
+
+AMR iteration 2
+Number of unknowns: 1024
+Setting time step: 0.17007216 in DGTransportTDO
+Setting time step: 0.17007216 in CombinedOp
+Setting time step: 0.17007216 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.3994959e-05
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.3995e-05
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 0.00270047 ...
+   Pass :  1   Iteration :   1  ||B r|| = 3.6317e-15
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.7746593e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.77466e-12, ||r||/||r_0|| = 5.55533e-07
+Setting time step: 0.17007216 in DGTransportTDO
+Setting time step: 0.17007216 in CombinedOp
+Setting time step: 0.17007216 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 5.350956e-06
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 5.35096e-06
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 0.00103252 ...
+   Pass :  1   Iteration :   1  ||B r|| = 7.76147e-16
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.8194766e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.81948e-12, ||r||/||r_0|| = 1.46132e-06
+Setting time step: 0.17007216 in DGTransportTDO
+Setting time step: 0.17007216 in CombinedOp
+Setting time step: 0.17007216 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.4798597e-07
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 2.47986e-07
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 4.78515e-05 ...
+   Pass :  1   Iteration :   1  ||B r|| = 4.33273e-17
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.5318692e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.53187e-12, ||r||/||r_0|| = 3.44046e-05
+Setting time step: 0.17007216 in DGTransportTDO
+Setting time step: 0.17007216 in CombinedOp
+Setting time step: 0.17007216 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.6760233e-06
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 2.67602e-06
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 0.000516367 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.30778e-16
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.2978324e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.29783e-12, ||r||/||r_0|| = 3.10081e-06
+Setting time step: 0.17007216 in DGTransportTDO
+Setting time step: 0.17007216 in CombinedOp
+Setting time step: 0.17007216 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 5.6379891e-06
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 5.63799e-06
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 0.00108791 ...
+   Pass :  1   Iteration :   1  ||B r|| = 8.3564e-16
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.4127795e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.41278e-12, ||r||/||r_0|| = 1.49216e-06
+Setting time step: 0.34014433 in DGTransportTDO
+Setting time step: 0.34014433 in CombinedOp
+Setting time step: 0.34014433 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.7411569e-06
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.74116e-06
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 0.000198663 ...
+   Pass :  1   Iteration :   1  ||B r|| = 5.83514e-17
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.3795501e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.37955e-12, ||r||/||r_0|| = 4.81263e-06
+Setting time step: 0.34014433 in DGTransportTDO
+Setting time step: 0.34014433 in CombinedOp
+Setting time step: 0.34014433 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.1052509e-06
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.10525e-06
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 0.000126108 ...
+   Pass :  1   Iteration :   1  ||B r|| = 5.97073e-17
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.1933131e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.19331e-12, ||r||/||r_0|| = 7.41308e-06
+Setting time step: 0.34014433 in DGTransportTDO
+Setting time step: 0.34014433 in CombinedOp
+Setting time step: 0.34014433 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.3894768e-07
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 3.38948e-07
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 3.86735e-05 ...
+   Pass :  1   Iteration :   1  ||B r|| = 7.81352e-18
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.1510434e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.15104e-12, ||r||/||r_0|| = 2.40481e-05
+Setting time step: 0.34014433 in DGTransportTDO
+Setting time step: 0.34014433 in CombinedOp
+Setting time step: 0.34014433 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.6734964e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 3.6735e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 4.19139e-06 ...
+   Pass :  1   Iteration :   1  ||B r|| = 2.61987e-18
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.6578658e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.65787e-12, ||r||/||r_0|| = 0.000208463
+Setting time step: 0.34014433 in DGTransportTDO
+Setting time step: 0.34014433 in CombinedOp
+Setting time step: 0.34014433 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.6308181e-06
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.63082e-06
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 0.000186074 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.26381e-16
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.9828283e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.98283e-12, ||r||/||r_0|| = 4.89498e-06
+Setting time step: 0.68028866 in DGTransportTDO
+Setting time step: 0.68028866 in CombinedOp
+Setting time step: 0.68028866 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.9780429e-07
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 2.97804e-07
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 1.86966e-05 ...
+   Pass :  1   Iteration :   1  ||B r|| = 9.2046e-18
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.7675802e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.76758e-12, ||r||/||r_0|| = 2.60828e-05
+Setting time step: 0.68028866 in DGTransportTDO
+Setting time step: 0.68028866 in CombinedOp
+Setting time step: 0.68028866 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.3795797e-07
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 2.37958e-07
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 1.49394e-05 ...
+   Pass :  1   Iteration :   1  ||B r|| = 4.23161e-18
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.6878724e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.68787e-12, ||r||/||r_0|| = 3.65101e-05
+Setting time step: 0.68028866 in DGTransportTDO
+Setting time step: 0.68028866 in CombinedOp
+Setting time step: 0.68028866 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.0076187e-07
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.00762e-07
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 6.32599e-06 ...
+   Pass :  1   Iteration :   1  ||B r|| = 5.61007e-18
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.8612482e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.86125e-12, ||r||/||r_0|| = 7.80181e-05
+Setting time step: 0.68028866 in DGTransportTDO
+Setting time step: 0.68028866 in CombinedOp
+Setting time step: 0.68028866 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.7628806e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 2.76288e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 1.73458e-06 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.01264e-18
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.2418373e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.24184e-12, ||r||/||r_0|| = 0.000298306
+Setting time step: 0.68028866 in DGTransportTDO
+Setting time step: 0.68028866 in CombinedOp
+Setting time step: 0.68028866 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 4.358618e-07
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 4.35862e-07
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.73642e-05 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.18416e-17
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.5289549e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.52895e-12, ||r||/||r_0|| = 1.72737e-05
+Setting time step: 1.3605773 in DGTransportTDO
+Setting time step: 1.3605773 in CombinedOp
+Setting time step: 1.3605773 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 4.3795433e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 4.37954e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 1.44749e-06 ...
+   Pass :  1   Iteration :   1  ||B r|| = 2.98066e-19
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.6245463e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.62455e-12, ||r||/||r_0|| = 0.000174095
+Setting time step: 1.3605773 in DGTransportTDO
+Setting time step: 1.3605773 in CombinedOp
+Setting time step: 1.3605773 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.9162081e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 3.91621e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 1.29436e-06 ...
+   Pass :  1   Iteration :   1  ||B r|| = 3.20266e-19
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.8418742e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 7.84187e-12, ||r||/||r_0|| = 0.000200242
+Setting time step: 1.3605773 in DGTransportTDO
+Setting time step: 1.3605773 in CombinedOp
+Setting time step: 1.3605773 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.8550314e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.85503e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 6.13116e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.8550314e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.85503e-08, ||r||/||r_0|| = 1
+Setting time step: 1.3605773 in DGTransportTDO
+Setting time step: 1.3605773 in CombinedOp
+Setting time step: 1.3605773 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.9381072e-09
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 8.93811e-09
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.95415e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.9381072e-09
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.93811e-09, ||r||/||r_0|| = 1
+Setting time step: 1.3605773 in DGTransportTDO
+Setting time step: 1.3605773 in CombinedOp
+Setting time step: 1.3605773 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.8048641e-07
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 2.80486e-07
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 9.27043e-06 ...
+   Pass :  1   Iteration :   1  ||B r|| = 1.68547e-18
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.6421574e-12
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 8.64216e-12, ||r||/||r_0|| = 3.08113e-05
+Time stepping paused at t = 11.097935
+
+Estimating errors.
+No refinements necessary.
+No derefinements needed.
+
+AMR iteration 3
+Number of unknowns: 1024
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Setting time step: 2.7211546 in DGTransportTDO
+Setting time step: 2.7211546 in CombinedOp
+Setting time step: 2.7211546 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 1.48365e-08
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            2.06 |  Total :     6.07
+** Total highmark (MB):
+    Sum-of-all :     6.07 | Avg :     6.07  | Max :     6.07
+**************************************************
+
+** Memory Usage **********************************
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :            0.14 |  Total :     2.08
+** Total highmark (MB):
+    Sum-of-all :     2.08 | Avg :     2.08  | Max :     2.08
+**************************************************
+   Pass :  1   Iteration :   0  ||B r|| = 2.51845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.4836548e-08
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 1.48365e-08, ||r||/||r_0|| = 1
+Time stepping paused at t = 54.636409
+Steady State solution has been reached
+
+Time stepping done after 19.134398s.
