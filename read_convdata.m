@@ -126,8 +126,9 @@ end
 %%
 
 refineMesh = meshgrid(refine)';
-refineMesh(:,5) = refineMesh(:,4);
+refineMesh(:,end) = [];
 orderMesh = meshgrid(order);
+orderMesh(end+1,:) = orderMesh(end,:);
 
 for ii=1:length(chiPara)
     
@@ -149,7 +150,7 @@ for ii=1:length(chiPara)
 end
 
 figure(2)
-xlim([1 5])
+xlim([0 5])
 ylim([1 5])
 zlim([3 9])
 xticks(refine)
