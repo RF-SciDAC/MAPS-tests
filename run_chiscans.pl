@@ -8,7 +8,7 @@ my $root_dir = '../../mfem/miniapps/plasma/';
 my $input_path = '~/mfem-analysis/input-files/';
 my $mesh_path = '../../mfem/data/';
 
-my @chi = qw(1.0e3, 1.0e4, 1.0e5, 1.0e6, 1.0e7, 1.0e8, 1.0e9);
+my @chi = qw(1.0e3 1.0e4 1.0e5 1.0e6 1.0e7 1.0e8 1.0e9);
 foreach my $chi (@chi) {
 	my $filename = 'input-files/transport2d_ecs.inp';
 	my $newfile = "$filename.new";
