@@ -2,7 +2,7 @@ dir_path = '.';
 prefix = 'Transport2D-Parallel';
 refine = [1];
 order = [3];
-chiPara = [3,4,5,6];
+chiPara = [3,4,5,6,7,8,9];
 
 noconv_arr = zeros(length(refine),length(order),length(chiPara));
 abort_arr = zeros(length(refine),length(order),length(chiPara));
@@ -119,9 +119,9 @@ for jj=1:length(refine)
                     abort_arr(jj,kk,ll) = 1;
 %                     noconv_arr(jj,kk,ll) = 1;
                 end
-                if ~isempty(sluabort_loc)
-                    noconv_arr(jj,kk,ll) = 1;
-                end
+%                 if ~isempty(sluabort_loc)
+%                     noconv_arr(jj,kk,ll) = 1;
+%                 end
                 
                 dof_loc = regexp(line,"Number of unknowns per field: ");
                 if ~isempty(dof_loc)
@@ -269,6 +269,30 @@ if length(order)~=1
     legend('$\chi_{\parallel} = 10^3$','$\chi_{\parallel} = 10^6$',...
         '$\chi_{\parallel} = 10^9$','interpreter','latex','location',...
         'northwest')
+
+elseif length(order)==1
+    
+    ab_ind = find(abort_arr);
+    nc_ind = find((noconv_arr) & ~(abort_arr));
+    co_ind = find(~noconv_arr);
+    
+    figure(4)
+    set(gcf,'color','w','Position',[0 0 900 400])
+    semilogy(chiPara(co_ind),squeeze(err_arr(1,1,co_ind)),'k*',...
+        'markersize',15,'linewidth',2)
+    hold on
+    semilogy(chiPara(nc_ind),squeeze(err_arr(1,1,nc_ind)),'xb',...
+        'markersize',15,'linewidth',2)
+    xlim([min(chiPara), max(chiPara)])
+    ylim([min(err_arr(1,1,:)) max(err_arr(1,1,nc_ind)+1.0e-3)])
+    xlabel('log$_{10} \chi_{\parallel}$','interpreter','latex')
+    ylabel('$L^2$ Error','interpreter','latex')
+    legend('Converged to SS','GMRES: No convergence!','location',...
+        'northwest','interpreter','latex')
+    title('Error for $\chi_{\parallel}$ scan with 1 mesh refinement (8x8) and order 3',...
+        'interpreter','latex')
+    
+
 end
 
 
