@@ -6,7 +6,7 @@ Running the script `read_convdata.m` should produce the figure
 
 ![plot](./output-files/chi_scan.png)
 
-where missing values in the figure indicate where the MPI Abort error occured.  
+where missing values in the figure (chi parallel 10^6, 10^8, 10^9) indicate where the MPI Abort error occured.  
 
 ## Dependencies: ##
 
