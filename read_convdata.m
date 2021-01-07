@@ -1,4 +1,4 @@
-dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/GMRES/chi_scan/';
+dir_path = '.';
 prefix = 'Transport2D-Parallel';
 refine = [1];
 order = [3];
