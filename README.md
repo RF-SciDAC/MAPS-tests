@@ -11,5 +11,5 @@ where missing values in the figure indicate where the MPI Abort error occured.
 ## Dependencies: ##
 
 Perl v5.26.1
-\\
+
 Matlab 2018b
