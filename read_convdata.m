@@ -1,7 +1,7 @@
-dir_path = '.';
+dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/GMRES/chi_scan';
 prefix = 'Transport2D-Parallel';
-refine = [1];
-order = [3];
+refine = [0,1,2,3,4];
+order = [1,2,3,4,5];
 chiPara = [3,4,5,6,7,8,9];
 
 noconv_arr = zeros(length(refine),length(order),length(chiPara));
@@ -20,10 +20,10 @@ for jj=1:length(refine)
 %                 continue
 %             end
             
-            if length(order)~=1
+            if length(order)==1
                 filepath = strcat(dir_path,'/chi',num2str(chiPara(ll)),'/r',...
                 num2str(refine(jj)),'_o',num2str(order(kk)),'/');
-            elseif length(order)==1
+            elseif length(order)~=1
                 filepath = strcat(dir_path,'/chi1.0e',num2str(chiPara(ll)),'/');
             end
 
