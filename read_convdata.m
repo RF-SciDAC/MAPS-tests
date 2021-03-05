@@ -1,7 +1,7 @@
 dir_path = '.'; % directory for the mfem output data files
 prefix = 'Transport2D-Parallel';
-refine = [1];
-order = [3];
+refine = [0,1,2,3,4];
+order = [1,2,3,4,5];
 chiPara = [3,4,5,6,7,8,9];
 
 noconv_arr = zeros(length(refine),length(order),length(chiPara));
@@ -14,8 +14,6 @@ for jj=1:length(refine)
     for kk=1:length(order)
         for ll=1:length(chiPara)
             
-                num2str(refine(jj)),'_o',num2str(order(kk)),'/');
-            elseif length(order)==1
                 filepath = strcat(dir_path,'/chi1.0e',num2str(chiPara(ll)),'/');
             end
 
