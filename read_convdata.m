@@ -1,8 +1,9 @@
-dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/';
+
+dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/git_check/hash-a6c5140/ltol1e-8/';
 prefix = 'Transport2D-Parallel';
-refine = [0,1,2,3,4,5];
-order = [1,2,3,4,5];
-chiPara = [3,6,9];
+refine = [1,2,3,4,5];
+order = [1];
+chiPara = [3];
 
 noconv_arr = zeros(length(refine),length(order),length(chiPara));
 abort_arr = zeros(length(refine),length(order),length(chiPara));
@@ -20,10 +21,12 @@ for jj=1:length(refine)
 %                 continue
 %             end
             
-            if length(order)~=1
-                filepath = strcat(dir_path,'/chi',num2str(chiPara(ll)),'/r',...
+            if length(order)==1
+%                 filepath = strcat(dir_path,'/chi',num2str(chiPara(ll)),'/r',...
+%                 num2str(refine(jj)),'_o',num2str(order(kk)),'/');
+                filepath = strcat(dir_path,'/r',...
                 num2str(refine(jj)),'_o',num2str(order(kk)),'/');
-            elseif length(order)==1
+            elseif length(order)~=1
                 filepath = strcat(dir_path,'/chi1.0e',num2str(chiPara(ll)),'/');
             end
 
