@@ -1,0 +1,4979 @@
+Options used:
+   --mesh ../../mfem/data/inline-quad.mesh
+   --bc-file /home/gz6/mfem-analysis/input-files/transport2d_bcs.inp
+   --ic-file /home/gz6/mfem-analysis/input-files/transport2d_ics.inp
+   --ec-file /home/gz6/mfem-analysis/input-files/transport2d_ecs.inp
+   --es-file /home/gz6/mfem-analysis/input-files/transport2d_ess.inp
+   --eqdsk-file 
+   --logging 1
+   --operator-test 8
+   --equation-weights '1 1 1 1 1'
+   --problem 0
+   --refine-serial 1
+   --refine-parallel 0
+   --disable-amr
+   --max-err -1
+   --hysteresis 0.25
+   --nc-limit 3
+   --amr-weights '1 1 1 1 1'
+   --order 4
+   --dg-sigma -1
+   --dg-kappa 25
+   --linear-abs-tolerance 1e-06
+   --linear-rel-tolerance 1e-06
+   --linear-max-iterations 300
+   --linear-logging-level 3
+   --newton-abs-tolerance 1e-10
+   --newton-rel-tolerance 1e-10
+   --newton-max-iterations 10
+   --newton-logging-level 1
+   --steady-state-abs-tolerance 1e-08
+   --steady-state-rel-tolerance 1e-08
+   --prec-type 1
+   --prec-logging-level 0
+   --initial-tolerance 1e-05
+   --ode-tolerance 0.001
+   --ode-solver 2
+   --err-per-step
+   --ode-weights '1 1 1 1 1'
+   --kP 0
+   --kI 0.6
+   --kD 0
+   --dead-zone-min 0.95
+   --dead-zone-max 1.05
+   --theta-max 2
+   --t-minimum 0
+   --t-final 200
+   --time-step 0.01
+   --cfl-number 0.3
+   --ion-charge 1
+   --ion-mass 2.01410178
+   --neutral-mass 2.01410178
+   --neutral-temp 3
+   --min-neutral-density 900000000000000
+   --max-neutral-density 1000000000000000
+   --neutral-density-exp 0
+   --min-ion-density 1e+16
+   --max-ion-density 1e+18
+   --ion-density-exp 0
+   --min-ion-temp 1
+   --max-ion-temp 10
+   --ion-temp-exp 0
+   --min-electron-temp 10
+   --max-electron-temp 440
+   --electron-temp-exp 0
+   --total-B-magnitude 5
+   --poloidal-B-magnitude 0.5
+   --velocity 1000
+   --Di-perp 1
+   --Xi-perp 1
+   --Xe-perp 1
+   --equation-term-flags '-1 -1 -1 -1 -1'
+   --visualization-flags '-1 -1 -1 -1 -1'
+   --visualization
+   --visit-datafiles
+   --ascii-datafiles
+   --no-check-gradient
+   --visualization-steps 4
+Device configuration: cpu
+Memory configuration: host-std
+Number of elements in initial mesh: 16
+Number of elements after serial refinement: 64
+2: Number of elements in parallel mesh: 4
+2: Number of elements after parallel refinement: 4
+0: Number of elements in parallel mesh: 4
+0: Number of elements after parallel refinement: 4
+1: Number of elements in parallel mesh: 4
+1: Number of elements after parallel refinement: 4
+4: Number of elements in parallel mesh: 4
+4: Number of elements after parallel refinement: 4
+3: Number of elements in parallel mesh: 4
+3: Number of elements after parallel refinement: 4
+6: Number of elements in parallel mesh: 4
+6: Number of elements after parallel refinement: 4
+9: Number of elements in parallel mesh: 4
+9: Number of elements after parallel refinement: 4
+10: Number of elements in parallel mesh: 4
+10: Number of elements after parallel refinement: 4
+11: Number of elements in parallel mesh: 4
+11: Number of elements after parallel refinement: 4
+12: Number of elements in parallel mesh: 4
+12: Number of elements after parallel refinement: 4
+13: Number of elements in parallel mesh: 4
+13: Number of elements after parallel refinement: 4
+5: Number of elements in parallel mesh: 4
+5: Number of elements after parallel refinement: 4
+7: Number of elements in parallel mesh: 4
+7: Number of elements after parallel refinement: 4
+8: Number of elements in parallel mesh: 4
+8: Number of elements after parallel refinement: 4
+15: Number of elements in parallel mesh: 4
+14: Number of elements in parallel mesh: 4
+14: Number of elements after parallel refinement: 4
+15: Number of elements after parallel refinement: 4
+Configuring initial conditions
+Reading initial conditions from /home/gz6/mfem-analysis/input-files/transport2d_ics.inp
+Configuring exact solutions
+Reading exact solutions from /home/gz6/mfem-analysis/input-files/transport2d_ess.inp
+Number of unknowns per field: 1600
+Total number of unknowns:     8000
+Configuring boundary conditions
+Reading boundary conditions from /home/gz6/mfem-analysis/input-files/transport2d_bcs.inp
+Configuring equation coefficients
+Reading equation coefficients from /home/gz6/mfem-analysis/input-files/transport2d_ecs.inp
+Ion Static Pressure: Adding time derivative term proportional to d n_i / dt
+Ion Static Pressure: Adding time derivative term proportional to d T_i / dt
+Ion Static Pressure: Adding anisotropic diffusion term
+Ion Static Pressure: Adding source term
+Opening GLVis sockets.
+Range of error estimates for initial condition: 5.58845235202377e-16 < elem err < 8.193663865202666e-16
+
+Begin time stepping at t = 0
+Setting time step: 0.0025 in DGTransportTDO
+Setting time step: 0.0025 in CombinedOp
+Setting time step: 0.0025 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.275754919261918
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.275755
+   Pass :  1   Iteration :   0  ||B r|| = 99.1739 ...
+   Pass :  4   Iteration : 193  ||B r|| = 9.68836e-05
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.002029418366625286
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00202942, ||r||/||r_0|| = 0.0073595
+   Pass :  1   Iteration :   0  ||B r|| = 9.68836e-05 ...
+   Pass :  5   Iteration : 226  ||B r|| = 9.95135e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.119387706018017e-05
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 2.11939e-05, ||r||/||r_0|| = 7.68577e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.95135e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.119387706018017e-05
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 2.11939e-05, ||r||/||r_0|| = 7.68577e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.95135e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.119387706018017e-05
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 2.11939e-05, ||r||/||r_0|| = 7.68577e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.95135e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.119387706018017e-05
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 2.11939e-05, ||r||/||r_0|| = 7.68577e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.95135e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.119387706018017e-05
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 2.11939e-05, ||r||/||r_0|| = 7.68577e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.95135e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.119387706018017e-05
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 2.11939e-05, ||r||/||r_0|| = 7.68577e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.95135e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.119387706018017e-05
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 2.11939e-05, ||r||/||r_0|| = 7.68577e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.95135e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.119387706018017e-05
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 2.11939e-05, ||r||/||r_0|| = 7.68577e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.95135e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.119387706018017e-05
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 2.11939e-05, ||r||/||r_0|| = 7.68577e-05
+Setting time step: 0.0025 in DGTransportTDO
+Setting time step: 0.0025 in CombinedOp
+Setting time step: 0.0025 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.2581891918353931
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.258189
+   Pass :  1   Iteration :   0  ||B r|| = 92.8564 ...
+   Pass :  4   Iteration : 193  ||B r|| = 9.07635e-05
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001901516581405912
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00190152, ||r||/||r_0|| = 0.00736482
+   Pass :  1   Iteration :   0  ||B r|| = 9.07635e-05 ...
+   Pass :  5   Iteration : 224  ||B r|| = 9.84586e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.172796440050981e-05
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 2.1728e-05, ||r||/||r_0|| = 8.41552e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.84587e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.172796440050981e-05
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 2.1728e-05, ||r||/||r_0|| = 8.41552e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.84587e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.172796440050981e-05
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 2.1728e-05, ||r||/||r_0|| = 8.41552e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.84587e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.172796440050981e-05
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 2.1728e-05, ||r||/||r_0|| = 8.41552e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.84587e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.172796440050981e-05
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 2.1728e-05, ||r||/||r_0|| = 8.41552e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.84587e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.172796440050981e-05
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 2.1728e-05, ||r||/||r_0|| = 8.41552e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.84587e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.172796440050981e-05
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 2.1728e-05, ||r||/||r_0|| = 8.41552e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.84587e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.172796440050981e-05
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 2.1728e-05, ||r||/||r_0|| = 8.41552e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.84587e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.172796440050981e-05
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 2.1728e-05, ||r||/||r_0|| = 8.41552e-05
+Setting time step: 0.0025 in DGTransportTDO
+Setting time step: 0.0025 in CombinedOp
+Setting time step: 0.0025 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.2651260496942674
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.265126
+   Pass :  1   Iteration :   0  ||B r|| = 95.3512 ...
+   Pass :  4   Iteration : 193  ||B r|| = 9.3185e-05
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001952149891939734
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00195215, ||r||/||r_0|| = 0.0073631
+   Pass :  1   Iteration :   0  ||B r|| = 9.3185e-05 ...
+   Pass :  5   Iteration : 225  ||B r|| = 9.82654e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.149386783796265e-05
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 2.14939e-05, ||r||/||r_0|| = 8.10704e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.82654e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.149386783796265e-05
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 2.14939e-05, ||r||/||r_0|| = 8.10704e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.82654e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.149386783796265e-05
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 2.14939e-05, ||r||/||r_0|| = 8.10704e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.82654e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.149386783796265e-05
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 2.14939e-05, ||r||/||r_0|| = 8.10704e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.82654e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.149386783796265e-05
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 2.14939e-05, ||r||/||r_0|| = 8.10704e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.82654e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.149386783796265e-05
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 2.14939e-05, ||r||/||r_0|| = 8.10704e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.82654e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.149386783796265e-05
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 2.14939e-05, ||r||/||r_0|| = 8.10704e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.82654e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.149386783796265e-05
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 2.14939e-05, ||r||/||r_0|| = 8.10704e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.82654e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.149386783796265e-05
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 2.14939e-05, ||r||/||r_0|| = 8.10704e-05
+Setting time step: 0.0025 in DGTransportTDO
+Setting time step: 0.0025 in CombinedOp
+Setting time step: 0.0025 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.2668967409018661
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.266897
+   Pass :  1   Iteration :   0  ||B r|| = 95.9881 ...
+   Pass :  4   Iteration : 193  ||B r|| = 9.38009e-05
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001965014081412098
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00196501, ||r||/||r_0|| = 0.00736245
+   Pass :  1   Iteration :   0  ||B r|| = 9.38009e-05 ...
+   Pass :  5   Iteration : 225  ||B r|| = 9.8905e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.160459021806273e-05
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 2.16046e-05, ||r||/||r_0|| = 8.09474e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.8905e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.160459021806273e-05
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 2.16046e-05, ||r||/||r_0|| = 8.09474e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.8905e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.160459021806273e-05
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 2.16046e-05, ||r||/||r_0|| = 8.09474e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.8905e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.160459021806273e-05
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 2.16046e-05, ||r||/||r_0|| = 8.09474e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.8905e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.160459021806273e-05
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 2.16046e-05, ||r||/||r_0|| = 8.09474e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.8905e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.160459021806273e-05
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 2.16046e-05, ||r||/||r_0|| = 8.09474e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.8905e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.160459021806273e-05
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 2.16046e-05, ||r||/||r_0|| = 8.09474e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.8905e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.160459021806273e-05
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 2.16046e-05, ||r||/||r_0|| = 8.09474e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.8905e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.160459021806273e-05
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 2.16046e-05, ||r||/||r_0|| = 8.09474e-05
+Setting time step: 0.0025 in DGTransportTDO
+Setting time step: 0.0025 in CombinedOp
+Setting time step: 0.0025 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.249706411353161
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.249706
+   Pass :  1   Iteration :   0  ||B r|| = 89.8059 ...
+   Pass :  4   Iteration : 193  ||B r|| = 8.77581e-05
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001838433594807143
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00183843, ||r||/||r_0|| = 0.00736238
+   Pass :  1   Iteration :   0  ||B r|| = 8.77581e-05 ...
+   Pass :  5   Iteration : 223  ||B r|| = 9.79506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.987029403345094e-05
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 1.98703e-05, ||r||/||r_0|| = 7.95746e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.79506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.987029403345094e-05
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 1.98703e-05, ||r||/||r_0|| = 7.95746e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.79506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.987029403345094e-05
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 1.98703e-05, ||r||/||r_0|| = 7.95746e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.79506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.987029403345094e-05
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 1.98703e-05, ||r||/||r_0|| = 7.95746e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.79506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.987029403345094e-05
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 1.98703e-05, ||r||/||r_0|| = 7.95746e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.79506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.987029403345094e-05
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 1.98703e-05, ||r||/||r_0|| = 7.95746e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.79506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.987029403345094e-05
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 1.98703e-05, ||r||/||r_0|| = 7.95746e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.79506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.987029403345094e-05
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 1.98703e-05, ||r||/||r_0|| = 7.95746e-05
+   Pass :  1   Iteration :   0  ||B r|| = 9.79506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 1.987029403345094e-05
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 1.98703e-05, ||r||/||r_0|| = 7.95746e-05
+Setting time step: 0.005 in DGTransportTDO
+Setting time step: 0.005 in CombinedOp
+Setting time step: 0.005 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.2417534124194688
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.241753
+   Pass :  1   Iteration :   0  ||B r|| = 56.6061 ...
+   Pass :  5   Iteration : 241  ||B r|| = 5.6486e-05
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00184427999584253
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00184428, ||r||/||r_0|| = 0.00762877
+   Pass :  1   Iteration :   0  ||B r|| = 5.6486e-05 ...
+   Pass :  5   Iteration : 208  ||B r|| = 9.81168e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.072993932325701e-05
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.07299e-05, ||r||/||r_0|| = 0.000127113
+   Pass :  1   Iteration :   0  ||B r|| = 9.8117e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.072993932325701e-05
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 3.07299e-05, ||r||/||r_0|| = 0.000127113
+   Pass :  1   Iteration :   0  ||B r|| = 9.8117e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.072993932325701e-05
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 3.07299e-05, ||r||/||r_0|| = 0.000127113
+   Pass :  1   Iteration :   0  ||B r|| = 9.8117e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.072993932325701e-05
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 3.07299e-05, ||r||/||r_0|| = 0.000127113
+   Pass :  1   Iteration :   0  ||B r|| = 9.8117e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.072993932325701e-05
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 3.07299e-05, ||r||/||r_0|| = 0.000127113
+   Pass :  1   Iteration :   0  ||B r|| = 9.8117e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.072993932325701e-05
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 3.07299e-05, ||r||/||r_0|| = 0.000127113
+   Pass :  1   Iteration :   0  ||B r|| = 9.8117e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.072993932325701e-05
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 3.07299e-05, ||r||/||r_0|| = 0.000127113
+   Pass :  1   Iteration :   0  ||B r|| = 9.8117e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.072993932325701e-05
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 3.07299e-05, ||r||/||r_0|| = 0.000127113
+   Pass :  1   Iteration :   0  ||B r|| = 9.8117e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.072993932325701e-05
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 3.07299e-05, ||r||/||r_0|| = 0.000127113
+Setting time step: 0.005 in DGTransportTDO
+Setting time step: 0.005 in CombinedOp
+Setting time step: 0.005 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.2119033335800527
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.211903
+   Pass :  1   Iteration :   0  ||B r|| = 49.617 ...
+   Pass :  5   Iteration : 241  ||B r|| = 4.95123e-05
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001616614086778587
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00161661, ||r||/||r_0|| = 0.00762902
+   Pass :  1   Iteration :   0  ||B r|| = 4.95123e-05 ...
+   Pass :  5   Iteration : 205  ||B r|| = 9.78138e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.793107507033114e-05
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.79311e-05, ||r||/||r_0|| = 0.000179002
+   Pass :  1   Iteration :   0  ||B r|| = 9.78141e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.793107507033114e-05
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 3.79311e-05, ||r||/||r_0|| = 0.000179002
+   Pass :  1   Iteration :   0  ||B r|| = 9.78141e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.793107507033114e-05
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 3.79311e-05, ||r||/||r_0|| = 0.000179002
+   Pass :  1   Iteration :   0  ||B r|| = 9.78141e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.793107507033114e-05
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 3.79311e-05, ||r||/||r_0|| = 0.000179002
+   Pass :  1   Iteration :   0  ||B r|| = 9.78141e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.793107507033114e-05
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 3.79311e-05, ||r||/||r_0|| = 0.000179002
+   Pass :  1   Iteration :   0  ||B r|| = 9.78141e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.793107507033114e-05
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 3.79311e-05, ||r||/||r_0|| = 0.000179002
+   Pass :  1   Iteration :   0  ||B r|| = 9.78141e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.793107507033114e-05
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 3.79311e-05, ||r||/||r_0|| = 0.000179002
+   Pass :  1   Iteration :   0  ||B r|| = 9.78141e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.793107507033114e-05
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 3.79311e-05, ||r||/||r_0|| = 0.000179002
+   Pass :  1   Iteration :   0  ||B r|| = 9.78141e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 3.793107507033114e-05
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 3.79311e-05, ||r||/||r_0|| = 0.000179002
+Setting time step: 0.005 in DGTransportTDO
+Setting time step: 0.005 in CombinedOp
+Setting time step: 0.005 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.2235484351996932
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.223548
+   Pass :  1   Iteration :   0  ||B r|| = 52.3436 ...
+   Pass :  5   Iteration : 241  ||B r|| = 5.22329e-05
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001705430742570407
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00170543, ||r||/||r_0|| = 0.00762891
+   Pass :  1   Iteration :   0  ||B r|| = 5.22329e-05 ...
+   Pass :  5   Iteration : 206  ||B r|| = 9.86475e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.699369759629065e-05
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 2.69937e-05, ||r||/||r_0|| = 0.000120751
+   Pass :  1   Iteration :   0  ||B r|| = 9.8648e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.699369759629065e-05
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 2.69937e-05, ||r||/||r_0|| = 0.000120751
+   Pass :  1   Iteration :   0  ||B r|| = 9.8648e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.699369759629065e-05
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 2.69937e-05, ||r||/||r_0|| = 0.000120751
+   Pass :  1   Iteration :   0  ||B r|| = 9.8648e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.699369759629065e-05
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 2.69937e-05, ||r||/||r_0|| = 0.000120751
+   Pass :  1   Iteration :   0  ||B r|| = 9.8648e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.699369759629065e-05
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 2.69937e-05, ||r||/||r_0|| = 0.000120751
+   Pass :  1   Iteration :   0  ||B r|| = 9.8648e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.699369759629065e-05
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 2.69937e-05, ||r||/||r_0|| = 0.000120751
+   Pass :  1   Iteration :   0  ||B r|| = 9.8648e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.699369759629065e-05
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 2.69937e-05, ||r||/||r_0|| = 0.000120751
+   Pass :  1   Iteration :   0  ||B r|| = 9.8648e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.699369759629065e-05
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 2.69937e-05, ||r||/||r_0|| = 0.000120751
+   Pass :  1   Iteration :   0  ||B r|| = 9.8648e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.699369759629065e-05
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 2.69937e-05, ||r||/||r_0|| = 0.000120751
+Setting time step: 0.005 in DGTransportTDO
+Setting time step: 0.005 in CombinedOp
+Setting time step: 0.005 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.2265810052355943
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.226581
+   Pass :  1   Iteration :   0  ||B r|| = 53.0537 ...
+   Pass :  5   Iteration : 241  ||B r|| = 5.29414e-05
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001728560180494685
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00172856, ||r||/||r_0|| = 0.00762888
+   Pass :  1   Iteration :   0  ||B r|| = 5.29414e-05 ...
+   Pass :  5   Iteration : 206  ||B r|| = 9.99806e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.73134027807942e-05
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 2.73134e-05, ||r||/||r_0|| = 0.000120546
+   Pass :  1   Iteration :   0  ||B r|| = 9.99807e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.73134027807942e-05
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 2.73134e-05, ||r||/||r_0|| = 0.000120546
+   Pass :  1   Iteration :   0  ||B r|| = 9.99807e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.73134027807942e-05
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 2.73134e-05, ||r||/||r_0|| = 0.000120546
+   Pass :  1   Iteration :   0  ||B r|| = 9.99807e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.73134027807942e-05
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 2.73134e-05, ||r||/||r_0|| = 0.000120546
+   Pass :  1   Iteration :   0  ||B r|| = 9.99807e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.73134027807942e-05
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 2.73134e-05, ||r||/||r_0|| = 0.000120546
+   Pass :  1   Iteration :   0  ||B r|| = 9.99807e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.73134027807942e-05
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 2.73134e-05, ||r||/||r_0|| = 0.000120546
+   Pass :  1   Iteration :   0  ||B r|| = 9.99807e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.73134027807942e-05
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 2.73134e-05, ||r||/||r_0|| = 0.000120546
+   Pass :  1   Iteration :   0  ||B r|| = 9.99807e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.73134027807942e-05
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 2.73134e-05, ||r||/||r_0|| = 0.000120546
+   Pass :  1   Iteration :   0  ||B r|| = 9.99807e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 2.73134027807942e-05
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 2.73134e-05, ||r||/||r_0|| = 0.000120546
+Setting time step: 0.005 in DGTransportTDO
+Setting time step: 0.005 in CombinedOp
+Setting time step: 0.005 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.1980378319389368
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.198038
+   Pass :  1   Iteration :   0  ||B r|| = 46.3699 ...
+   Pass :  5   Iteration : 241  ||B r|| = 4.62723e-05
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001510872342336928
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00151087, ||r||/||r_0|| = 0.00762921
+   Pass :  1   Iteration :   0  ||B r|| = 4.62723e-05 ...
+   Pass :  4   Iteration : 200  ||B r|| = 9.99415e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 4.248631123928224e-05
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 4.24863e-05, ||r||/||r_0|| = 0.000214536
+   Pass :  1   Iteration :   0  ||B r|| = 9.99417e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 4.248631123928224e-05
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 4.24863e-05, ||r||/||r_0|| = 0.000214536
+   Pass :  1   Iteration :   0  ||B r|| = 9.99417e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 4.248631123928224e-05
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 4.24863e-05, ||r||/||r_0|| = 0.000214536
+   Pass :  1   Iteration :   0  ||B r|| = 9.99417e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 4.248631123928224e-05
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 4.24863e-05, ||r||/||r_0|| = 0.000214536
+   Pass :  1   Iteration :   0  ||B r|| = 9.99417e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 4.248631123928224e-05
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 4.24863e-05, ||r||/||r_0|| = 0.000214536
+   Pass :  1   Iteration :   0  ||B r|| = 9.99417e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 4.248631123928224e-05
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 4.24863e-05, ||r||/||r_0|| = 0.000214536
+   Pass :  1   Iteration :   0  ||B r|| = 9.99417e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 4.248631123928224e-05
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 4.24863e-05, ||r||/||r_0|| = 0.000214536
+   Pass :  1   Iteration :   0  ||B r|| = 9.99417e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 4.248631123928224e-05
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 4.24863e-05, ||r||/||r_0|| = 0.000214536
+   Pass :  1   Iteration :   0  ||B r|| = 9.99417e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 4.248631123928224e-05
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 4.24863e-05, ||r||/||r_0|| = 0.000214536
+Setting time step: 0.01 in DGTransportTDO
+Setting time step: 0.01 in CombinedOp
+Setting time step: 0.01 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.1858107375957079
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.185811
+   Pass :  1   Iteration :   0  ||B r|| = 25.6169 ...
+   Pass :  6   Iteration : 300  ||B r|| = 8.80409e-05
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00813547905081511
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00813548, ||r||/||r_0|| = 0.0437837
+   Pass :  1   Iteration :   0  ||B r|| = 8.80409e-05 ...
+   Pass :  5   Iteration : 214  ||B r|| = 9.92738e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 5.663245528542395e-05
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 5.66325e-05, ||r||/||r_0|| = 0.000304786
+   Pass :  1   Iteration :   0  ||B r|| = 9.92741e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 5.663245528542395e-05
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 5.66325e-05, ||r||/||r_0|| = 0.000304786
+   Pass :  1   Iteration :   0  ||B r|| = 9.92741e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 5.663245528542395e-05
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 5.66325e-05, ||r||/||r_0|| = 0.000304786
+   Pass :  1   Iteration :   0  ||B r|| = 9.92741e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 5.663245528542395e-05
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 5.66325e-05, ||r||/||r_0|| = 0.000304786
+   Pass :  1   Iteration :   0  ||B r|| = 9.92741e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 5.663245528542395e-05
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 5.66325e-05, ||r||/||r_0|| = 0.000304786
+   Pass :  1   Iteration :   0  ||B r|| = 9.92741e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 5.663245528542395e-05
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 5.66325e-05, ||r||/||r_0|| = 0.000304786
+   Pass :  1   Iteration :   0  ||B r|| = 9.92741e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 5.663245528542395e-05
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 5.66325e-05, ||r||/||r_0|| = 0.000304786
+   Pass :  1   Iteration :   0  ||B r|| = 9.92741e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 5.663245528542395e-05
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 5.66325e-05, ||r||/||r_0|| = 0.000304786
+   Pass :  1   Iteration :   0  ||B r|| = 9.92741e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 5.663245528542395e-05
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 5.66325e-05, ||r||/||r_0|| = 0.000304786
+Setting time step: 0.01 in DGTransportTDO
+Setting time step: 0.01 in CombinedOp
+Setting time step: 0.01 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.1425944354038869
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.142594
+   Pass :  1   Iteration :   0  ||B r|| = 19.6588 ...
+   Pass :  6   Iteration : 300  ||B r|| = 6.75845e-05
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.006239046092601663
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00623905, ||r||/||r_0|| = 0.0437538
+   Pass :  1   Iteration :   0  ||B r|| = 6.75845e-05 ...
+   Pass :  4   Iteration : 200  ||B r|| = 9.88288e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.510646273285268e-05
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 8.51065e-05, ||r||/||r_0|| = 0.000596843
+   Pass :  1   Iteration :   0  ||B r|| = 9.88288e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.510646273285268e-05
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 8.51065e-05, ||r||/||r_0|| = 0.000596843
+   Pass :  1   Iteration :   0  ||B r|| = 9.88288e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.510646273285268e-05
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 8.51065e-05, ||r||/||r_0|| = 0.000596843
+   Pass :  1   Iteration :   0  ||B r|| = 9.88288e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.510646273285268e-05
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 8.51065e-05, ||r||/||r_0|| = 0.000596843
+   Pass :  1   Iteration :   0  ||B r|| = 9.88288e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.510646273285268e-05
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 8.51065e-05, ||r||/||r_0|| = 0.000596843
+   Pass :  1   Iteration :   0  ||B r|| = 9.88288e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.510646273285268e-05
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 8.51065e-05, ||r||/||r_0|| = 0.000596843
+   Pass :  1   Iteration :   0  ||B r|| = 9.88288e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.510646273285268e-05
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 8.51065e-05, ||r||/||r_0|| = 0.000596843
+   Pass :  1   Iteration :   0  ||B r|| = 9.88288e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.510646273285268e-05
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 8.51065e-05, ||r||/||r_0|| = 0.000596843
+   Pass :  1   Iteration :   0  ||B r|| = 9.88288e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 8.510646273285268e-05
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 8.51065e-05, ||r||/||r_0|| = 0.000596843
+Setting time step: 0.01 in DGTransportTDO
+Setting time step: 0.01 in CombinedOp
+Setting time step: 0.01 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.1590767900699741
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.159077
+   Pass :  1   Iteration :   0  ||B r|| = 21.9312 ...
+   Pass :  6   Iteration : 300  ||B r|| = 7.5389e-05
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.006962250859943579
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00696225, ||r||/||r_0|| = 0.0437666
+   Pass :  1   Iteration :   0  ||B r|| = 7.5389e-05 ...
+   Pass :  5   Iteration : 206  ||B r|| = 9.90041e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.318342923428968e-05
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 7.31834e-05, ||r||/||r_0|| = 0.000460051
+   Pass :  1   Iteration :   0  ||B r|| = 9.90042e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.318342923428968e-05
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 7.31834e-05, ||r||/||r_0|| = 0.000460051
+   Pass :  1   Iteration :   0  ||B r|| = 9.90042e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.318342923428968e-05
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 7.31834e-05, ||r||/||r_0|| = 0.000460051
+   Pass :  1   Iteration :   0  ||B r|| = 9.90042e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.318342923428968e-05
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 7.31834e-05, ||r||/||r_0|| = 0.000460051
+   Pass :  1   Iteration :   0  ||B r|| = 9.90042e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.318342923428968e-05
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 7.31834e-05, ||r||/||r_0|| = 0.000460051
+   Pass :  1   Iteration :   0  ||B r|| = 9.90042e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.318342923428968e-05
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 7.31834e-05, ||r||/||r_0|| = 0.000460051
+   Pass :  1   Iteration :   0  ||B r|| = 9.90042e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.318342923428968e-05
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 7.31834e-05, ||r||/||r_0|| = 0.000460051
+   Pass :  1   Iteration :   0  ||B r|| = 9.90042e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.318342923428968e-05
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 7.31834e-05, ||r||/||r_0|| = 0.000460051
+   Pass :  1   Iteration :   0  ||B r|| = 9.90042e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.318342923428968e-05
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 7.31834e-05, ||r||/||r_0|| = 0.000460051
+Setting time step: 0.01 in DGTransportTDO
+Setting time step: 0.01 in CombinedOp
+Setting time step: 0.01 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.1635328926850944
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.163533
+   Pass :  1   Iteration :   0  ||B r|| = 22.5455 ...
+   Pass :  6   Iteration : 300  ||B r|| = 7.74977e-05
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.007157923749834434
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00715792, ||r||/||r_0|| = 0.0437705
+   Pass :  1   Iteration :   0  ||B r|| = 7.74977e-05 ...
+   Pass :  5   Iteration : 207  ||B r|| = 9.92848e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 6.879140616609648e-05
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 6.87914e-05, ||r||/||r_0|| = 0.000420658
+   Pass :  1   Iteration :   0  ||B r|| = 9.92849e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 6.879140616609648e-05
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 6.87914e-05, ||r||/||r_0|| = 0.000420658
+   Pass :  1   Iteration :   0  ||B r|| = 9.92849e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 6.879140616609648e-05
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 6.87914e-05, ||r||/||r_0|| = 0.000420658
+   Pass :  1   Iteration :   0  ||B r|| = 9.92849e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 6.879140616609648e-05
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 6.87914e-05, ||r||/||r_0|| = 0.000420658
+   Pass :  1   Iteration :   0  ||B r|| = 9.92849e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 6.879140616609648e-05
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 6.87914e-05, ||r||/||r_0|| = 0.000420658
+   Pass :  1   Iteration :   0  ||B r|| = 9.92849e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 6.879140616609648e-05
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 6.87914e-05, ||r||/||r_0|| = 0.000420658
+   Pass :  1   Iteration :   0  ||B r|| = 9.92849e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 6.879140616609648e-05
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 6.87914e-05, ||r||/||r_0|| = 0.000420658
+   Pass :  1   Iteration :   0  ||B r|| = 9.92849e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 6.879140616609648e-05
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 6.87914e-05, ||r||/||r_0|| = 0.000420658
+   Pass :  1   Iteration :   0  ||B r|| = 9.92849e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 6.879140616609648e-05
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 6.87914e-05, ||r||/||r_0|| = 0.000420658
+Setting time step: 0.01 in DGTransportTDO
+Setting time step: 0.01 in CombinedOp
+Setting time step: 0.01 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.124215030844918
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.124215
+   Pass :  1   Iteration :   0  ||B r|| = 17.1249 ...
+   Pass :  6   Iteration : 300  ||B r|| = 5.88605e-05
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.005436981805069688
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00543698, ||r||/||r_0|| = 0.0437707
+   Pass :  1   Iteration :   0  ||B r|| = 5.88605e-05 ...
+   Pass :  4   Iteration : 198  ||B r|| = 9.84499e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.946981635315246e-05
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 7.94698e-05, ||r||/||r_0|| = 0.000639776
+   Pass :  1   Iteration :   0  ||B r|| = 9.845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.946981635315246e-05
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 7.94698e-05, ||r||/||r_0|| = 0.000639776
+   Pass :  1   Iteration :   0  ||B r|| = 9.845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.946981635315246e-05
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 7.94698e-05, ||r||/||r_0|| = 0.000639776
+   Pass :  1   Iteration :   0  ||B r|| = 9.845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.946981635315246e-05
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 7.94698e-05, ||r||/||r_0|| = 0.000639776
+   Pass :  1   Iteration :   0  ||B r|| = 9.845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.946981635315246e-05
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 7.94698e-05, ||r||/||r_0|| = 0.000639776
+   Pass :  1   Iteration :   0  ||B r|| = 9.845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.946981635315246e-05
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 7.94698e-05, ||r||/||r_0|| = 0.000639776
+   Pass :  1   Iteration :   0  ||B r|| = 9.845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.946981635315246e-05
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 7.94698e-05, ||r||/||r_0|| = 0.000639776
+   Pass :  1   Iteration :   0  ||B r|| = 9.845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.946981635315246e-05
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 7.94698e-05, ||r||/||r_0|| = 0.000639776
+   Pass :  1   Iteration :   0  ||B r|| = 9.845e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 7.946981635315246e-05
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 7.94698e-05, ||r||/||r_0|| = 0.000639776
+Setting time step: 0.02 in DGTransportTDO
+Setting time step: 0.02 in CombinedOp
+Setting time step: 0.02 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.109770096823425
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.10977
+   Pass :  1   Iteration :   0  ||B r|| = 8.30339 ...
+   Pass :  6   Iteration : 300  ||B r|| = 4.07868e-05
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.007285410445819282
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00728541, ||r||/||r_0|| = 0.0663697
+   Pass :  1   Iteration :   0  ||B r|| = 4.07868e-05 ...
+   Pass :  5   Iteration : 208  ||B r|| = 9.70201e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001553167406041552
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000155317, ||r||/||r_0|| = 0.00141493
+   Pass :  1   Iteration :   0  ||B r|| = 9.70201e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001553167406041552
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000155317, ||r||/||r_0|| = 0.00141493
+   Pass :  1   Iteration :   0  ||B r|| = 9.70201e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001553167406041552
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000155317, ||r||/||r_0|| = 0.00141493
+   Pass :  1   Iteration :   0  ||B r|| = 9.70201e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001553167406041552
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000155317, ||r||/||r_0|| = 0.00141493
+   Pass :  1   Iteration :   0  ||B r|| = 9.70201e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001553167406041552
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000155317, ||r||/||r_0|| = 0.00141493
+   Pass :  1   Iteration :   0  ||B r|| = 9.70201e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001553167406041552
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000155317, ||r||/||r_0|| = 0.00141493
+   Pass :  1   Iteration :   0  ||B r|| = 9.70201e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001553167406041552
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000155317, ||r||/||r_0|| = 0.00141493
+   Pass :  1   Iteration :   0  ||B r|| = 9.70201e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001553167406041552
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000155317, ||r||/||r_0|| = 0.00141493
+   Pass :  1   Iteration :   0  ||B r|| = 9.70201e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001553167406041552
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000155317, ||r||/||r_0|| = 0.00141493
+Setting time step: 0.02 in DGTransportTDO
+Setting time step: 0.02 in CombinedOp
+Setting time step: 0.02 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.06402785965737505
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0640279
+   Pass :  1   Iteration :   0  ||B r|| = 4.84346 ...
+   Pass :  6   Iteration : 300  ||B r|| = 2.38575e-05
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.004258499399847408
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.0042585, ||r||/||r_0|| = 0.0665101
+   Pass :  1   Iteration :   0  ||B r|| = 2.38575e-05 ...
+   Pass :  4   Iteration : 188  ||B r|| = 9.90624e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001756710178674834
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000175671, ||r||/||r_0|| = 0.00274367
+   Pass :  1   Iteration :   0  ||B r|| = 9.90624e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001756710178674834
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000175671, ||r||/||r_0|| = 0.00274367
+   Pass :  1   Iteration :   0  ||B r|| = 9.90624e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001756710178674834
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000175671, ||r||/||r_0|| = 0.00274367
+   Pass :  1   Iteration :   0  ||B r|| = 9.90624e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001756710178674834
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000175671, ||r||/||r_0|| = 0.00274367
+   Pass :  1   Iteration :   0  ||B r|| = 9.90624e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001756710178674834
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000175671, ||r||/||r_0|| = 0.00274367
+   Pass :  1   Iteration :   0  ||B r|| = 9.90624e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001756710178674834
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000175671, ||r||/||r_0|| = 0.00274367
+   Pass :  1   Iteration :   0  ||B r|| = 9.90624e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001756710178674834
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000175671, ||r||/||r_0|| = 0.00274367
+   Pass :  1   Iteration :   0  ||B r|| = 9.90624e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001756710178674834
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000175671, ||r||/||r_0|| = 0.00274367
+   Pass :  1   Iteration :   0  ||B r|| = 9.90624e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001756710178674834
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000175671, ||r||/||r_0|| = 0.00274367
+Setting time step: 0.02 in DGTransportTDO
+Setting time step: 0.02 in CombinedOp
+Setting time step: 0.02 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.08079951120431397
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0807995
+   Pass :  1   Iteration :   0  ||B r|| = 6.11212 ...
+   Pass :  6   Iteration : 300  ||B r|| = 3.00761e-05
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.005372991384592734
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00537299, ||r||/||r_0|| = 0.0664978
+   Pass :  1   Iteration :   0  ||B r|| = 3.00761e-05 ...
+   Pass :  4   Iteration : 197  ||B r|| = 9.92115e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002134774386937135
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000213477, ||r||/||r_0|| = 0.00264206
+   Pass :  1   Iteration :   0  ||B r|| = 9.92115e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002134774386937135
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000213477, ||r||/||r_0|| = 0.00264206
+   Pass :  1   Iteration :   0  ||B r|| = 9.92115e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002134774386937135
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000213477, ||r||/||r_0|| = 0.00264206
+   Pass :  1   Iteration :   0  ||B r|| = 9.92115e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002134774386937135
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000213477, ||r||/||r_0|| = 0.00264206
+   Pass :  1   Iteration :   0  ||B r|| = 9.92115e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002134774386937135
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000213477, ||r||/||r_0|| = 0.00264206
+   Pass :  1   Iteration :   0  ||B r|| = 9.92115e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002134774386937135
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000213477, ||r||/||r_0|| = 0.00264206
+   Pass :  1   Iteration :   0  ||B r|| = 9.92115e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002134774386937135
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000213477, ||r||/||r_0|| = 0.00264206
+   Pass :  1   Iteration :   0  ||B r|| = 9.92115e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002134774386937135
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000213477, ||r||/||r_0|| = 0.00264206
+   Pass :  1   Iteration :   0  ||B r|| = 9.92115e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002134774386937135
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000213477, ||r||/||r_0|| = 0.00264206
+Setting time step: 0.02 in DGTransportTDO
+Setting time step: 0.02 in CombinedOp
+Setting time step: 0.02 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.08564428268675757
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0856443
+   Pass :  1   Iteration :   0  ||B r|| = 6.47856 ...
+   Pass :  6   Iteration : 300  ||B r|| = 3.18677e-05
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.005692889987752425
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00569289, ||r||/||r_0|| = 0.0664713
+   Pass :  1   Iteration :   0  ||B r|| = 3.18677e-05 ...
+   Pass :  4   Iteration : 199  ||B r|| = 9.4506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.000203570048251612
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.00020357, ||r||/||r_0|| = 0.00237693
+   Pass :  1   Iteration :   0  ||B r|| = 9.4506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.000203570048251612
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.00020357, ||r||/||r_0|| = 0.00237693
+   Pass :  1   Iteration :   0  ||B r|| = 9.4506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.000203570048251612
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.00020357, ||r||/||r_0|| = 0.00237693
+   Pass :  1   Iteration :   0  ||B r|| = 9.4506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.000203570048251612
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.00020357, ||r||/||r_0|| = 0.00237693
+   Pass :  1   Iteration :   0  ||B r|| = 9.4506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.000203570048251612
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.00020357, ||r||/||r_0|| = 0.00237693
+   Pass :  1   Iteration :   0  ||B r|| = 9.4506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.000203570048251612
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.00020357, ||r||/||r_0|| = 0.00237693
+   Pass :  1   Iteration :   0  ||B r|| = 9.4506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.000203570048251612
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.00020357, ||r||/||r_0|| = 0.00237693
+   Pass :  1   Iteration :   0  ||B r|| = 9.4506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.000203570048251612
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.00020357, ||r||/||r_0|| = 0.00237693
+   Pass :  1   Iteration :   0  ||B r|| = 9.4506e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.000203570048251612
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.00020357, ||r||/||r_0|| = 0.00237693
+Setting time step: 0.02 in DGTransportTDO
+Setting time step: 0.02 in CombinedOp
+Setting time step: 0.02 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.04857305253256745
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0485731
+   Pass :  1   Iteration :   0  ||B r|| = 3.66435 ...
+   Pass :  6   Iteration : 300  ||B r|| = 1.82953e-05
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.003282915207334114
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00328292, ||r||/||r_0|| = 0.0675872
+   Pass :  1   Iteration :   0  ||B r|| = 1.82953e-05 ...
+   Pass :  3   Iteration : 149  ||B r|| = 9.91152e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001614146792215075
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000161415, ||r||/||r_0|| = 0.00332313
+   Pass :  1   Iteration :   0  ||B r|| = 9.91152e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001614146792215075
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000161415, ||r||/||r_0|| = 0.00332313
+   Pass :  1   Iteration :   0  ||B r|| = 9.91152e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001614146792215075
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000161415, ||r||/||r_0|| = 0.00332313
+   Pass :  1   Iteration :   0  ||B r|| = 9.91152e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001614146792215075
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000161415, ||r||/||r_0|| = 0.00332313
+   Pass :  1   Iteration :   0  ||B r|| = 9.91152e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001614146792215075
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000161415, ||r||/||r_0|| = 0.00332313
+   Pass :  1   Iteration :   0  ||B r|| = 9.91152e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001614146792215075
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000161415, ||r||/||r_0|| = 0.00332313
+   Pass :  1   Iteration :   0  ||B r|| = 9.91152e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001614146792215075
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000161415, ||r||/||r_0|| = 0.00332313
+   Pass :  1   Iteration :   0  ||B r|| = 9.91152e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001614146792215075
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000161415, ||r||/||r_0|| = 0.00332313
+   Pass :  1   Iteration :   0  ||B r|| = 9.91152e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001614146792215075
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000161415, ||r||/||r_0|| = 0.00332313
+Time stepping paused at t = 0.15
+
+Estimating errors.
+Setting time step: 0.02 in DGTransportTDO
+Setting time step: 0.02 in CombinedOp
+Setting time step: 0.02 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0383534860238937
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0383535
+   Pass :  1   Iteration :   0  ||B r|| = 2.90086 ...
+   Pass :  6   Iteration : 300  ||B r|| = 1.42397e-05
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.002514218249352579
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00251422, ||r||/||r_0|| = 0.0655538
+   Pass :  1   Iteration :   0  ||B r|| = 1.42397e-05 ...
+   Pass :  3   Iteration : 138  ||B r|| = 9.75468e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001587298773541198
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.00015873, ||r||/||r_0|| = 0.0041386
+   Pass :  1   Iteration :   0  ||B r|| = 9.75469e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001587298773541198
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.00015873, ||r||/||r_0|| = 0.0041386
+   Pass :  1   Iteration :   0  ||B r|| = 9.75469e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001587298773541198
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.00015873, ||r||/||r_0|| = 0.0041386
+   Pass :  1   Iteration :   0  ||B r|| = 9.75469e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001587298773541198
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.00015873, ||r||/||r_0|| = 0.0041386
+   Pass :  1   Iteration :   0  ||B r|| = 9.75469e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001587298773541198
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.00015873, ||r||/||r_0|| = 0.0041386
+   Pass :  1   Iteration :   0  ||B r|| = 9.75469e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001587298773541198
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.00015873, ||r||/||r_0|| = 0.0041386
+   Pass :  1   Iteration :   0  ||B r|| = 9.75469e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001587298773541198
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.00015873, ||r||/||r_0|| = 0.0041386
+   Pass :  1   Iteration :   0  ||B r|| = 9.75469e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001587298773541198
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.00015873, ||r||/||r_0|| = 0.0041386
+   Pass :  1   Iteration :   0  ||B r|| = 9.75469e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001587298773541198
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.00015873, ||r||/||r_0|| = 0.0041386
+Setting time step: 0.02 in DGTransportTDO
+Setting time step: 0.02 in CombinedOp
+Setting time step: 0.02 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.02237482934897848
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0223748
+   Pass :  1   Iteration :   0  ||B r|| = 1.69229 ...
+   Pass :  6   Iteration : 300  ||B r|| = 8.33588e-06
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001467673979830447
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00146767, ||r||/||r_0|| = 0.0655949
+   Pass :  1   Iteration :   0  ||B r|| = 8.33588e-06 ...
+   Pass :  2   Iteration :  90  ||B r|| = 9.87812e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001602546715997963
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000160255, ||r||/||r_0|| = 0.00716227
+   Pass :  1   Iteration :   0  ||B r|| = 9.87811e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001602546715997963
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000160255, ||r||/||r_0|| = 0.00716227
+   Pass :  1   Iteration :   0  ||B r|| = 9.87811e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001602546715997963
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000160255, ||r||/||r_0|| = 0.00716227
+   Pass :  1   Iteration :   0  ||B r|| = 9.87811e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001602546715997963
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000160255, ||r||/||r_0|| = 0.00716227
+   Pass :  1   Iteration :   0  ||B r|| = 9.87811e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001602546715997963
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000160255, ||r||/||r_0|| = 0.00716227
+   Pass :  1   Iteration :   0  ||B r|| = 9.87811e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001602546715997963
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000160255, ||r||/||r_0|| = 0.00716227
+   Pass :  1   Iteration :   0  ||B r|| = 9.87811e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001602546715997963
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000160255, ||r||/||r_0|| = 0.00716227
+   Pass :  1   Iteration :   0  ||B r|| = 9.87811e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001602546715997963
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000160255, ||r||/||r_0|| = 0.00716227
+   Pass :  1   Iteration :   0  ||B r|| = 9.87811e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001602546715997963
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000160255, ||r||/||r_0|| = 0.00716227
+Setting time step: 0.02 in DGTransportTDO
+Setting time step: 0.02 in CombinedOp
+Setting time step: 0.02 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.02823358462221122
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0282336
+   Pass :  1   Iteration :   0  ||B r|| = 2.13543 ...
+   Pass :  6   Iteration : 300  ||B r|| = 1.05058e-05
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001852057340802103
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00185206, ||r||/||r_0|| = 0.0655977
+   Pass :  1   Iteration :   0  ||B r|| = 1.05058e-05 ...
+   Pass :  3   Iteration : 119  ||B r|| = 9.85106e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001627514179868694
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000162751, ||r||/||r_0|| = 0.00576446
+   Pass :  1   Iteration :   0  ||B r|| = 9.85105e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001627514179868694
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000162751, ||r||/||r_0|| = 0.00576446
+   Pass :  1   Iteration :   0  ||B r|| = 9.85105e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001627514179868694
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000162751, ||r||/||r_0|| = 0.00576446
+   Pass :  1   Iteration :   0  ||B r|| = 9.85105e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001627514179868694
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000162751, ||r||/||r_0|| = 0.00576446
+   Pass :  1   Iteration :   0  ||B r|| = 9.85105e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001627514179868694
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000162751, ||r||/||r_0|| = 0.00576446
+   Pass :  1   Iteration :   0  ||B r|| = 9.85105e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001627514179868694
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000162751, ||r||/||r_0|| = 0.00576446
+   Pass :  1   Iteration :   0  ||B r|| = 9.85105e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001627514179868694
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000162751, ||r||/||r_0|| = 0.00576446
+   Pass :  1   Iteration :   0  ||B r|| = 9.85105e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001627514179868694
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000162751, ||r||/||r_0|| = 0.00576446
+   Pass :  1   Iteration :   0  ||B r|| = 9.85105e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001627514179868694
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000162751, ||r||/||r_0|| = 0.00576446
+Setting time step: 0.02 in DGTransportTDO
+Setting time step: 0.02 in CombinedOp
+Setting time step: 0.02 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.02992582652643268
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0299258
+   Pass :  1   Iteration :   0  ||B r|| = 2.26344 ...
+   Pass :  6   Iteration : 300  ||B r|| = 1.113e-05
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001962655043098095
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00196266, ||r||/||r_0|| = 0.065584
+   Pass :  1   Iteration :   0  ||B r|| = 1.113e-05 ...
+   Pass :  3   Iteration : 121  ||B r|| = 9.96352e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001575201638012718
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.00015752, ||r||/||r_0|| = 0.00526369
+   Pass :  1   Iteration :   0  ||B r|| = 9.96353e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001575201638012718
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.00015752, ||r||/||r_0|| = 0.00526369
+   Pass :  1   Iteration :   0  ||B r|| = 9.96353e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001575201638012718
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.00015752, ||r||/||r_0|| = 0.00526369
+   Pass :  1   Iteration :   0  ||B r|| = 9.96353e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001575201638012718
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.00015752, ||r||/||r_0|| = 0.00526369
+   Pass :  1   Iteration :   0  ||B r|| = 9.96353e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001575201638012718
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.00015752, ||r||/||r_0|| = 0.00526369
+   Pass :  1   Iteration :   0  ||B r|| = 9.96353e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001575201638012718
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.00015752, ||r||/||r_0|| = 0.00526369
+   Pass :  1   Iteration :   0  ||B r|| = 9.96353e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001575201638012718
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.00015752, ||r||/||r_0|| = 0.00526369
+   Pass :  1   Iteration :   0  ||B r|| = 9.96353e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001575201638012718
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.00015752, ||r||/||r_0|| = 0.00526369
+   Pass :  1   Iteration :   0  ||B r|| = 9.96353e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001575201638012718
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.00015752, ||r||/||r_0|| = 0.00526369
+Setting time step: 0.02 in DGTransportTDO
+Setting time step: 0.02 in CombinedOp
+Setting time step: 0.02 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.01703030035757055
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0170303
+   Pass :  1   Iteration :   0  ||B r|| = 1.28088 ...
+   Pass :  6   Iteration : 300  ||B r|| = 6.31275e-06
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001091491849658218
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00109149, ||r||/||r_0|| = 0.0640912
+   Pass :  1   Iteration :   0  ||B r|| = 6.31275e-06 ...
+   Pass :  2   Iteration :  73  ||B r|| = 9.98124e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001472305364372063
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000147231, ||r||/||r_0|| = 0.00864521
+   Pass :  1   Iteration :   0  ||B r|| = 9.98126e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001472305364372063
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000147231, ||r||/||r_0|| = 0.00864521
+   Pass :  1   Iteration :   0  ||B r|| = 9.98126e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001472305364372063
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000147231, ||r||/||r_0|| = 0.00864521
+   Pass :  1   Iteration :   0  ||B r|| = 9.98126e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001472305364372063
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000147231, ||r||/||r_0|| = 0.00864521
+   Pass :  1   Iteration :   0  ||B r|| = 9.98126e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001472305364372063
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000147231, ||r||/||r_0|| = 0.00864521
+   Pass :  1   Iteration :   0  ||B r|| = 9.98126e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001472305364372063
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000147231, ||r||/||r_0|| = 0.00864521
+   Pass :  1   Iteration :   0  ||B r|| = 9.98126e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001472305364372063
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000147231, ||r||/||r_0|| = 0.00864521
+   Pass :  1   Iteration :   0  ||B r|| = 9.98126e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001472305364372063
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000147231, ||r||/||r_0|| = 0.00864521
+   Pass :  1   Iteration :   0  ||B r|| = 9.98126e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001472305364372063
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000147231, ||r||/||r_0|| = 0.00864521
+Setting time step: 0.03831043324844162 in DGTransportTDO
+Setting time step: 0.03831043324844162 in CombinedOp
+Setting time step: 0.03831043324844162 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.01340093149883178
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0134009
+   Pass :  1   Iteration :   0  ||B r|| = 0.554957 ...
+   Pass :  6   Iteration : 300  ||B r|| = 7.05083e-06
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.002441271869970005
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00244127, ||r||/||r_0|| = 0.182172
+   Pass :  1   Iteration :   0  ||B r|| = 7.05083e-06 ...
+   Pass :  4   Iteration : 171  ||B r|| = 9.64614e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001896107389872013
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000189611, ||r||/||r_0|| = 0.0141491
+   Pass :  1   Iteration :   0  ||B r|| = 9.64613e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001896107389872013
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000189611, ||r||/||r_0|| = 0.0141491
+   Pass :  1   Iteration :   0  ||B r|| = 9.64613e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001896107389872013
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000189611, ||r||/||r_0|| = 0.0141491
+   Pass :  1   Iteration :   0  ||B r|| = 9.64613e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001896107389872013
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000189611, ||r||/||r_0|| = 0.0141491
+   Pass :  1   Iteration :   0  ||B r|| = 9.64613e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001896107389872013
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000189611, ||r||/||r_0|| = 0.0141491
+   Pass :  1   Iteration :   0  ||B r|| = 9.64613e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001896107389872013
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000189611, ||r||/||r_0|| = 0.0141491
+   Pass :  1   Iteration :   0  ||B r|| = 9.64613e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001896107389872013
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000189611, ||r||/||r_0|| = 0.0141491
+   Pass :  1   Iteration :   0  ||B r|| = 9.64613e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001896107389872013
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000189611, ||r||/||r_0|| = 0.0141491
+   Pass :  1   Iteration :   0  ||B r|| = 9.64613e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0001896107389872013
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000189611, ||r||/||r_0|| = 0.0141491
+Setting time step: 0.03831043324844162 in DGTransportTDO
+Setting time step: 0.03831043324844162 in CombinedOp
+Setting time step: 0.03831043324844162 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.004429789988217033
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00442979
+   Pass :  1   Iteration :   0  ||B r|| = 0.182825 ...
+   Pass :  6   Iteration : 300  ||B r|| = 2.38104e-06
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007353475277133158
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000735348, ||r||/||r_0|| = 0.166001
+   Pass :  1   Iteration :   0  ||B r|| = 2.38104e-06 ...
+   Pass :  2   Iteration :  79  ||B r|| = 9.96094e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002401371108833288
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000240137, ||r||/||r_0|| = 0.0542096
+   Pass :  1   Iteration :   0  ||B r|| = 9.96094e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002401371108833288
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000240137, ||r||/||r_0|| = 0.0542096
+   Pass :  1   Iteration :   0  ||B r|| = 9.96094e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002401371108833288
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000240137, ||r||/||r_0|| = 0.0542096
+   Pass :  1   Iteration :   0  ||B r|| = 9.96094e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002401371108833288
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000240137, ||r||/||r_0|| = 0.0542096
+   Pass :  1   Iteration :   0  ||B r|| = 9.96094e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002401371108833288
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000240137, ||r||/||r_0|| = 0.0542096
+   Pass :  1   Iteration :   0  ||B r|| = 9.96094e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002401371108833288
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000240137, ||r||/||r_0|| = 0.0542096
+   Pass :  1   Iteration :   0  ||B r|| = 9.96094e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002401371108833288
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000240137, ||r||/||r_0|| = 0.0542096
+   Pass :  1   Iteration :   0  ||B r|| = 9.96094e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002401371108833288
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000240137, ||r||/||r_0|| = 0.0542096
+   Pass :  1   Iteration :   0  ||B r|| = 9.96094e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002401371108833288
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000240137, ||r||/||r_0|| = 0.0542096
+Setting time step: 0.03831043324844162 in DGTransportTDO
+Setting time step: 0.03831043324844162 in CombinedOp
+Setting time step: 0.03831043324844162 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.007531796657223864
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0075318
+   Pass :  1   Iteration :   0  ||B r|| = 0.311724 ...
+   Pass :  6   Iteration : 300  ||B r|| = 4.00772e-06
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001300942571634895
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00130094, ||r||/||r_0|| = 0.172727
+   Pass :  1   Iteration :   0  ||B r|| = 4.00772e-06 ...
+   Pass :  3   Iteration : 139  ||B r|| = 9.71787e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002898625628663627
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000289863, ||r||/||r_0|| = 0.0384852
+   Pass :  1   Iteration :   0  ||B r|| = 9.71787e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002898625628663627
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000289863, ||r||/||r_0|| = 0.0384852
+   Pass :  1   Iteration :   0  ||B r|| = 9.71787e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002898625628663627
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000289863, ||r||/||r_0|| = 0.0384852
+   Pass :  1   Iteration :   0  ||B r|| = 9.71787e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002898625628663627
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000289863, ||r||/||r_0|| = 0.0384852
+   Pass :  1   Iteration :   0  ||B r|| = 9.71787e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002898625628663627
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000289863, ||r||/||r_0|| = 0.0384852
+   Pass :  1   Iteration :   0  ||B r|| = 9.71787e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002898625628663627
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000289863, ||r||/||r_0|| = 0.0384852
+   Pass :  1   Iteration :   0  ||B r|| = 9.71787e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002898625628663627
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000289863, ||r||/||r_0|| = 0.0384852
+   Pass :  1   Iteration :   0  ||B r|| = 9.71787e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002898625628663627
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000289863, ||r||/||r_0|| = 0.0384852
+   Pass :  1   Iteration :   0  ||B r|| = 9.71787e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002898625628663627
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000289863, ||r||/||r_0|| = 0.0384852
+Setting time step: 0.03831043324844162 in DGTransportTDO
+Setting time step: 0.03831043324844162 in CombinedOp
+Setting time step: 0.03831043324844162 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00852029046467029
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00852029
+   Pass :  1   Iteration :   0  ||B r|| = 0.352756 ...
+   Pass :  6   Iteration : 300  ||B r|| = 4.51607e-06
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001497336532436118
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00149734, ||r||/||r_0|| = 0.175738
+   Pass :  1   Iteration :   0  ||B r|| = 4.51607e-06 ...
+   Pass :  3   Iteration : 142  ||B r|| = 9.62169e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002325207033187373
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000232521, ||r||/||r_0|| = 0.0272902
+   Pass :  1   Iteration :   0  ||B r|| = 9.6217e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002325207033187373
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000232521, ||r||/||r_0|| = 0.0272902
+   Pass :  1   Iteration :   0  ||B r|| = 9.6217e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002325207033187373
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000232521, ||r||/||r_0|| = 0.0272902
+   Pass :  1   Iteration :   0  ||B r|| = 9.6217e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002325207033187373
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000232521, ||r||/||r_0|| = 0.0272902
+   Pass :  1   Iteration :   0  ||B r|| = 9.6217e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002325207033187373
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000232521, ||r||/||r_0|| = 0.0272902
+   Pass :  1   Iteration :   0  ||B r|| = 9.6217e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002325207033187373
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000232521, ||r||/||r_0|| = 0.0272902
+   Pass :  1   Iteration :   0  ||B r|| = 9.6217e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002325207033187373
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000232521, ||r||/||r_0|| = 0.0272902
+   Pass :  1   Iteration :   0  ||B r|| = 9.6217e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002325207033187373
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000232521, ||r||/||r_0|| = 0.0272902
+   Pass :  1   Iteration :   0  ||B r|| = 9.6217e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002325207033187373
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000232521, ||r||/||r_0|| = 0.0272902
+Setting time step: 0.03831043324844162 in DGTransportTDO
+Setting time step: 0.03831043324844162 in CombinedOp
+Setting time step: 0.03831043324844162 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.009602153996235709
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00960215
+   Pass :  1   Iteration :   0  ||B r|| = 0.114096 ...
+   Pass :  6   Iteration : 300  ||B r|| = 1.08819e-06
+GMRES: No convergence!
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.000327227535411469
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000327228, ||r||/||r_0|| = 0.0340786
+   Pass :  1   Iteration :   0  ||B r|| = 1.08819e-06 ...
+   Pass :  1   Iteration :  13  ||B r|| = 9.89232e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002540647021555645
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000254065, ||r||/||r_0|| = 0.0264591
+   Pass :  1   Iteration :   0  ||B r|| = 9.89232e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002540647021555645
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000254065, ||r||/||r_0|| = 0.0264591
+   Pass :  1   Iteration :   0  ||B r|| = 9.89232e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002540647021555645
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000254065, ||r||/||r_0|| = 0.0264591
+   Pass :  1   Iteration :   0  ||B r|| = 9.89232e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002540647021555645
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000254065, ||r||/||r_0|| = 0.0264591
+   Pass :  1   Iteration :   0  ||B r|| = 9.89232e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002540647021555645
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000254065, ||r||/||r_0|| = 0.0264591
+   Pass :  1   Iteration :   0  ||B r|| = 9.89232e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002540647021555645
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000254065, ||r||/||r_0|| = 0.0264591
+   Pass :  1   Iteration :   0  ||B r|| = 9.89232e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002540647021555645
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000254065, ||r||/||r_0|| = 0.0264591
+   Pass :  1   Iteration :   0  ||B r|| = 9.89232e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002540647021555645
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000254065, ||r||/||r_0|| = 0.0264591
+   Pass :  1   Iteration :   0  ||B r|| = 9.89232e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002540647021555645
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000254065, ||r||/||r_0|| = 0.0264591
+Setting time step: 0.04237882832061491 in DGTransportTDO
+Setting time step: 0.04237882832061491 in CombinedOp
+Setting time step: 0.04237882832061491 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001876769397856911
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00187677
+   Pass :  1   Iteration :   0  ||B r|| = 0.0695748 ...
+   Pass :  6   Iteration : 290  ||B r|| = 9.83966e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002817811523973348
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000281781, ||r||/||r_0|| = 0.150142
+   Pass :  1   Iteration :   0  ||B r|| = 9.83966e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002817811523973348
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000281781, ||r||/||r_0|| = 0.150142
+   Pass :  1   Iteration :   0  ||B r|| = 9.83966e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002817811523973348
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000281781, ||r||/||r_0|| = 0.150142
+   Pass :  1   Iteration :   0  ||B r|| = 9.83966e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002817811523973348
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000281781, ||r||/||r_0|| = 0.150142
+   Pass :  1   Iteration :   0  ||B r|| = 9.83966e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002817811523973348
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000281781, ||r||/||r_0|| = 0.150142
+   Pass :  1   Iteration :   0  ||B r|| = 9.83966e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002817811523973348
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000281781, ||r||/||r_0|| = 0.150142
+   Pass :  1   Iteration :   0  ||B r|| = 9.83966e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002817811523973348
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000281781, ||r||/||r_0|| = 0.150142
+   Pass :  1   Iteration :   0  ||B r|| = 9.83966e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002817811523973348
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000281781, ||r||/||r_0|| = 0.150142
+   Pass :  1   Iteration :   0  ||B r|| = 9.83966e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002817811523973348
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000281781, ||r||/||r_0|| = 0.150142
+   Pass :  1   Iteration :   0  ||B r|| = 9.83966e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002817811523973348
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000281781, ||r||/||r_0|| = 0.150142
+Setting time step: 0.04237882832061491 in DGTransportTDO
+Setting time step: 0.04237882832061491 in CombinedOp
+Setting time step: 0.04237882832061491 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007076635922235474
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000707664
+   Pass :  1   Iteration :   0  ||B r|| = 0.0197999 ...
+   Pass :  4   Iteration : 187  ||B r|| = 9.82069e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002928749390521612
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000292875, ||r||/||r_0|| = 0.413862
+   Pass :  1   Iteration :   0  ||B r|| = 9.82068e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002928749390521612
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000292875, ||r||/||r_0|| = 0.413862
+   Pass :  1   Iteration :   0  ||B r|| = 9.82068e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002928749390521612
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000292875, ||r||/||r_0|| = 0.413862
+   Pass :  1   Iteration :   0  ||B r|| = 9.82068e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002928749390521612
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000292875, ||r||/||r_0|| = 0.413862
+   Pass :  1   Iteration :   0  ||B r|| = 9.82068e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002928749390521612
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000292875, ||r||/||r_0|| = 0.413862
+   Pass :  1   Iteration :   0  ||B r|| = 9.82068e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002928749390521612
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000292875, ||r||/||r_0|| = 0.413862
+   Pass :  1   Iteration :   0  ||B r|| = 9.82068e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002928749390521612
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000292875, ||r||/||r_0|| = 0.413862
+   Pass :  1   Iteration :   0  ||B r|| = 9.82068e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002928749390521612
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000292875, ||r||/||r_0|| = 0.413862
+   Pass :  1   Iteration :   0  ||B r|| = 9.82068e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002928749390521612
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000292875, ||r||/||r_0|| = 0.413862
+   Pass :  1   Iteration :   0  ||B r|| = 9.82068e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002928749390521612
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000292875, ||r||/||r_0|| = 0.413862
+Setting time step: 0.04237882832061491 in DGTransportTDO
+Setting time step: 0.04237882832061491 in CombinedOp
+Setting time step: 0.04237882832061491 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001064130832669083
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00106413
+   Pass :  1   Iteration :   0  ||B r|| = 0.0368497 ...
+   Pass :  5   Iteration : 245  ||B r|| = 9.72473e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002944879706540483
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000294488, ||r||/||r_0|| = 0.27674
+   Pass :  1   Iteration :   0  ||B r|| = 9.72473e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002944879706540483
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000294488, ||r||/||r_0|| = 0.27674
+   Pass :  1   Iteration :   0  ||B r|| = 9.72473e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002944879706540483
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000294488, ||r||/||r_0|| = 0.27674
+   Pass :  1   Iteration :   0  ||B r|| = 9.72473e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002944879706540483
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000294488, ||r||/||r_0|| = 0.27674
+   Pass :  1   Iteration :   0  ||B r|| = 9.72473e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002944879706540483
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000294488, ||r||/||r_0|| = 0.27674
+   Pass :  1   Iteration :   0  ||B r|| = 9.72473e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002944879706540483
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000294488, ||r||/||r_0|| = 0.27674
+   Pass :  1   Iteration :   0  ||B r|| = 9.72473e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002944879706540483
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000294488, ||r||/||r_0|| = 0.27674
+   Pass :  1   Iteration :   0  ||B r|| = 9.72473e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002944879706540483
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000294488, ||r||/||r_0|| = 0.27674
+   Pass :  1   Iteration :   0  ||B r|| = 9.72473e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002944879706540483
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000294488, ||r||/||r_0|| = 0.27674
+   Pass :  1   Iteration :   0  ||B r|| = 9.72473e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002944879706540483
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000294488, ||r||/||r_0|| = 0.27674
+Setting time step: 0.04237882832061491 in DGTransportTDO
+Setting time step: 0.04237882832061491 in CombinedOp
+Setting time step: 0.04237882832061491 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001182614075056069
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00118261
+   Pass :  1   Iteration :   0  ||B r|| = 0.0423785 ...
+   Pass :  6   Iteration : 260  ||B r|| = 9.81829e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002235904129382475
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00022359, ||r||/||r_0|| = 0.189065
+   Pass :  1   Iteration :   0  ||B r|| = 9.81829e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002235904129382475
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.00022359, ||r||/||r_0|| = 0.189065
+   Pass :  1   Iteration :   0  ||B r|| = 9.81829e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002235904129382475
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.00022359, ||r||/||r_0|| = 0.189065
+   Pass :  1   Iteration :   0  ||B r|| = 9.81829e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002235904129382475
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.00022359, ||r||/||r_0|| = 0.189065
+   Pass :  1   Iteration :   0  ||B r|| = 9.81829e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002235904129382475
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.00022359, ||r||/||r_0|| = 0.189065
+   Pass :  1   Iteration :   0  ||B r|| = 9.81829e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002235904129382475
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.00022359, ||r||/||r_0|| = 0.189065
+   Pass :  1   Iteration :   0  ||B r|| = 9.81829e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002235904129382475
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.00022359, ||r||/||r_0|| = 0.189065
+   Pass :  1   Iteration :   0  ||B r|| = 9.81829e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002235904129382475
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.00022359, ||r||/||r_0|| = 0.189065
+   Pass :  1   Iteration :   0  ||B r|| = 9.81829e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002235904129382475
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.00022359, ||r||/||r_0|| = 0.189065
+   Pass :  1   Iteration :   0  ||B r|| = 9.81829e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002235904129382475
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.00022359, ||r||/||r_0|| = 0.189065
+Setting time step: 0.04237882832061491 in DGTransportTDO
+Setting time step: 0.04237882832061491 in CombinedOp
+Setting time step: 0.04237882832061491 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.006518341247328259
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00651834
+   Pass :  1   Iteration :   0  ||B r|| = 0.0121116 ...
+   Pass :  4   Iteration : 194  ||B r|| = 9.91315e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002451557347183134
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000245156, ||r||/||r_0|| = 0.0376101
+   Pass :  1   Iteration :   0  ||B r|| = 9.91315e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002451557347183134
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000245156, ||r||/||r_0|| = 0.0376101
+   Pass :  1   Iteration :   0  ||B r|| = 9.91315e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002451557347183134
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000245156, ||r||/||r_0|| = 0.0376101
+   Pass :  1   Iteration :   0  ||B r|| = 9.91315e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002451557347183134
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000245156, ||r||/||r_0|| = 0.0376101
+   Pass :  1   Iteration :   0  ||B r|| = 9.91315e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002451557347183134
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000245156, ||r||/||r_0|| = 0.0376101
+   Pass :  1   Iteration :   0  ||B r|| = 9.91315e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002451557347183134
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000245156, ||r||/||r_0|| = 0.0376101
+   Pass :  1   Iteration :   0  ||B r|| = 9.91315e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002451557347183134
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000245156, ||r||/||r_0|| = 0.0376101
+   Pass :  1   Iteration :   0  ||B r|| = 9.91315e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002451557347183134
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000245156, ||r||/||r_0|| = 0.0376101
+   Pass :  1   Iteration :   0  ||B r|| = 9.91315e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002451557347183134
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000245156, ||r||/||r_0|| = 0.0376101
+   Pass :  1   Iteration :   0  ||B r|| = 9.91315e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0002451557347183134
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000245156, ||r||/||r_0|| = 0.0376101
+Setting time step: 0.08475765664122982 in DGTransportTDO
+Setting time step: 0.08475765664122982 in CombinedOp
+Setting time step: 0.08475765664122982 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0003309805752492311
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000330981
+   Pass :  1   Iteration :   0  ||B r|| = 0.00406939 ...
+   Pass :  3   Iteration : 141  ||B r|| = 9.48797e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007806267672626033
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000780627, ||r||/||r_0|| = 2.35853
+   Pass :  1   Iteration :   0  ||B r|| = 9.48797e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007806267672626033
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000780627, ||r||/||r_0|| = 2.35853
+   Pass :  1   Iteration :   0  ||B r|| = 9.48797e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007806267672626033
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000780627, ||r||/||r_0|| = 2.35853
+   Pass :  1   Iteration :   0  ||B r|| = 9.48797e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007806267672626033
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000780627, ||r||/||r_0|| = 2.35853
+   Pass :  1   Iteration :   0  ||B r|| = 9.48797e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007806267672626033
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000780627, ||r||/||r_0|| = 2.35853
+   Pass :  1   Iteration :   0  ||B r|| = 9.48797e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007806267672626033
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000780627, ||r||/||r_0|| = 2.35853
+   Pass :  1   Iteration :   0  ||B r|| = 9.48797e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007806267672626033
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000780627, ||r||/||r_0|| = 2.35853
+   Pass :  1   Iteration :   0  ||B r|| = 9.48797e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007806267672626033
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000780627, ||r||/||r_0|| = 2.35853
+   Pass :  1   Iteration :   0  ||B r|| = 9.48797e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007806267672626033
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000780627, ||r||/||r_0|| = 2.35853
+   Pass :  1   Iteration :   0  ||B r|| = 9.48797e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007806267672626033
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000780627, ||r||/||r_0|| = 2.35853
+Setting time step: 0.08475765664122982 in DGTransportTDO
+Setting time step: 0.08475765664122982 in CombinedOp
+Setting time step: 0.08475765664122982 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001549132761937606
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00154913
+   Pass :  1   Iteration :   0  ||B r|| = 0.0001386 ...
+   Pass :  1   Iteration :  11  ||B r|| = 9.88213e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005722786874720249
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000572279, ||r||/||r_0|| = 0.369419
+   Pass :  1   Iteration :   0  ||B r|| = 9.88213e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005722786874720249
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000572279, ||r||/||r_0|| = 0.369419
+   Pass :  1   Iteration :   0  ||B r|| = 9.88213e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005722786874720249
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000572279, ||r||/||r_0|| = 0.369419
+   Pass :  1   Iteration :   0  ||B r|| = 9.88213e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005722786874720249
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000572279, ||r||/||r_0|| = 0.369419
+   Pass :  1   Iteration :   0  ||B r|| = 9.88213e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005722786874720249
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000572279, ||r||/||r_0|| = 0.369419
+   Pass :  1   Iteration :   0  ||B r|| = 9.88213e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005722786874720249
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000572279, ||r||/||r_0|| = 0.369419
+   Pass :  1   Iteration :   0  ||B r|| = 9.88213e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005722786874720249
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000572279, ||r||/||r_0|| = 0.369419
+   Pass :  1   Iteration :   0  ||B r|| = 9.88213e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005722786874720249
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000572279, ||r||/||r_0|| = 0.369419
+   Pass :  1   Iteration :   0  ||B r|| = 9.88213e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005722786874720249
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000572279, ||r||/||r_0|| = 0.369419
+   Pass :  1   Iteration :   0  ||B r|| = 9.88213e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005722786874720249
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000572279, ||r||/||r_0|| = 0.369419
+Setting time step: 0.08475765664122982 in DGTransportTDO
+Setting time step: 0.08475765664122982 in CombinedOp
+Setting time step: 0.08475765664122982 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001272123256875773
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00127212
+   Pass :  1   Iteration :   0  ||B r|| = 0.00118862 ...
+   Pass :  1   Iteration :  47  ||B r|| = 9.60084e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005859244599735917
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000585924, ||r||/||r_0|| = 0.460588
+   Pass :  1   Iteration :   0  ||B r|| = 9.60084e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005859244599735917
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000585924, ||r||/||r_0|| = 0.460588
+   Pass :  1   Iteration :   0  ||B r|| = 9.60084e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005859244599735917
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000585924, ||r||/||r_0|| = 0.460588
+   Pass :  1   Iteration :   0  ||B r|| = 9.60084e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005859244599735917
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000585924, ||r||/||r_0|| = 0.460588
+   Pass :  1   Iteration :   0  ||B r|| = 9.60084e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005859244599735917
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000585924, ||r||/||r_0|| = 0.460588
+   Pass :  1   Iteration :   0  ||B r|| = 9.60084e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005859244599735917
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000585924, ||r||/||r_0|| = 0.460588
+   Pass :  1   Iteration :   0  ||B r|| = 9.60084e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005859244599735917
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000585924, ||r||/||r_0|| = 0.460588
+   Pass :  1   Iteration :   0  ||B r|| = 9.60084e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005859244599735917
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000585924, ||r||/||r_0|| = 0.460588
+   Pass :  1   Iteration :   0  ||B r|| = 9.60084e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005859244599735917
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000585924, ||r||/||r_0|| = 0.460588
+   Pass :  1   Iteration :   0  ||B r|| = 9.60084e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005859244599735917
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000585924, ||r||/||r_0|| = 0.460588
+Setting time step: 0.08475765664122982 in DGTransportTDO
+Setting time step: 0.08475765664122982 in CombinedOp
+Setting time step: 0.08475765664122982 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0009945004832393771
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0009945
+   Pass :  1   Iteration :   0  ||B r|| = 0.00167237 ...
+   Pass :  3   Iteration : 110  ||B r|| = 9.97743e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006449371204286431
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000644937, ||r||/||r_0|| = 0.648504
+   Pass :  1   Iteration :   0  ||B r|| = 9.97743e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006449371204286431
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000644937, ||r||/||r_0|| = 0.648504
+   Pass :  1   Iteration :   0  ||B r|| = 9.97743e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006449371204286431
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000644937, ||r||/||r_0|| = 0.648504
+   Pass :  1   Iteration :   0  ||B r|| = 9.97743e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006449371204286431
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000644937, ||r||/||r_0|| = 0.648504
+   Pass :  1   Iteration :   0  ||B r|| = 9.97743e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006449371204286431
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000644937, ||r||/||r_0|| = 0.648504
+   Pass :  1   Iteration :   0  ||B r|| = 9.97743e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006449371204286431
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000644937, ||r||/||r_0|| = 0.648504
+   Pass :  1   Iteration :   0  ||B r|| = 9.97743e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006449371204286431
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000644937, ||r||/||r_0|| = 0.648504
+   Pass :  1   Iteration :   0  ||B r|| = 9.97743e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006449371204286431
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000644937, ||r||/||r_0|| = 0.648504
+   Pass :  1   Iteration :   0  ||B r|| = 9.97743e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006449371204286431
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000644937, ||r||/||r_0|| = 0.648504
+   Pass :  1   Iteration :   0  ||B r|| = 9.97743e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006449371204286431
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000644937, ||r||/||r_0|| = 0.648504
+Setting time step: 0.08475765664122982 in DGTransportTDO
+Setting time step: 0.08475765664122982 in CombinedOp
+Setting time step: 0.08475765664122982 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0198131594779116
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0198132
+   Pass :  1   Iteration :   0  ||B r|| = 0.00087936 ...
+   Pass :  4   Iteration : 167  ||B r|| = 9.81136e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004396323903717897
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000439632, ||r||/||r_0|| = 0.0221889
+   Pass :  1   Iteration :   0  ||B r|| = 9.81137e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004396323903717897
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000439632, ||r||/||r_0|| = 0.0221889
+   Pass :  1   Iteration :   0  ||B r|| = 9.81137e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004396323903717897
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000439632, ||r||/||r_0|| = 0.0221889
+   Pass :  1   Iteration :   0  ||B r|| = 9.81137e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004396323903717897
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000439632, ||r||/||r_0|| = 0.0221889
+   Pass :  1   Iteration :   0  ||B r|| = 9.81137e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004396323903717897
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000439632, ||r||/||r_0|| = 0.0221889
+   Pass :  1   Iteration :   0  ||B r|| = 9.81137e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004396323903717897
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000439632, ||r||/||r_0|| = 0.0221889
+   Pass :  1   Iteration :   0  ||B r|| = 9.81137e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004396323903717897
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000439632, ||r||/||r_0|| = 0.0221889
+   Pass :  1   Iteration :   0  ||B r|| = 9.81137e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004396323903717897
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000439632, ||r||/||r_0|| = 0.0221889
+   Pass :  1   Iteration :   0  ||B r|| = 9.81137e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004396323903717897
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000439632, ||r||/||r_0|| = 0.0221889
+   Pass :  1   Iteration :   0  ||B r|| = 9.81137e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004396323903717897
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000439632, ||r||/||r_0|| = 0.0221889
+Time stepping paused at t = 0.8917876728411454
+
+Estimating errors.
+Setting time step: 0.1695153132824596 in DGTransportTDO
+Setting time step: 0.1695153132824596 in CombinedOp
+Setting time step: 0.1695153132824596 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004422753671151324
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000442275
+   Pass :  1   Iteration :   0  ||B r|| = 0.000176039 ...
+   Pass :  1   Iteration :   7  ||B r|| = 8.69816e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006785505925767331
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000678551, ||r||/||r_0|| = 1.53423
+   Pass :  1   Iteration :   0  ||B r|| = 8.69816e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006785505925767331
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000678551, ||r||/||r_0|| = 1.53423
+   Pass :  1   Iteration :   0  ||B r|| = 8.69816e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006785505925767331
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000678551, ||r||/||r_0|| = 1.53423
+   Pass :  1   Iteration :   0  ||B r|| = 8.69816e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006785505925767331
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000678551, ||r||/||r_0|| = 1.53423
+   Pass :  1   Iteration :   0  ||B r|| = 8.69816e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006785505925767331
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000678551, ||r||/||r_0|| = 1.53423
+   Pass :  1   Iteration :   0  ||B r|| = 8.69816e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006785505925767331
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000678551, ||r||/||r_0|| = 1.53423
+   Pass :  1   Iteration :   0  ||B r|| = 8.69816e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006785505925767331
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000678551, ||r||/||r_0|| = 1.53423
+   Pass :  1   Iteration :   0  ||B r|| = 8.69816e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006785505925767331
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000678551, ||r||/||r_0|| = 1.53423
+   Pass :  1   Iteration :   0  ||B r|| = 8.69816e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006785505925767331
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000678551, ||r||/||r_0|| = 1.53423
+   Pass :  1   Iteration :   0  ||B r|| = 8.69816e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006785505925767331
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000678551, ||r||/||r_0|| = 1.53423
+Setting time step: 0.1695153132824596 in DGTransportTDO
+Setting time step: 0.1695153132824596 in CombinedOp
+Setting time step: 0.1695153132824596 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001347652975299472
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00134765
+   Pass :  1   Iteration :   0  ||B r|| = 0.000158214 ...
+   Pass :  1   Iteration :   4  ||B r|| = 9.15818e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004621439905478971
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000462144, ||r||/||r_0|| = 0.342925
+   Pass :  1   Iteration :   0  ||B r|| = 9.15818e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004621439905478971
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000462144, ||r||/||r_0|| = 0.342925
+   Pass :  1   Iteration :   0  ||B r|| = 9.15818e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004621439905478971
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000462144, ||r||/||r_0|| = 0.342925
+   Pass :  1   Iteration :   0  ||B r|| = 9.15818e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004621439905478971
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000462144, ||r||/||r_0|| = 0.342925
+   Pass :  1   Iteration :   0  ||B r|| = 9.15818e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004621439905478971
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000462144, ||r||/||r_0|| = 0.342925
+   Pass :  1   Iteration :   0  ||B r|| = 9.15818e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004621439905478971
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000462144, ||r||/||r_0|| = 0.342925
+   Pass :  1   Iteration :   0  ||B r|| = 9.15818e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004621439905478971
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000462144, ||r||/||r_0|| = 0.342925
+   Pass :  1   Iteration :   0  ||B r|| = 9.15818e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004621439905478971
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000462144, ||r||/||r_0|| = 0.342925
+   Pass :  1   Iteration :   0  ||B r|| = 9.15818e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004621439905478971
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000462144, ||r||/||r_0|| = 0.342925
+   Pass :  1   Iteration :   0  ||B r|| = 9.15818e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004621439905478971
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000462144, ||r||/||r_0|| = 0.342925
+Setting time step: 0.1695153132824596 in DGTransportTDO
+Setting time step: 0.1695153132824596 in CombinedOp
+Setting time step: 0.1695153132824596 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00108589985249092
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.0010859
+   Pass :  1   Iteration :   0  ||B r|| = 7.60822e-05 ...
+   Pass :  1   Iteration :   3  ||B r|| = 9.04148e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004576748165460493
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000457675, ||r||/||r_0|| = 0.421471
+   Pass :  1   Iteration :   0  ||B r|| = 9.04148e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004576748165460493
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000457675, ||r||/||r_0|| = 0.421471
+   Pass :  1   Iteration :   0  ||B r|| = 9.04148e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004576748165460493
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000457675, ||r||/||r_0|| = 0.421471
+   Pass :  1   Iteration :   0  ||B r|| = 9.04148e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004576748165460493
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000457675, ||r||/||r_0|| = 0.421471
+   Pass :  1   Iteration :   0  ||B r|| = 9.04148e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004576748165460493
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000457675, ||r||/||r_0|| = 0.421471
+   Pass :  1   Iteration :   0  ||B r|| = 9.04148e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004576748165460493
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000457675, ||r||/||r_0|| = 0.421471
+   Pass :  1   Iteration :   0  ||B r|| = 9.04148e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004576748165460493
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000457675, ||r||/||r_0|| = 0.421471
+   Pass :  1   Iteration :   0  ||B r|| = 9.04148e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004576748165460493
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000457675, ||r||/||r_0|| = 0.421471
+   Pass :  1   Iteration :   0  ||B r|| = 9.04148e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004576748165460493
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000457675, ||r||/||r_0|| = 0.421471
+   Pass :  1   Iteration :   0  ||B r|| = 9.04148e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004576748165460493
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000457675, ||r||/||r_0|| = 0.421471
+Setting time step: 0.1695153132824596 in DGTransportTDO
+Setting time step: 0.1695153132824596 in CombinedOp
+Setting time step: 0.1695153132824596 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0008676508976704378
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000867651
+   Pass :  1   Iteration :   0  ||B r|| = 2.93417e-05 ...
+   Pass :  1   Iteration :   2  ||B r|| = 9.291e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004524455167320306
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000452446, ||r||/||r_0|| = 0.52146
+   Pass :  1   Iteration :   0  ||B r|| = 9.291e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004524455167320306
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000452446, ||r||/||r_0|| = 0.52146
+   Pass :  1   Iteration :   0  ||B r|| = 9.291e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004524455167320306
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000452446, ||r||/||r_0|| = 0.52146
+   Pass :  1   Iteration :   0  ||B r|| = 9.291e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004524455167320306
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000452446, ||r||/||r_0|| = 0.52146
+   Pass :  1   Iteration :   0  ||B r|| = 9.291e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004524455167320306
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000452446, ||r||/||r_0|| = 0.52146
+   Pass :  1   Iteration :   0  ||B r|| = 9.291e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004524455167320306
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000452446, ||r||/||r_0|| = 0.52146
+   Pass :  1   Iteration :   0  ||B r|| = 9.291e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004524455167320306
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000452446, ||r||/||r_0|| = 0.52146
+   Pass :  1   Iteration :   0  ||B r|| = 9.291e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004524455167320306
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000452446, ||r||/||r_0|| = 0.52146
+   Pass :  1   Iteration :   0  ||B r|| = 9.291e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004524455167320306
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000452446, ||r||/||r_0|| = 0.52146
+   Pass :  1   Iteration :   0  ||B r|| = 9.291e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0004524455167320306
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000452446, ||r||/||r_0|| = 0.52146
+Setting time step: 0.1695153132824596 in DGTransportTDO
+Setting time step: 0.1695153132824596 in CombinedOp
+Setting time step: 0.1695153132824596 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.005076116060388566
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00507612
+   Pass :  1   Iteration :   0  ||B r|| = 0.000366331 ...
+   Pass :  1   Iteration :   8  ||B r|| = 9.41061e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00113012797975072
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.00113013, ||r||/||r_0|| = 0.222636
+   Pass :  1   Iteration :   0  ||B r|| = 9.41061e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00113012797975072
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.00113013, ||r||/||r_0|| = 0.222636
+   Pass :  1   Iteration :   0  ||B r|| = 9.41061e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00113012797975072
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.00113013, ||r||/||r_0|| = 0.222636
+   Pass :  1   Iteration :   0  ||B r|| = 9.41061e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00113012797975072
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.00113013, ||r||/||r_0|| = 0.222636
+   Pass :  1   Iteration :   0  ||B r|| = 9.41061e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00113012797975072
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.00113013, ||r||/||r_0|| = 0.222636
+   Pass :  1   Iteration :   0  ||B r|| = 9.41061e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00113012797975072
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.00113013, ||r||/||r_0|| = 0.222636
+   Pass :  1   Iteration :   0  ||B r|| = 9.41061e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00113012797975072
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.00113013, ||r||/||r_0|| = 0.222636
+   Pass :  1   Iteration :   0  ||B r|| = 9.41061e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00113012797975072
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.00113013, ||r||/||r_0|| = 0.222636
+   Pass :  1   Iteration :   0  ||B r|| = 9.41061e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00113012797975072
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.00113013, ||r||/||r_0|| = 0.222636
+   Pass :  1   Iteration :   0  ||B r|| = 9.41061e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00113012797975072
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.00113013, ||r||/||r_0|| = 0.222636
+Setting time step: 0.3390306265649193 in DGTransportTDO
+Setting time step: 0.3390306265649193 in CombinedOp
+Setting time step: 0.3390306265649193 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.001130135670024935
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00113014
+   Pass :  1   Iteration :   0  ||B r|| = 1.00694e-06 ...
+   Pass :  1   Iteration :   1  ||B r|| = 4.43545e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006568671563958793
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000656867, ||r||/||r_0|| = 0.581229
+   Pass :  1   Iteration :   0  ||B r|| = 4.43545e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006568671563958793
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000656867, ||r||/||r_0|| = 0.581229
+   Pass :  1   Iteration :   0  ||B r|| = 4.43545e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006568671563958793
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000656867, ||r||/||r_0|| = 0.581229
+   Pass :  1   Iteration :   0  ||B r|| = 4.43545e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006568671563958793
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000656867, ||r||/||r_0|| = 0.581229
+   Pass :  1   Iteration :   0  ||B r|| = 4.43545e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006568671563958793
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000656867, ||r||/||r_0|| = 0.581229
+   Pass :  1   Iteration :   0  ||B r|| = 4.43545e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006568671563958793
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000656867, ||r||/||r_0|| = 0.581229
+   Pass :  1   Iteration :   0  ||B r|| = 4.43545e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006568671563958793
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000656867, ||r||/||r_0|| = 0.581229
+   Pass :  1   Iteration :   0  ||B r|| = 4.43545e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006568671563958793
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000656867, ||r||/||r_0|| = 0.581229
+   Pass :  1   Iteration :   0  ||B r|| = 4.43545e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006568671563958793
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000656867, ||r||/||r_0|| = 0.581229
+   Pass :  1   Iteration :   0  ||B r|| = 4.43545e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006568671563958793
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000656867, ||r||/||r_0|| = 0.581229
+Setting time step: 0.3390306265649193 in DGTransportTDO
+Setting time step: 0.3390306265649193 in CombinedOp
+Setting time step: 0.3390306265649193 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005306344041182401
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000530634
+   Pass :  1   Iteration :   0  ||B r|| = 1.00027e-06 ...
+   Pass :  1   Iteration :   1  ||B r|| = 7.65886e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006942580153907467
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000694258, ||r||/||r_0|| = 1.30835
+   Pass :  1   Iteration :   0  ||B r|| = 7.65894e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006942580153907467
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000694258, ||r||/||r_0|| = 1.30835
+   Pass :  1   Iteration :   0  ||B r|| = 7.65894e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006942580153907467
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000694258, ||r||/||r_0|| = 1.30835
+   Pass :  1   Iteration :   0  ||B r|| = 7.65894e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006942580153907467
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000694258, ||r||/||r_0|| = 1.30835
+   Pass :  1   Iteration :   0  ||B r|| = 7.65894e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006942580153907467
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000694258, ||r||/||r_0|| = 1.30835
+   Pass :  1   Iteration :   0  ||B r|| = 7.65894e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006942580153907467
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000694258, ||r||/||r_0|| = 1.30835
+   Pass :  1   Iteration :   0  ||B r|| = 7.65894e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006942580153907467
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000694258, ||r||/||r_0|| = 1.30835
+   Pass :  1   Iteration :   0  ||B r|| = 7.65894e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006942580153907467
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000694258, ||r||/||r_0|| = 1.30835
+   Pass :  1   Iteration :   0  ||B r|| = 7.65894e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006942580153907467
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000694258, ||r||/||r_0|| = 1.30835
+   Pass :  1   Iteration :   0  ||B r|| = 7.65894e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0006942580153907467
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000694258, ||r||/||r_0|| = 1.30835
+Setting time step: 0.3390306265649193 in DGTransportTDO
+Setting time step: 0.3390306265649193 in CombinedOp
+Setting time step: 0.3390306265649193 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005388485562498245
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000538849
+   Pass :  1   Iteration :   0  ||B r|| = 5.96202e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005388485562498245
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000538849, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 5.96202e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005388485562498245
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000538849, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 5.96202e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005388485562498245
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000538849, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 5.96202e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005388485562498245
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000538849, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 5.96202e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005388485562498245
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000538849, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 5.96202e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005388485562498245
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000538849, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 5.96202e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005388485562498245
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000538849, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 5.96202e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005388485562498245
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000538849, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 5.96202e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005388485562498245
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000538849, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 5.96202e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005388485562498245
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000538849, ||r||/||r_0|| = 1
+Setting time step: 0.3390306265649193 in DGTransportTDO
+Setting time step: 0.3390306265649193 in CombinedOp
+Setting time step: 0.3390306265649193 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005836759865059109
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000583676
+   Pass :  1   Iteration :   0  ||B r|| = 4.84817e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005836759865059109
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000583676, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 4.84817e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005836759865059109
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000583676, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 4.84817e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005836759865059109
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000583676, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 4.84817e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005836759865059109
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000583676, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 4.84817e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005836759865059109
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000583676, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 4.84817e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005836759865059109
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000583676, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 4.84817e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005836759865059109
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000583676, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 4.84817e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005836759865059109
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000583676, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 4.84817e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005836759865059109
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000583676, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 4.84817e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0005836759865059109
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000583676, ||r||/||r_0|| = 1
+Setting time step: 0.3390306265649193 in DGTransportTDO
+Setting time step: 0.3390306265649193 in CombinedOp
+Setting time step: 0.3390306265649193 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.00457954174155523
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.00457954
+   Pass :  1   Iteration :   0  ||B r|| = 4.98186e-06 ...
+   Pass :  1   Iteration :   2  ||B r|| = 5.23726e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836169996742981
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000783617, ||r||/||r_0|| = 0.171113
+   Pass :  1   Iteration :   0  ||B r|| = 5.23726e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836169996742981
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000783617, ||r||/||r_0|| = 0.171113
+   Pass :  1   Iteration :   0  ||B r|| = 5.23726e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836169996742981
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000783617, ||r||/||r_0|| = 0.171113
+   Pass :  1   Iteration :   0  ||B r|| = 5.23726e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836169996742981
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000783617, ||r||/||r_0|| = 0.171113
+   Pass :  1   Iteration :   0  ||B r|| = 5.23726e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836169996742981
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000783617, ||r||/||r_0|| = 0.171113
+   Pass :  1   Iteration :   0  ||B r|| = 5.23726e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836169996742981
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000783617, ||r||/||r_0|| = 0.171113
+   Pass :  1   Iteration :   0  ||B r|| = 5.23726e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836169996742981
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000783617, ||r||/||r_0|| = 0.171113
+   Pass :  1   Iteration :   0  ||B r|| = 5.23726e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836169996742981
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000783617, ||r||/||r_0|| = 0.171113
+   Pass :  1   Iteration :   0  ||B r|| = 5.23726e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836169996742981
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000783617, ||r||/||r_0|| = 0.171113
+   Pass :  1   Iteration :   0  ||B r|| = 5.23726e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836169996742981
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000783617, ||r||/||r_0|| = 0.171113
+Setting time step: 0.6780612531298386 in DGTransportTDO
+Setting time step: 0.6780612531298386 in CombinedOp
+Setting time step: 0.6780612531298386 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000783617
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+Setting time step: 0.6780612531298386 in DGTransportTDO
+Setting time step: 0.6780612531298386 in CombinedOp
+Setting time step: 0.6780612531298386 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000783617
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+Setting time step: 0.6780612531298386 in DGTransportTDO
+Setting time step: 0.6780612531298386 in CombinedOp
+Setting time step: 0.6780612531298386 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000783617
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+Setting time step: 0.6780612531298386 in DGTransportTDO
+Setting time step: 0.6780612531298386 in CombinedOp
+Setting time step: 0.6780612531298386 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000783617
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+Setting time step: 0.6780612531298386 in DGTransportTDO
+Setting time step: 0.6780612531298386 in CombinedOp
+Setting time step: 0.6780612531298386 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000783617
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+Setting time step: 0.6780612531298386 in DGTransportTDO
+Setting time step: 0.6780612531298386 in CombinedOp
+Setting time step: 0.6780612531298386 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000783617
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+Setting time step: 0.6780612531298386 in DGTransportTDO
+Setting time step: 0.6780612531298386 in CombinedOp
+Setting time step: 0.6780612531298386 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000783617
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+Setting time step: 0.6780612531298386 in DGTransportTDO
+Setting time step: 0.6780612531298386 in CombinedOp
+Setting time step: 0.6780612531298386 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000783617
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+Setting time step: 0.6780612531298386 in DGTransportTDO
+Setting time step: 0.6780612531298386 in CombinedOp
+Setting time step: 0.6780612531298386 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000783617
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+Setting time step: 0.6780612531298386 in DGTransportTDO
+Setting time step: 0.6780612531298386 in CombinedOp
+Setting time step: 0.6780612531298386 in IonStaticPressureOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 0.000783617
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  3 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  4 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  5 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  6 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  7 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  8 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration  9 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+   Pass :  1   Iteration :   0  ||B r|| = 2.61932e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 0
+norm(r_3) 0.0007836173188024741
+norm(r_4) 0
+Newton iteration 10 : ||r|| = 0.000783617, ||r||/||r_0|| = 1
+Time stepping paused at t = 8.350461457269368
+Steady State solution has been reached
+
+Time stepping done after 9.046020473s.
