@@ -1,9 +1,9 @@
 
-dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/git_check/hash-a6c5140/ltol1e-8/';
+dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/AMG/sovinec-NFpreprint/dgk200/';
 prefix = 'Transport2D-Parallel';
-refine = [1,2,3,4,5];
-order = [1];
-chiPara = [3];
+refine = [0,1,2,3,4,5];
+order = [1,2,3,4,5];
+chiPara = [3,6,9];
 
 noconv_arr = zeros(length(refine),length(order),length(chiPara));
 abort_arr = zeros(length(refine),length(order),length(chiPara));
@@ -21,12 +21,12 @@ for jj=1:length(refine)
 %                 continue
 %             end
             
-            if length(order)==1
-%                 filepath = strcat(dir_path,'/chi',num2str(chiPara(ll)),'/r',...
-%                 num2str(refine(jj)),'_o',num2str(order(kk)),'/');
-                filepath = strcat(dir_path,'/r',...
+            if length(order)~=1
+                filepath = strcat(dir_path,'/chi',num2str(chiPara(ll)),'/r',...
                 num2str(refine(jj)),'_o',num2str(order(kk)),'/');
-            elseif length(order)~=1
+%                 filepath = strcat(dir_path,'/r',...
+%                 num2str(refine(jj)),'_o',num2str(order(kk)),'/');
+            elseif length(order)==1
                 filepath = strcat(dir_path,'/chi1.0e',num2str(chiPara(ll)),'/');
             end
 
@@ -35,7 +35,7 @@ for jj=1:length(refine)
                 noconv_arr(jj,kk,ll) = NaN;
                 abort_arr(jj,kk,ll) = NaN;
                 err_arr(jj,kk,ll) = NaN;
-                fprintf('Directory does not exist: %s\n',filepath)
+%                 fprintf('Directory does not exist: %s\n',filepath)
                 continue
             end
             
@@ -56,6 +56,11 @@ for jj=1:length(refine)
                 err_arr(jj,kk,ll) = NaN;
                 fprintf('Could not find any time steps using prefix: %s\n',prefix)
                 fprintf('Empty directory: %s\n',filepath)
+                continue
+            elseif nt >= 10
+                fprintf('Greater than 10 timesteps, check output for: \n')
+                fprintf('chiPara = %d, refine = %d, order = %d\n',chiPara(ll),...
+                    refine(jj),order(kk))
                 continue
             else
                 fprintf('Found nt = %d timesteps\n',nt)
@@ -159,6 +164,52 @@ end
 
 %%
 
+x0 = 0;
+y0 = 0;
+width = 252*2;
+height = 252/1.5;
+
+dx = zeros(1,length(refine));
+dx(1) = 0.25;
+
+for ii = 2:length(refine)
+    
+    dx(ii) = dx(ii-1)/2.0;
+    
+end
+
+figure(1)
+subplot(1,3,1)
+set(gcf,'Position',[x0 y0 width height],'color','w')
+loglog(dx,squeeze(err_arr(:,1,1)),'k+-')
+hold on
+loglog(dx,squeeze(err_arr(:,2,1)),'kx-')
+loglog(dx,squeeze(err_arr(:,3,1)),'ko-')
+set(gca,'Fontsize',14)
+xlabel('$\Delta x$','interpreter','latex')
+ylabel('$L^2$ Error','interpreter','latex')
+% legend({'O1','O2','O3'},'interpreter','latex','location','northwest',...
+%     'NumColumns',3)
+hold off
+
+subplot(1,3,2)
+set(gcf,'Position',[x0 y0 width height],'color','w')
+loglog(dx,squeeze(err_arr(:,1,2)),'k+-')
+hold on
+loglog(dx,squeeze(err_arr(:,2,2)),'kx-')
+loglog(dx,squeeze(err_arr(:,3,2)),'ko-')
+loglog(dx,squeeze(err_arr(:,4,2)),'ks-')
+set(gca,'Fontsize',14)
+xlabel('$\Delta x$','interpreter','latex')
+% ylabel('$L^2$ Error','interpreter','latex')
+% legend('O1','O2','O3','O4','interpreter','latex','location','west')
+hold off
+
+subplot(1,3,3)
+
+
+%%
+
 if length(order)~=1
     refineMesh = meshgrid(refine)';
     refineMesh(:,end) = [];
@@ -177,7 +228,7 @@ if length(order)~=1
         coIdx = ((noconv_arr(:,:,ii) == 0) & (abort_arr(:,:,ii) == 0));
         abIdx = abort_arr(:,:,ii) == 1;
 
-        figure(1)
+        figure(2)
         stem3(refineMesh(coIdx),orderMesh(coIdx),chiMesh(coIdx),':k',...
             'markeredgecolor','k','markersize',15)
         hold on
@@ -219,7 +270,7 @@ if length(order)~=1
 
     %%
 
-    figure(2)
+    figure(3)
     set(gcf,'color','w')
     subplot(3,1,1)
     semilogy(refine, wallTime(1:6),'k*-','linewidth',2)
@@ -261,7 +312,7 @@ if length(order)~=1
 
     %%
 
-    figure(3)
+    figure(4)
     set(gcf,'color','w')
     loglog(dof(1:30),wallTime(1:30),'k*-','linewidth',1)
     hold on
@@ -279,7 +330,7 @@ elseif length(order)==1
     nc_ind = find((noconv_arr) & ~(abort_arr));
     co_ind = find(~noconv_arr);
     
-    figure(4)
+    figure(5)
     set(gcf,'color','w','Position',[0 0 900 400])
     semilogy(chiPara(co_ind),squeeze(err_arr(1,1,co_ind)),'k*',...
         'markersize',15,'linewidth',2)
