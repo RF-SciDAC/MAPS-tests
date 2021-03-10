@@ -1,5 +1,5 @@
 
-dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/AMG/sovinec-NFpreprint/dgk200/';
+dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/AMG/sovinec-NFpreprint/dgk100/';
 prefix = 'Transport2D-Parallel';
 refine = [0,1,2,3,4,5];
 order = [1,2,3,4,5];
@@ -61,7 +61,7 @@ for jj=1:length(refine)
                 fprintf('Greater than 10 timesteps, check output for: \n')
                 fprintf('chiPara = %d, refine = %d, order = %d\n',chiPara(ll),...
                     refine(jj),order(kk))
-                continue
+%                 continue
             else
                 fprintf('Found nt = %d timesteps\n',nt)
                 fprintf('for chiPara = %d, refine = %d, order = %d\n',chiPara(ll),...
