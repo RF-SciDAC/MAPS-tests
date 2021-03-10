@@ -1,5 +1,5 @@
 
-dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/AMG/sovinec-NFpreprint/dgk100/';
+dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/AMG/sovinec-NFpreprint/dgk500/';
 prefix = 'Transport2D-Parallel';
 refine = [0,1,2,3,4,5];
 order = [1,2,3,4,5];
@@ -72,7 +72,11 @@ for jj=1:length(refine)
             time = nan(1,nt);
             for ii = 0:nt-1
                 fname = fullfile(strcat(filepath,prefix,'_',num2str(ii,'%06.f'),'.mfem_root'));
-                fid = fileread(fname);
+                if ~isfile(fname)
+                    continue
+                else
+                    fid = fileread(fname);
+                end
                 time_loc = regexp(fid,'"time"');
                 ind_col = strfind(fid(time_loc:time_loc+10),': ');
                 ind_com = strfind(fid(time_loc:time_loc+30),',');
@@ -193,7 +197,6 @@ ylabel('$L^2$ Error','interpreter','latex')
 hold off
 
 subplot(1,3,2)
-set(gcf,'Position',[x0 y0 width height],'color','w')
 loglog(dx,squeeze(err_arr(:,1,2)),'k+-')
 hold on
 loglog(dx,squeeze(err_arr(:,2,2)),'kx-')
@@ -206,7 +209,12 @@ xlabel('$\Delta x$','interpreter','latex')
 hold off
 
 subplot(1,3,3)
-
+loglog(dx,squeeze(err_arr(:,3,3)),'ko-')
+hold on
+loglog(dx,squeeze(err_arr(:,4,3)),'ks-')
+loglog(dx,squeeze(err_arr(:,5,3)),'kd-')
+set(gca,'Fontsize',14)
+xlabel('$\Delta x$','interpreter','latex')
 
 %%
 
