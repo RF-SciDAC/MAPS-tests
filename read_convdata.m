@@ -1,5 +1,5 @@
 
-dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/AMG/sovinec-NFpreprint/dgk500/';
+dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
 prefix = 'Transport2D-Parallel';
 refine = [0,1,2,3,4,5];
 order = [1,2,3,4,5];
@@ -20,6 +20,13 @@ for jj=1:length(refine)
 %                 abort_arr(jj,kk,ll) = NaN;
 %                 continue
 %             end
+            if ll==1
+                dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/';
+            elseif ll==2
+                dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/';
+            elseif ll==3
+                dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
+            end
             
             if length(order)~=1
                 filepath = strcat(dir_path,'/chi',num2str(chiPara(ll)),'/r',...
@@ -35,7 +42,7 @@ for jj=1:length(refine)
                 noconv_arr(jj,kk,ll) = NaN;
                 abort_arr(jj,kk,ll) = NaN;
                 err_arr(jj,kk,ll) = NaN;
-%                 fprintf('Directory does not exist: %s\n',filepath)
+                fprintf('Directory does not exist: %s\n',filepath)
                 continue
             end
             
@@ -183,38 +190,53 @@ for ii = 2:length(refine)
 end
 
 figure(1)
-subplot(1,3,1)
+subplot(1,4,1)
 set(gcf,'Position',[x0 y0 width height],'color','w')
 loglog(dx,squeeze(err_arr(:,1,1)),'k+-')
 hold on
 loglog(dx,squeeze(err_arr(:,2,1)),'kx-')
 loglog(dx,squeeze(err_arr(:,3,1)),'ko-')
-set(gca,'Fontsize',14)
+set(gca,'Fontsize',10)
+% ylim([5e-7,1e-1])
 xlabel('$\Delta x$','interpreter','latex')
 ylabel('$L^2$ Error','interpreter','latex')
+xlim([min(dx) max(dx)])
 % legend({'O1','O2','O3'},'interpreter','latex','location','northwest',...
 %     'NumColumns',3)
 hold off
 
-subplot(1,3,2)
-loglog(dx,squeeze(err_arr(:,1,2)),'k+-')
+subplot(1,4,2)
+line1 = loglog(dx,squeeze(err_arr(:,1,2)),'k+-');
 hold on
-loglog(dx,squeeze(err_arr(:,2,2)),'kx-')
-loglog(dx,squeeze(err_arr(:,3,2)),'ko-')
-loglog(dx,squeeze(err_arr(:,4,2)),'ks-')
-set(gca,'Fontsize',14)
+line2 = loglog(dx,squeeze(err_arr(:,2,2)),'kx-');
+line3 = loglog(dx,squeeze(err_arr(:,3,2)),'ko-');
+line4 = loglog(dx,squeeze(err_arr(:,4,2)),'ks-');
+set(gca,'Fontsize',10)
 xlabel('$\Delta x$','interpreter','latex')
+xlim([min(dx) max(dx)])
+% ah1=axes('position',get(gca,'position'),'visible','off');
+% loglog(dx,squeeze(err_arr(:,5,3)),'kd-')
 % ylabel('$L^2$ Error','interpreter','latex')
-% legend('O1','O2','O3','O4','interpreter','latex','location','west')
+% legend({'O1','O2','O3','O4','O5'},'interpreter','latex','location','north')
 hold off
 
-subplot(1,3,3)
+subplot(1,4,3)
+% loglog(dx,squeeze(err_arr(:,1,3)),'k+-')
 loglog(dx,squeeze(err_arr(:,3,3)),'ko-')
 hold on
+% loglog(dx,squeeze(err_arr(:,2,3)),'kx-')
 loglog(dx,squeeze(err_arr(:,4,3)),'ks-')
-loglog(dx,squeeze(err_arr(:,5,3)),'kd-')
-set(gca,'Fontsize',14)
+line5 = loglog(dx,squeeze(err_arr(:,5,3)),'kd-','linewidth',0.5);
+set(gca,'Fontsize',10)
+xlim([min(dx) max(dx)])
 xlabel('$\Delta x$','interpreter','latex')
+
+subplot(1,4,4)
+xlim([min(dx) max(dx)])
+axis off
+
+hL = legend([line1,line2,line3,line4,line5],...
+    {'O1','O2','O3','O4','O5'});
 
 %%
 
