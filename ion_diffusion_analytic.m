@@ -1,10 +1,8 @@
 
-sigx = 0.02;
-sigy = 0.02;
 mux = 0.5;
 muy = 0.5;
 D = 1.0;
-npts = 101;
+npts = 501;
 t = 0;
 tE = 0.0002;
 A = 1.0/(sqrt(4.0*D*pi*(t + tE)));
@@ -17,29 +15,34 @@ centrex = X - mux;
 centrey = Y - muy;
 % widthx = 2.0*sigx^2;
 % widthy = 2.0*sigy^2;
-widthx = 4.0*D*tE;
+sigx = sqrt(2.0*D*(t+tE));
+sigy = sigx;
+widthx = 2.0*sigx^2;
 widthy = widthx;
 
-% GaussInit = A*exp(-((centrex^2 + centrey^2)/(4.0*D*(t+tE))));
+% Gauss2D = A*exp(-(centrex.^2 + centrey.^2)/(4.0*D*(t+tE)));
 
-Gauss2D = A*exp(-((centrex.^2/(4.0*D*(t+tE))) + (centrey.^2/(4.0*D*(t+tE)))));
+Gauss2D = A*exp(-((centrex.^2/widthx) + (centrey.^2/widthy)));
 
 Gauss1Dx = Gauss2D(round(npts/2),:);
 
 %%
 
-t = [0.000299307,0.00134925];
+t = [1.96565e-4,6.76079e-4,1.69351e-3];
 
 A = 1.0/(sqrt(4.0*D*pi*(t(1) + tE)));
+sigx = sqrt(2.0*D*(t(1)+tE));
+sigy = sigx;
+widthx = 2.0*sigx^2;
+widthy = widthx;
 
-Gauss2D_exact = A*exp(-((centrex.^2/(4.0*D*(t(1)+tE))) +...
-    (centrey.^2/(4.0*D*(t(1)+tE)))));
+Gauss2D_exact = A*exp(-((centrex.^2/widthx) + (centrey.^2/widthy)));
 
 Gauss1D_exact = Gauss2D_exact(round(npts/2),:);
 
 figure(1)
 set(gcf,'color','white')
-contourf(X,Y,Gauss2D,'linestyle','none')
+contourf(X,Y,Gauss2D_exact,'linestyle','none')
 colormap(flipud(gray))
 colorbar;
 caxis([0 20])
@@ -58,9 +61,12 @@ ylim([0 20])
 %%
 
 A = 1.0/(sqrt(4.0*D*pi*(t(2) + tE)));
+sigx = sqrt(2.0*D*(t(2)+tE));
+sigy = sigx;
+widthx = 2.0*sigx^2;
+widthy = widthx;
 
-Gauss2D_exact = A*exp(-((centrex.^2/(4.0*D*(t(2)+tE))) +...
-    (centrey.^2/(4.0*D*(t(2)+tE)))));
+Gauss2D_exact = A*exp(-((centrex.^2/widthx) + (centrey.^2/widthy)));
 
 Gauss1D_exact = Gauss2D_exact(round(npts/2),:);
 
