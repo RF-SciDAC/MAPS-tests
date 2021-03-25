@@ -21,7 +21,7 @@ for jj=1:length(refine)
 %                 continue
 %             end
             if ll==1
-                dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/AMG/sovinec-NFpreprint';
+                dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/AMG/sovinec-NFpreprint/';
             elseif ll==2
                 dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/AMG/sovinec-NFpreprint/dgk100';
             elseif ll==3
@@ -196,6 +196,9 @@ loglog(dx,squeeze(err_arr(:,1,1)),'k+-')
 hold on
 loglog(dx,squeeze(err_arr(:,2,1)),'kx-')
 loglog(dx,squeeze(err_arr(:,3,1)),'ko-')
+loglog(dx,dx.^2,'r+-')
+loglog(dx,dx.^3,'rx-')
+loglog(dx(1:3),1.0e-1*dx(1:3).^4,'ro-')
 set(gca,'Fontsize',10)
 % ylim([5e-7,1e-1])
 xlabel('$\Delta x$','interpreter','latex')
@@ -214,6 +217,10 @@ hold on
 line2 = loglog(dx,squeeze(err_arr(:,2,2)),'kx-');
 line3 = loglog(dx,squeeze(err_arr(:,3,2)),'ko-');
 line4 = loglog(dx,squeeze(err_arr(:,4,2)),'ks-');
+loglog(dx(4:6),1.0e4*dx(4:6).^2,'r+-')
+loglog(dx,1.0e2*dx.^3,'rx-')
+loglog(dx,1.0e1*dx.^4,'ro-')
+loglog(dx(1:4),1.0e-2*dx(1:4).^5,'rs-')
 set(gca,'Fontsize',10)
 xlabel('$\Delta x$','interpreter','latex')
 xlim([min(dx) max(dx)])
@@ -221,7 +228,7 @@ xlim([min(dx) max(dx)])
 % loglog(dx,squeeze(err_arr(:,5,3)),'kd-')
 % ylabel('$L^2$ Error','interpreter','latex')
 % legend({'O1','O2','O3','O4','O5'},'interpreter','latex','location','north')
-text(0.8,0.98,'b)','Units', 'Normalized', 'VerticalAlignment', 'Top','FontWeight','bold',...
+text(0.6,0.98,'b)','Units', 'Normalized', 'VerticalAlignment', 'Top','FontWeight','bold',...
     'Fontsize',12,...
                 'color','black')
 hold off
@@ -233,6 +240,9 @@ hold on
 % loglog(dx,squeeze(err_arr(:,2,3)),'kx-')
 loglog(dx,squeeze(err_arr(:,4,3)),'ks-')
 line5 = loglog(dx,squeeze(err_arr(:,5,3)),'kd-','linewidth',0.5);
+loglog(dx(1:5),1.0e3*dx(1:5).^4,'ro-')
+loglog(dx(1:3),1.0e2*dx(1:3).^5,'rs-')
+loglog(dx(1:2),1.0e-1*dx(1:2).^6,'-rd')
 set(gca,'Fontsize',10)
 xlim([min(dx) max(dx)])
 xlabel('$\Delta x$','interpreter','latex')

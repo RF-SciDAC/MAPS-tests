@@ -54,6 +54,9 @@ plot(x,Gauss1Dx,'k-')
 ylim([0 20])
 ylabel('$n_i$','interpreter','latex')
 xlabel('Position','interpreter','latex')
+text(0.07,0.98,'$t=0$','Units', 'Normalized', 'VerticalAlignment', 'Top','FontWeight','bold',...
+    'Fontsize',16,...
+                'color','black','interpreter','latex')
 
 subplot(1,3,2)
 set(gcf,'color','white')
@@ -61,6 +64,9 @@ plot(x,Gauss1D_exact,'k-')
 ylim([0 20])
 yticks([])
 xlabel('Position','interpreter','latex')
+text(0.07,0.98,'$t=3\Delta t$','Units', 'Normalized', 'VerticalAlignment', 'Top','FontWeight','bold',...
+    'Fontsize',16,...
+                'color','black','interpreter','latex')
 
 %%
 
@@ -80,6 +86,9 @@ plot(x,Gauss1D_exact,'k-')
 ylim([0 20])
 yticks([])
 xlabel('Position','interpreter','latex')
+text(0.07,0.98,'$t=6\Delta t$','Units', 'Normalized', 'VerticalAlignment', 'Top','FontWeight','bold',...
+    'Fontsize',16,...
+                'color','black','interpreter','latex')
 
 
 
