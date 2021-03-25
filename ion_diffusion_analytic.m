@@ -67,6 +67,8 @@ xlabel('Position','interpreter','latex')
 text(0.07,0.98,'$t=3\Delta t$','Units', 'Normalized', 'VerticalAlignment', 'Top','FontWeight','bold',...
     'Fontsize',16,...
                 'color','black','interpreter','latex')
+            
+Sin2D_exact = ((2.0*pi^2)*exp(-2.0*pi^2*0.0492602))*sin(pi.*X).*sin(pi.*Y);
 
 %%
 
@@ -89,6 +91,10 @@ xlabel('Position','interpreter','latex')
 text(0.07,0.98,'$t=6\Delta t$','Units', 'Normalized', 'VerticalAlignment', 'Top','FontWeight','bold',...
     'Fontsize',16,...
                 'color','black','interpreter','latex')
+            
+%%
+
+
 
 
 
