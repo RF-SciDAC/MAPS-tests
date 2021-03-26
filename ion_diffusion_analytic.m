@@ -67,8 +67,7 @@ xlabel('Position','interpreter','latex')
 text(0.07,0.98,'$t=3\Delta t$','Units', 'Normalized', 'VerticalAlignment', 'Top','FontWeight','bold',...
     'Fontsize',16,...
                 'color','black','interpreter','latex')
-            
-Sin2D_exact = ((2.0*pi^2)*exp(-2.0*pi^2*0.0492602))*sin(pi.*X).*sin(pi.*Y);
+           
 
 %%
 
@@ -94,6 +93,65 @@ text(0.07,0.98,'$t=6\Delta t$','Units', 'Normalized', 'VerticalAlignment', 'Top'
             
 %%
 
+% t = [0,0.01,0.03,0.07,0.115204,0.174623];
+t = [0.0,0.01,0.03];
+levels = linspace(0,1,50);
+
+x0 = 0;
+y0 = 0;
+width = 252*2;
+height = 252/1.5;
+
+for ii=1:length(t)
+    
+    Sin2D_exact = ((1.0)*exp(-2.0*pi^2*t(ii)))*sin(pi.*X).*sin(pi.*Y);
+    Sin1D_exact = Sin2D_exact(round(npts/2),:);
+    
+    figure(3)
+    set(gcf,'Position',[x0 y0 width height],'color','white')
+    subplot(1,3,ii)
+    plot(x,Sin1D_exact,'r-','linewidth',1)
+    xlabel('Position','interpreter','latex')
+    ylim([0 1])
+    set(gca,'Fontsize',10)
+%     text(0.02,0.98,['$t =$ ',num2str(t(ii)),' s'],'Units', 'Normalized', 'VerticalAlignment', 'Top','FontWeight','bold',...
+%     'Fontsize',12,...
+%                 'color','black','interpreter','latex')
+    
+    if ii==1
+        ylabel('Amplitude','interpreter','latex')
+    else
+        yticks([])
+    end
+    
+    figure(4)
+    set(gcf,'Position',[x0 y0 width height],'color','white')
+    subplot(1,3,ii)
+    contourf(x,y,Sin2D_exact,levels,'linestyle','none')
+    colormap(flipud(gray))
+    caxis([0 1])
+    hold on
+    plot(x,0.5*ones(1,npts),'r-')
+    
+    xlabel('Position','interpreter','latex')
+    ylim([0 1])
+    set(gca,'Fontsize',10) 
+    
+    if ii==1
+        ylabel('Amplitude','interpreter','latex')
+    else
+        yticks([])
+    end
+    
+    if ii==3
+        colorbar;
+    else
+    end
+    
+    
+    
+    
+end
 
 
 
