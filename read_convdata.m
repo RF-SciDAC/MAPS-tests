@@ -1,5 +1,5 @@
 
-dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/AMG/sovinec-NFpreprint/dgk100';
+dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
 prefix = 'Transport2D-Parallel';
 refine = [0,1,2,3,4,5];
 order = [1,2,3,4,5];
@@ -21,11 +21,11 @@ for jj=1:length(refine)
 %                 continue
 %             end
             if ll==1
-                dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/AMG/sovinec-NFpreprint/';
+                dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/';
             elseif ll==2
-                dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/AMG/sovinec-NFpreprint/dgk100';
+                dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
             elseif ll==3
-                dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/AMG/sovinec-NFpreprint/dgk100';
+                dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
             end
             
             if length(order)~=1
@@ -192,13 +192,13 @@ end
 figure(1)
 subplot(1,4,1)
 set(gcf,'Position',[x0 y0 width height],'color','w')
-loglog(dx,squeeze(err_arr(:,1,1)),'k+-')
+loglog(dx,squeeze(err_arr(:,1,1)),'k+-','linewidth',1.)
 hold on
-loglog(dx,squeeze(err_arr(:,2,1)),'kx-')
-loglog(dx,squeeze(err_arr(:,3,1)),'ko-')
-loglog(dx,dx.^2,'r+-')
-loglog(dx,dx.^3,'rx-')
-loglog(dx(1:3),1.0e-1*dx(1:3).^4,'ro-')
+loglog(dx,squeeze(err_arr(:,2,1)),'kx-','linewidth',1.)
+loglog(dx,squeeze(err_arr(:,3,1)),'ko-','linewidth',1.)
+loglog(dx(2:6),(max(err_arr(:,1,1)/max(dx(2:6).^2)))*dx(2:6).^2,'r+--')
+loglog(dx(1:4),(max(err_arr(:,2,1)/max(dx(1:4).^3)))*dx(1:4).^3,'rx--')
+loglog(dx(1:3),(max(err_arr(:,3,1)/max(dx(1:3).^4)))*dx(1:3).^4,'ro--')
 set(gca,'Fontsize',10)
 % ylim([5e-7,1e-1])
 xlabel('$\Delta x$','interpreter','latex')
@@ -212,15 +212,15 @@ text(0.07,0.98,'a)','Units', 'Normalized', 'VerticalAlignment', 'Top','FontWeigh
 hold off
 
 subplot(1,4,2)
-line1 = loglog(dx,squeeze(err_arr(:,1,2)),'k+-');
+line1 = loglog(dx,squeeze(err_arr(:,1,2)),'k+-','linewidth',1.);
 hold on
-line2 = loglog(dx,squeeze(err_arr(:,2,2)),'kx-');
-line3 = loglog(dx,squeeze(err_arr(:,3,2)),'ko-');
-line4 = loglog(dx,squeeze(err_arr(:,4,2)),'ks-');
-loglog(dx(4:6),1.0e4*dx(4:6).^2,'r+-')
-loglog(dx,1.0e2*dx.^3,'rx-')
-loglog(dx,1.0e1*dx.^4,'ro-')
-loglog(dx(1:4),1.0e-2*dx(1:4).^5,'rs-')
+line2 = loglog(dx,squeeze(err_arr(:,2,2)),'kx-','linewidth',1.);
+line3 = loglog(dx,squeeze(err_arr(:,3,2)),'ko-','linewidth',1.);
+line4 = loglog(dx,squeeze(err_arr(:,4,2)),'ks-','linewidth',1.);
+loglog(dx(4:6),(max(err_arr(:,1,2)/max(dx(4:6).^2)))*dx(4:6).^2,'r+--')
+loglog(dx(1:5),(max(err_arr(:,2,2)/max(dx(1:5).^3)))*dx(1:5).^3,'rx--')
+loglog(dx(1:4),(max(err_arr(:,3,2)/max(dx(1:4).^4)))*dx(1:4).^4,'ro--')
+loglog(dx(1:3),(max(err_arr(:,4,2)/max(dx(1:3).^5)))*dx(1:3).^5,'rs--')
 set(gca,'Fontsize',10)
 xlabel('$\Delta x$','interpreter','latex')
 xlim([min(dx) max(dx)])
@@ -235,14 +235,14 @@ hold off
 
 subplot(1,4,3)
 % loglog(dx,squeeze(err_arr(:,1,3)),'k+-')
-loglog(dx,squeeze(err_arr(:,3,3)),'ko-')
+loglog(dx,squeeze(err_arr(:,3,3)),'ko-','linewidth',1.)
 hold on
 % loglog(dx,squeeze(err_arr(:,2,3)),'kx-')
-loglog(dx,squeeze(err_arr(:,4,3)),'ks-')
-line5 = loglog(dx,squeeze(err_arr(:,5,3)),'kd-','linewidth',0.5);
-loglog(dx(1:5),1.0e3*dx(1:5).^4,'ro-')
-loglog(dx(1:3),1.0e2*dx(1:3).^5,'rs-')
-loglog(dx(1:2),1.0e-1*dx(1:2).^6,'-rd')
+loglog(dx,squeeze(err_arr(:,4,3)),'ks-','linewidth',1.)
+line5 = loglog(dx,squeeze(err_arr(:,5,3)),'kd-','linewidth',1.);
+loglog(dx(1:4),(max(err_arr(:,3,3)/max(dx(1:4).^4)))*dx(1:4).^4,'ro--')
+loglog(dx(1:3),(max(err_arr(:,4,3)/max(dx(1:3).^5)))*dx(1:3).^5,'rs--')
+loglog(dx(1:2),(max(err_arr(:,5,3)/max(dx(1:2).^6)))*dx(1:2).^6,'rd--')
 set(gca,'Fontsize',10)
 xlim([min(dx) max(dx)])
 xlabel('$\Delta x$','interpreter','latex')

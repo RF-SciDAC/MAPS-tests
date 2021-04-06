@@ -26,6 +26,8 @@ Gauss2D = A*exp(-((centrex.^2/widthx) + (centrey.^2/widthy)));
 
 Gauss1Dx = Gauss2D(round(npts/2),:);
 
+visit_init = load('/Volumes/DATA/postdoc/mfem/ion_diffusion-unitySin2D/line-data/visit_ex_db_0dt.curve');
+
 %%
 
 t = [1.96565e-4,6.76079e-4,1.69351e-3];
@@ -57,6 +59,7 @@ xlabel('Position','interpreter','latex')
 text(0.07,0.98,'$t=0$','Units', 'Normalized', 'VerticalAlignment', 'Top','FontWeight','bold',...
     'Fontsize',16,...
                 'color','black','interpreter','latex')
+
 
 subplot(1,3,2)
 set(gcf,'color','white')
@@ -106,11 +109,18 @@ for ii=1:length(t)
     
     Sin2D_exact = ((1.0)*exp(-2.0*pi^2*t(ii)))*sin(pi.*X).*sin(pi.*Y);
     Sin1D_exact = Sin2D_exact(round(npts/2),:);
+    max(Sin2D_exact(:))
+    
+    filename = strcat('/Volumes/DATA/postdoc/mfem/ion_diffusion-unitySin2D/line-data/visit_ex_db_',...
+        num2str(ii-1),'dt.curve');
+    visit = load(filename);
     
     figure(3)
     set(gcf,'Position',[x0 y0 width height],'color','white')
     subplot(1,3,ii)
     plot(x,Sin1D_exact,'r-','linewidth',1)
+    hold on
+    plot(visit(:,1),visit(:,2),'k--')
     xlabel('Position','interpreter','latex')
     ylim([0 1])
     set(gca,'Fontsize',10)
@@ -122,6 +132,10 @@ for ii=1:length(t)
         ylabel('Amplitude','interpreter','latex')
     else
         yticks([])
+    end
+    
+    if ii==3
+        legend('Exact','Numerical','interprete','latex')
     end
     
     figure(4)
@@ -148,10 +162,25 @@ for ii=1:length(t)
     else
     end
     
-    
-    
-    
 end
+
+%%
+
+x0 = 0;
+y0 = 0;
+width = 252;
+height = 252;
+
+Sin2D_exact = ((1.0)*exp(-2.0*pi^2*t(3)))*sin(pi.*X).*sin(pi.*Y);
+Sin1D_exact = Sin2D_exact(round(npts/2),:);
+
+figure(5)
+set(gcf,'Position',[x0 y0 width height],'color','white')
+plot(x,Sin1D_exact,'r-','linewidth',1)
+xlabel('Position','interpreter','latex')
+ylim([0 1])
+set(gca,'Fontsize',10)
+ylabel('Amplitude','interpreter','latex')
 
 
 
