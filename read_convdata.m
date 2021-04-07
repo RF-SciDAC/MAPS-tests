@@ -1,5 +1,6 @@
 
-dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
+% dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
+% dir_path = '.';
 prefix = 'Transport2D-Parallel';
 refine = [0,1,2,3,4,5];
 order = [1,2,3,4,5];
@@ -11,29 +12,27 @@ err_arr = zeros(length(refine),length(order),length(chiPara));
 wallTime = NaN(length(refine),length(order),length(chiPara));
 dof = NaN(length(refine),length(order),length(chiPara));
 
+anisoTest = 1;
+chiTest = 0;
+iondiffTest = 0;
+neutdiffTest = 0;
+
 for jj=1:length(refine)
     for kk=1:length(order)
         for ll=1:length(chiPara)
             
-%             if jj==4 && kk==4
-%                 noconv_arr(jj,kk,ll) = NaN;
-%                 abort_arr(jj,kk,ll) = NaN;
-%                 continue
-%             end
-            if ll==1
-                dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/';
-            elseif ll==2
-                dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
-            elseif ll==3
-                dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
-            end
             
-            if length(order)~=1
+            if anisoTest
+                if ll==1
+                    dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/';
+                elseif ll==2
+                    dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
+                elseif ll==3
+                    dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
+                end
                 filepath = strcat(dir_path,'/chi',num2str(chiPara(ll)),'/r',...
                 num2str(refine(jj)),'_o',num2str(order(kk)),'/');
-%                 filepath = strcat(dir_path,'/r',...
-%                 num2str(refine(jj)),'_o',num2str(order(kk)),'/');
-            elseif length(order)==1
+            elseif chiTest
                 filepath = strcat(dir_path,'/chi1.0e',num2str(chiPara(ll)),'/');
             end
 
