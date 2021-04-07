@@ -3,10 +3,10 @@ use warnings;
 use strict;
 
 # Need to edit file/dir paths to wherever these are living.
-my $transport = '../../mfem/miniapps/plasma/transport2d';
-my $root_dir = '../../mfem/miniapps/plasma/';
+my $transport = '~/mfem/miniapps/plasma/transport2d';
+my $root_dir = '~/mfem/miniapps/plasma/';
 my $input_path = '~/mfem-analysis/input-files/';
-my $mesh_path = '../../mfem/data/';
+my $mesh_path = '~/mfem/data/';
 
 my @chi = qw(1.0e3 1.0e4 1.0e5 1.0e6 1.0e7 1.0e8 1.0e9);
 foreach my $chi (@chi) {
