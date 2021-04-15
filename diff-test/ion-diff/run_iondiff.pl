@@ -18,7 +18,7 @@ for ($o = 1; $o < 4; $o = $o + 1) {
 		chdir($folder) or die "can't chdir $folder\n";	
 		open (my $file, ">", "output.out") or die "Could not open file: $!";
 	
-		$command = "mpirun -np 16 ".$transport." -rs ".$r." -o ".$o." -m ".$mesh_path."inline-quad.mesh"." -bc ".$input_path."transport2d_bcs.inp"." -ic ".$input_path."transport2d_ics.inp"." -ec ".$input_path."transport2d_ecs.inp"." -op 2 -term-flags '-1 1 -1 -1 -1' -l 1 -visit -dt 1.0e-2 -tf 200 -eqn-w '1 1 1 1 1' -vs 2 -p 0 -es ".$input_path."transport2d_ess.inp"." -srtol 1.0e-8 -satol 1.0e-8 -natol 1.0e-10 -nrtol 1.0e-10 -latol 1.0e-6 -lrtol 1.0e-6 -pt 1 -no-amr";	
+		$command = "mpirun -np 16 ".$transport." -rs ".$r." -o ".$o." -m ".$mesh_path."inline-quad.mesh"." -bc ".$input_path."transport2d_bcs.inp"." -ic ".$input_path."transport2d_ics.inp"." -ec ".$input_path."transport2d_ecs.inp"." -op 2 -term-flags '-1 1 -1 -1 -1' -l 1 -visit -dt 1.0e-2 -tf 0.03 -eqn-w '1 1 1 1 1' -vs 1 -p 0 -es ".$input_path."transport2d_ess.inp"." -natol 1.0e-10 -nrtol 1.0e-10 -latol 1.0e-6 -lrtol 1.0e-6 -pt 1 -no-amr";	
 
 		$output = `$command`;
 
