@@ -1,9 +1,10 @@
 
-dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
+% dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
+% dir_path = '.';
 prefix = 'Transport2D-Parallel';
 refine = [0,1,2,3,4,5];
 order = [1,2,3,4,5];
-chiPara = [3,6,9];
+chiPara = [3,4,5,6,7,8,9];
 
 noconv_arr = zeros(length(refine),length(order),length(chiPara));
 abort_arr = zeros(length(refine),length(order),length(chiPara));
@@ -11,30 +12,42 @@ err_arr = zeros(length(refine),length(order),length(chiPara));
 wallTime = NaN(length(refine),length(order),length(chiPara));
 dof = NaN(length(refine),length(order),length(chiPara));
 
+anisoTest = 0;
+chiTest = 0;
+iondiffTest = 1;
+neutdiffTest = 0;
+
 for jj=1:length(refine)
     for kk=1:length(order)
         for ll=1:length(chiPara)
             
-%             if jj==4 && kk==4
-%                 noconv_arr(jj,kk,ll) = NaN;
-%                 abort_arr(jj,kk,ll) = NaN;
-%                 continue
-%             end
-            if ll==1
-                dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/';
-            elseif ll==2
-                dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
-            elseif ll==3
-                dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
-            end
             
-            if length(order)~=1
+            if anisoTest
+                if ll==1
+                    dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/';
+                elseif ll==2
+                    dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
+                elseif ll==3
+                    dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
+                end
                 filepath = strcat(dir_path,'/chi',num2str(chiPara(ll)),'/r',...
                 num2str(refine(jj)),'_o',num2str(order(kk)),'/');
-%                 filepath = strcat(dir_path,'/r',...
-%                 num2str(refine(jj)),'_o',num2str(order(kk)),'/');
-            elseif length(order)==1
-                filepath = strcat(dir_path,'/chi1.0e',num2str(chiPara(ll)),'/');
+            elseif chiTest
+                if jj == 2 && kk == 3
+                    dir_path = strcat(pwd,'/chi-test');
+                    filepath = strcat(dir_path,'/chi1.0e',num2str(chiPara(ll)),'/');
+                else
+%                     fprintf('Case not run: %d, %d\n',refine(jj),order(kk))
+                    continue 
+                end
+            elseif iondiffTest
+                dir_path = strcat(pwd,'/diff-test/ion-diff');
+                filepath = strcat(dir_path,'/r',...
+                num2str(refine(jj)),'_o',num2str(order(kk)),'/');
+            elseif neutdiffTest
+                dir_path = '/diff-test/neut-diff'
+                filepath = strcat(dir_path,'/r',...
+                num2str(refine(jj)),'_o',num2str(order(kk)),'/');
             end
 
             dir_data = dir(filepath);
@@ -175,91 +188,89 @@ end
 
 %%
 
-x0 = 0;
-y0 = 0;
-width = 252*2;
-height = 252/1.5;
+if anisoTest
+    x0 = 0;
+    y0 = 0;
+    width = 252*2;
+    height = 252/1.5;
 
-dx = zeros(1,length(refine));
-dx(1) = 0.25;
+    dx = zeros(1,length(refine));
+    dx(1) = 0.25;
 
-for ii = 2:length(refine)
-    
-    dx(ii) = dx(ii-1)/2.0;
-    
-end
+    for ii = 2:length(refine)
 
-figure(1)
-subplot(1,4,1)
-set(gcf,'Position',[x0 y0 width height],'color','w')
-loglog(dx,squeeze(err_arr(:,1,1)),'k+-','linewidth',1.)
-hold on
-loglog(dx,squeeze(err_arr(:,2,1)),'kx-','linewidth',1.)
-loglog(dx,squeeze(err_arr(:,3,1)),'ko-','linewidth',1.)
-loglog(dx(2:6),(max(err_arr(:,1,1)/max(dx(2:6).^2)))*dx(2:6).^2,'r+--')
-loglog(dx(1:4),(max(err_arr(:,2,1)/max(dx(1:4).^3)))*dx(1:4).^3,'rx--')
-loglog(dx(1:3),(max(err_arr(:,3,1)/max(dx(1:3).^4)))*dx(1:3).^4,'ro--')
-set(gca,'Fontsize',10)
-% ylim([5e-7,1e-1])
-xlabel('$\Delta x$','interpreter','latex')
-ylabel('$L^2$ Error','interpreter','latex')
-xlim([min(dx) max(dx)])
-% legend({'O1','O2','O3'},'interpreter','latex','location','northwest',...
-%     'NumColumns',3)
-text(0.07,0.98,'a)','Units', 'Normalized', 'VerticalAlignment', 'Top','FontWeight','bold',...
-    'Fontsize',12,...
-                'color','black')
-hold off
+        dx(ii) = dx(ii-1)/2.0;
 
-subplot(1,4,2)
-line1 = loglog(dx,squeeze(err_arr(:,1,2)),'k+-','linewidth',1.);
-hold on
-line2 = loglog(dx,squeeze(err_arr(:,2,2)),'kx-','linewidth',1.);
-line3 = loglog(dx,squeeze(err_arr(:,3,2)),'ko-','linewidth',1.);
-line4 = loglog(dx,squeeze(err_arr(:,4,2)),'ks-','linewidth',1.);
-loglog(dx(4:6),(max(err_arr(:,1,2)/max(dx(4:6).^2)))*dx(4:6).^2,'r+--')
-loglog(dx(1:5),(max(err_arr(:,2,2)/max(dx(1:5).^3)))*dx(1:5).^3,'rx--')
-loglog(dx(1:4),(max(err_arr(:,3,2)/max(dx(1:4).^4)))*dx(1:4).^4,'ro--')
-loglog(dx(1:3),(max(err_arr(:,4,2)/max(dx(1:3).^5)))*dx(1:3).^5,'rs--')
-set(gca,'Fontsize',10)
-xlabel('$\Delta x$','interpreter','latex')
-xlim([min(dx) max(dx)])
-% ah1=axes('position',get(gca,'position'),'visible','off');
-% loglog(dx,squeeze(err_arr(:,5,3)),'kd-')
-% ylabel('$L^2$ Error','interpreter','latex')
-% legend({'O1','O2','O3','O4','O5'},'interpreter','latex','location','north')
-text(0.6,0.98,'b)','Units', 'Normalized', 'VerticalAlignment', 'Top','FontWeight','bold',...
-    'Fontsize',12,...
-                'color','black')
-hold off
+    end
 
-subplot(1,4,3)
-% loglog(dx,squeeze(err_arr(:,1,3)),'k+-')
-loglog(dx,squeeze(err_arr(:,3,3)),'ko-','linewidth',1.)
-hold on
-% loglog(dx,squeeze(err_arr(:,2,3)),'kx-')
-loglog(dx,squeeze(err_arr(:,4,3)),'ks-','linewidth',1.)
-line5 = loglog(dx,squeeze(err_arr(:,5,3)),'kd-','linewidth',1.);
-loglog(dx(1:4),(max(err_arr(:,3,3)/max(dx(1:4).^4)))*dx(1:4).^4,'ro--')
-loglog(dx(1:3),(max(err_arr(:,4,3)/max(dx(1:3).^5)))*dx(1:3).^5,'rs--')
-loglog(dx(1:2),(max(err_arr(:,5,3)/max(dx(1:2).^6)))*dx(1:2).^6,'rd--')
-set(gca,'Fontsize',10)
-xlim([min(dx) max(dx)])
-xlabel('$\Delta x$','interpreter','latex')
-text(0.07,0.98,'c)','Units', 'Normalized', 'VerticalAlignment', 'Top','FontWeight','bold',...
-    'Fontsize',12,...
-                'color','black')
+    figure(1)
+    subplot(1,4,1)
+    set(gcf,'Position',[x0 y0 width height],'color','w')
+    loglog(dx,squeeze(err_arr(:,1,1)),'k+-','linewidth',1.)
+    hold on
+    loglog(dx,squeeze(err_arr(:,2,1)),'kx-','linewidth',1.)
+    loglog(dx,squeeze(err_arr(:,3,1)),'ko-','linewidth',1.)
+    loglog(dx(2:6),(max(err_arr(:,1,1)/max(dx(2:6).^2)))*dx(2:6).^2,'r+--')
+    loglog(dx(1:4),(max(err_arr(:,2,1)/max(dx(1:4).^3)))*dx(1:4).^3,'rx--')
+    loglog(dx(1:3),(max(err_arr(:,3,1)/max(dx(1:3).^4)))*dx(1:3).^4,'ro--')
+    set(gca,'Fontsize',10)
+    % ylim([5e-7,1e-1])
+    xlabel('$\Delta x$','interpreter','latex')
+    ylabel('$L^2$ Error','interpreter','latex')
+    xlim([min(dx) max(dx)])
+    % legend({'O1','O2','O3'},'interpreter','latex','location','northwest',...
+    %     'NumColumns',3)
+    text(0.07,0.98,'a)','Units', 'Normalized', 'VerticalAlignment', 'Top','FontWeight','bold',...
+        'Fontsize',12,...
+                    'color','black')
+    hold off
 
-subplot(1,4,4)
-xlim([min(dx) max(dx)])
-axis off
+    subplot(1,4,2)
+    line1 = loglog(dx,squeeze(err_arr(:,1,2)),'k+-','linewidth',1.);
+    hold on
+    line2 = loglog(dx,squeeze(err_arr(:,2,2)),'kx-','linewidth',1.);
+    line3 = loglog(dx,squeeze(err_arr(:,3,2)),'ko-','linewidth',1.);
+    line4 = loglog(dx,squeeze(err_arr(:,4,2)),'ks-','linewidth',1.);
+    loglog(dx(4:6),(max(err_arr(:,1,2)/max(dx(4:6).^2)))*dx(4:6).^2,'r+--')
+    loglog(dx(1:5),(max(err_arr(:,2,2)/max(dx(1:5).^3)))*dx(1:5).^3,'rx--')
+    loglog(dx(1:4),(max(err_arr(:,3,2)/max(dx(1:4).^4)))*dx(1:4).^4,'ro--')
+    loglog(dx(1:3),(max(err_arr(:,4,2)/max(dx(1:3).^5)))*dx(1:3).^5,'rs--')
+    set(gca,'Fontsize',10)
+    xlabel('$\Delta x$','interpreter','latex')
+    xlim([min(dx) max(dx)])
+    % ah1=axes('position',get(gca,'position'),'visible','off');
+    % loglog(dx,squeeze(err_arr(:,5,3)),'kd-')
+    % ylabel('$L^2$ Error','interpreter','latex')
+    % legend({'O1','O2','O3','O4','O5'},'interpreter','latex','location','north')
+    text(0.6,0.98,'b)','Units', 'Normalized', 'VerticalAlignment', 'Top','FontWeight','bold',...
+        'Fontsize',12,...
+                    'color','black')
+    hold off
 
-hL = legend([line1,line2,line3,line4,line5],...
-    {'O1','O2','O3','O4','O5'});
+    subplot(1,4,3)
+    % loglog(dx,squeeze(err_arr(:,1,3)),'k+-')
+    loglog(dx,squeeze(err_arr(:,3,3)),'ko-','linewidth',1.)
+    hold on
+    % loglog(dx,squeeze(err_arr(:,2,3)),'kx-')
+    loglog(dx,squeeze(err_arr(:,4,3)),'ks-','linewidth',1.)
+    line5 = loglog(dx,squeeze(err_arr(:,5,3)),'kd-','linewidth',1.);
+    loglog(dx(1:4),(max(err_arr(:,3,3)/max(dx(1:4).^4)))*dx(1:4).^4,'ro--')
+    loglog(dx(1:3),(max(err_arr(:,4,3)/max(dx(1:3).^5)))*dx(1:3).^5,'rs--')
+    loglog(dx(1:2),(max(err_arr(:,5,3)/max(dx(1:2).^6)))*dx(1:2).^6,'rd--')
+    set(gca,'Fontsize',10)
+    xlim([min(dx) max(dx)])
+    xlabel('$\Delta x$','interpreter','latex')
+    text(0.07,0.98,'c)','Units', 'Normalized', 'VerticalAlignment', 'Top','FontWeight','bold',...
+        'Fontsize',12,...
+                    'color','black')
 
-%%
+    subplot(1,4,4)
+    xlim([min(dx) max(dx)])
+    axis off
 
-if length(order)~=1
+    hL = legend([line1,line2,line3,line4,line5],...
+        {'O1','O2','O3','O4','O5'});
+
     refineMesh = meshgrid(refine)';
     refineMesh(:,end) = [];
     orderMesh = meshgrid(order);
@@ -373,11 +384,11 @@ if length(order)~=1
         '$\chi_{\parallel} = 10^9$','interpreter','latex','location',...
         'northwest')
 
-elseif length(order)==1
+elseif chiTest
     
-    ab_ind = find(abort_arr);
-    nc_ind = find((noconv_arr) & ~(abort_arr));
-    co_ind = find(~noconv_arr);
+    ab_ind = find(abort_arr(2,3,:));
+    nc_ind = find((noconv_arr(2,3,:)) & ~(abort_arr(2,3,:)));
+    co_ind = find(~noconv_arr(2,3,:));
     
     figure(5)
     set(gcf,'color','w','Position',[0 0 900 400])
@@ -387,7 +398,7 @@ elseif length(order)==1
     semilogy(chiPara(nc_ind),squeeze(err_arr(1,1,nc_ind)),'xb',...
         'markersize',15,'linewidth',2)
     xlim([min(chiPara), max(chiPara)])
-    ylim([min(err_arr(1,1,:)) max(err_arr(1,1,nc_ind)+1.0e-3)])
+%     ylim([min(err_arr(1,1,:)) max(err_arr(1,1,nc_ind)+1.0e-3)])
     xlabel('log$_{10} \chi_{\parallel}$','interpreter','latex')
     ylabel('$L^2$ Error','interpreter','latex')
     legend('Converged to SS','GMRES: No convergence!','location',...
