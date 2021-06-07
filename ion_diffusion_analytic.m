@@ -2,7 +2,7 @@
 mux = 0.5;
 muy = 0.5;
 D = 1.0;
-npts = 501;
+npts = 104;
 t = 0;
 tE = 0.0002;
 A = 1.0/(sqrt(4.0*D*pi*(t + tE)));
@@ -26,7 +26,7 @@ Gauss2D = A*exp(-((centrex.^2/widthx) + (centrey.^2/widthy)));
 
 Gauss1Dx = Gauss2D(round(npts/2),:);
 
-visit_init = load('/Volumes/DATA/postdoc/mfem/ion_diffusion-unitySin2D/line-data/visit_ex_db_0dt.curve');
+% visit_init = load('/Volumes/DATA/postdoc/mfem/ion_diffusion-unitySin2D/line-data/visit_ex_db_0dt.curve');
 
 %%
 
@@ -97,7 +97,8 @@ text(0.07,0.98,'$t=6\Delta t$','Units', 'Normalized', 'VerticalAlignment', 'Top'
 %%
 
 % t = [0,0.01,0.03,0.07,0.115204,0.174623];
-t = [0.0,0.01,0.03];
+% t = [0.0,0.01,0.03];
+t = [0, 0.113909,0.03];
 levels = linspace(0,1,50);
 
 x0 = 0;

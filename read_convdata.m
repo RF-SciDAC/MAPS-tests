@@ -13,8 +13,8 @@ wallTime = NaN(length(refine),length(order),length(chiPara));
 dof = NaN(length(refine),length(order),length(chiPara));
 
 anisoTest = 0;
-chiTest = 0;
-iondiffTest = 1;
+chiTest = 1;
+iondiffTest = 0;
 neutdiffTest = 0;
 
 for jj=1:length(refine)
@@ -34,7 +34,7 @@ for jj=1:length(refine)
                 num2str(refine(jj)),'_o',num2str(order(kk)),'/');
             elseif chiTest
                 if jj == 2 && kk == 3
-                    dir_path = strcat(pwd,'/chi-test');
+                    dir_path = strcat(pwd,'/chi-test/namr-tenniter/');
                     filepath = strcat(dir_path,'/chi1.0e',num2str(chiPara(ll)),'/');
                 else
 %                     fprintf('Case not run: %d, %d\n',refine(jj),order(kk))
@@ -178,8 +178,13 @@ for jj=1:length(refine)
 
             time_final(jj,kk,ll) = time_arr(end,1);
 %             Ti_err_final(ii,jj) = err_Ti(end,1);
-
-            err_arr(jj,kk,ll) = err_Ti(end,1);
+            if anisoTest || chiTest
+                err_arr(jj,kk,ll) = err_Ti(end,1);
+            elseif iondiffTest
+                err_arr(jj,kk,ll) = err_nion(end,1);
+            elseif neutdiffTest
+                err_arr(jj,kk,ll) = err_nneut(end,1);
+            end
         
             clear err_data time_arr err_nneut err_nion err_momion err_Ti err_Te
         end
@@ -392,10 +397,10 @@ elseif chiTest
     
     figure(5)
     set(gcf,'color','w','Position',[0 0 900 400])
-    semilogy(chiPara(co_ind),squeeze(err_arr(1,1,co_ind)),'k*',...
+    semilogy(chiPara(co_ind),squeeze(err_arr(2,3,co_ind)),'k*',...
         'markersize',15,'linewidth',2)
     hold on
-    semilogy(chiPara(nc_ind),squeeze(err_arr(1,1,nc_ind)),'xb',...
+    semilogy(chiPara(nc_ind),squeeze(err_arr(2,3,nc_ind)),'xb',...
         'markersize',15,'linewidth',2)
     xlim([min(chiPara), max(chiPara)])
 %     ylim([min(err_arr(1,1,:)) max(err_arr(1,1,nc_ind)+1.0e-3)])
