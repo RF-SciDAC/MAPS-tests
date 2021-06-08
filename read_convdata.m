@@ -4,16 +4,17 @@
 prefix = 'Transport2D-Parallel';
 refine = [0,1,2,3,4,5];
 order = [1,2,3,4,5];
-chiPara = [3,4,5,6,7,8,9];
+chiPara = [3,6,9];
 
 noconv_arr = zeros(length(refine),length(order),length(chiPara));
 abort_arr = zeros(length(refine),length(order),length(chiPara));
 err_arr = zeros(length(refine),length(order),length(chiPara));
 wallTime = NaN(length(refine),length(order),length(chiPara));
+time_final = zeros(length(refine),length(order),length(chiPara));
 dof = NaN(length(refine),length(order),length(chiPara));
 
-anisoTest = 0;
-chiTest = 1;
+anisoTest = 1;
+chiTest = 0;
 iondiffTest = 0;
 neutdiffTest = 0;
 
@@ -21,16 +22,16 @@ for jj=1:length(refine)
     for kk=1:length(order)
         for ll=1:length(chiPara)
             
-            
             if anisoTest
-                if ll==1
-                    dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/';
-                elseif ll==2
-                    dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
-                elseif ll==3
-                    dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
-                end
-                filepath = strcat(dir_path,'/chi',num2str(chiPara(ll)),'/r',...
+%                 if ll==1
+%                     dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/';
+%                 elseif ll==2
+%                     dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
+%                 elseif ll==3
+%                     dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
+%                 end
+                dir_path = '/Volumes/DATA/postdoc/mfem/benchmarking/sovinec_updatedint/AMG';
+                filepath = strcat(dir_path,'/chi1.0e',num2str(chiPara(ll)),'/r',...
                 num2str(refine(jj)),'_o',num2str(order(kk)),'/');
             elseif chiTest
                 if jj == 2 && kk == 3
@@ -179,7 +180,7 @@ for jj=1:length(refine)
             time_final(jj,kk,ll) = time_arr(end,1);
 %             Ti_err_final(ii,jj) = err_Ti(end,1);
             if anisoTest || chiTest
-                err_arr(jj,kk,ll) = err_Ti(end,1);
+                err_arr(jj,kk,ll) = err_nion(end,1);
             elseif iondiffTest
                 err_arr(jj,kk,ll) = err_nion(end,1);
             elseif neutdiffTest
@@ -215,9 +216,9 @@ if anisoTest
     hold on
     loglog(dx,squeeze(err_arr(:,2,1)),'kx-','linewidth',1.)
     loglog(dx,squeeze(err_arr(:,3,1)),'ko-','linewidth',1.)
-    loglog(dx(2:6),(max(err_arr(:,1,1)/max(dx(2:6).^2)))*dx(2:6).^2,'r+--')
-    loglog(dx(1:4),(max(err_arr(:,2,1)/max(dx(1:4).^3)))*dx(1:4).^3,'rx--')
-    loglog(dx(1:3),(max(err_arr(:,3,1)/max(dx(1:3).^4)))*dx(1:3).^4,'ro--')
+%     loglog(dx(2:6),(max(err_arr(:,1,1)/max(dx(2:6).^2)))*dx(2:6).^2,'r+--')
+%     loglog(dx(1:4),(max(err_arr(:,2,1)/max(dx(1:4).^3)))*dx(1:4).^3,'rx--')
+%     loglog(dx(1:3),(max(err_arr(:,3,1)/max(dx(1:3).^4)))*dx(1:3).^4,'ro--')
     set(gca,'Fontsize',10)
     % ylim([5e-7,1e-1])
     xlabel('$\Delta x$','interpreter','latex')
@@ -236,10 +237,10 @@ if anisoTest
     line2 = loglog(dx,squeeze(err_arr(:,2,2)),'kx-','linewidth',1.);
     line3 = loglog(dx,squeeze(err_arr(:,3,2)),'ko-','linewidth',1.);
     line4 = loglog(dx,squeeze(err_arr(:,4,2)),'ks-','linewidth',1.);
-    loglog(dx(4:6),(max(err_arr(:,1,2)/max(dx(4:6).^2)))*dx(4:6).^2,'r+--')
-    loglog(dx(1:5),(max(err_arr(:,2,2)/max(dx(1:5).^3)))*dx(1:5).^3,'rx--')
-    loglog(dx(1:4),(max(err_arr(:,3,2)/max(dx(1:4).^4)))*dx(1:4).^4,'ro--')
-    loglog(dx(1:3),(max(err_arr(:,4,2)/max(dx(1:3).^5)))*dx(1:3).^5,'rs--')
+%     loglog(dx(4:6),(max(err_arr(:,1,2)/max(dx(4:6).^2)))*dx(4:6).^2,'r+--')
+%     loglog(dx(1:5),(max(err_arr(:,2,2)/max(dx(1:5).^3)))*dx(1:5).^3,'rx--')
+%     loglog(dx(1:4),(max(err_arr(:,3,2)/max(dx(1:4).^4)))*dx(1:4).^4,'ro--')
+%     loglog(dx(1:3),(max(err_arr(:,4,2)/max(dx(1:3).^5)))*dx(1:3).^5,'rs--')
     set(gca,'Fontsize',10)
     xlabel('$\Delta x$','interpreter','latex')
     xlim([min(dx) max(dx)])
@@ -259,9 +260,9 @@ if anisoTest
     % loglog(dx,squeeze(err_arr(:,2,3)),'kx-')
     loglog(dx,squeeze(err_arr(:,4,3)),'ks-','linewidth',1.)
     line5 = loglog(dx,squeeze(err_arr(:,5,3)),'kd-','linewidth',1.);
-    loglog(dx(1:4),(max(err_arr(:,3,3)/max(dx(1:4).^4)))*dx(1:4).^4,'ro--')
-    loglog(dx(1:3),(max(err_arr(:,4,3)/max(dx(1:3).^5)))*dx(1:3).^5,'rs--')
-    loglog(dx(1:2),(max(err_arr(:,5,3)/max(dx(1:2).^6)))*dx(1:2).^6,'rd--')
+%     loglog(dx(1:4),(max(err_arr(:,3,3)/max(dx(1:4).^4)))*dx(1:4).^4,'ro--')
+%     loglog(dx(1:3),(max(err_arr(:,4,3)/max(dx(1:3).^5)))*dx(1:3).^5,'rs--')
+%     loglog(dx(1:2),(max(err_arr(:,5,3)/max(dx(1:2).^6)))*dx(1:2).^6,'rd--')
     set(gca,'Fontsize',10)
     xlim([min(dx) max(dx)])
     xlabel('$\Delta x$','interpreter','latex')
@@ -284,7 +285,7 @@ if anisoTest
     C = colormap(plasma(numel(orderMesh)));
 
 
-    for ii=7:-1:1
+    for ii=3:-1:1
 
         chiMesh = chiPara(ii)*ones(length(refine),length(order));
         temp_err = err_arr(:,:,ii);
