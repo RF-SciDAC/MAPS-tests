@@ -212,13 +212,13 @@ if anisoTest
     figure(1)
     subplot(1,4,1)
     set(gcf,'Position',[x0 y0 width height],'color','w')
-    loglog(dx,squeeze(err_arr(:,1,1)),'k+-','linewidth',1.)
+    loglog(dx,squeeze(err_arr(:,1,1)),'k+-','linewidth',1.5)
     hold on
-    loglog(dx,squeeze(err_arr(:,2,1)),'kx-','linewidth',1.)
-    loglog(dx,squeeze(err_arr(:,3,1)),'ko-','linewidth',1.)
-%     loglog(dx(2:6),(max(err_arr(:,1,1)/max(dx(2:6).^2)))*dx(2:6).^2,'r+--')
-%     loglog(dx(1:4),(max(err_arr(:,2,1)/max(dx(1:4).^3)))*dx(1:4).^3,'rx--')
-%     loglog(dx(1:3),(max(err_arr(:,3,1)/max(dx(1:3).^4)))*dx(1:3).^4,'ro--')
+    loglog(dx,squeeze(err_arr(:,2,1)),'kx-','linewidth',1.5)
+    loglog(dx,squeeze(err_arr(:,3,1)),'ko-','linewidth',1.5)
+    loglog(dx,(max(err_arr(:,1,1)/max(dx(2:6).^2)))*dx.^2,'r--')
+    loglog(dx,(max(err_arr(:,2,1)/max(dx(1:4).^3)))*dx.^3,'r--')
+    loglog(dx,(max(err_arr(:,3,1)/max(dx(1:3).^4)))*dx.^4,'r--')
     set(gca,'Fontsize',10)
     % ylim([5e-7,1e-1])
     xlabel('$\Delta x$','interpreter','latex')
@@ -232,15 +232,15 @@ if anisoTest
     hold off
 
     subplot(1,4,2)
-    line1 = loglog(dx,squeeze(err_arr(:,1,2)),'k+-','linewidth',1.);
+    line1 = loglog(dx,squeeze(err_arr(:,1,2)),'k+-','linewidth',1.5);
     hold on
-    line2 = loglog(dx,squeeze(err_arr(:,2,2)),'kx-','linewidth',1.);
-    line3 = loglog(dx,squeeze(err_arr(:,3,2)),'ko-','linewidth',1.);
-    line4 = loglog(dx,squeeze(err_arr(:,4,2)),'ks-','linewidth',1.);
-%     loglog(dx(4:6),(max(err_arr(:,1,2)/max(dx(4:6).^2)))*dx(4:6).^2,'r+--')
-%     loglog(dx(1:5),(max(err_arr(:,2,2)/max(dx(1:5).^3)))*dx(1:5).^3,'rx--')
-%     loglog(dx(1:4),(max(err_arr(:,3,2)/max(dx(1:4).^4)))*dx(1:4).^4,'ro--')
-%     loglog(dx(1:3),(max(err_arr(:,4,2)/max(dx(1:3).^5)))*dx(1:3).^5,'rs--')
+    line2 = loglog(dx,squeeze(err_arr(:,2,2)),'kx-','linewidth',1.5);
+    line3 = loglog(dx,squeeze(err_arr(:,3,2)),'ko-','linewidth',1.5);
+    line4 = loglog(dx,squeeze(err_arr(:,4,2)),'ks-','linewidth',1.5);
+    loglog(dx,(max(err_arr(:,1,2)/max(dx(4:6).^2)))*dx.^2,'r--')
+    loglog(dx,(max(err_arr(:,2,2)/max(dx(1:5).^3)))*dx.^3,'r--')
+    loglog(dx,(max(err_arr(:,3,2)/max(dx(1:4).^4)))*dx.^4,'r--')
+    loglog(dx,(max(err_arr(:,4,2)/max(dx(1:3).^5)))*dx.^5,'r--')
     set(gca,'Fontsize',10)
     xlabel('$\Delta x$','interpreter','latex')
     xlim([min(dx) max(dx)])
@@ -255,14 +255,14 @@ if anisoTest
 
     subplot(1,4,3)
     % loglog(dx,squeeze(err_arr(:,1,3)),'k+-')
-    loglog(dx,squeeze(err_arr(:,3,3)),'ko-','linewidth',1.)
+    loglog(dx,squeeze(err_arr(:,3,3)),'ko-','linewidth',1.5)
     hold on
     % loglog(dx,squeeze(err_arr(:,2,3)),'kx-')
-    loglog(dx,squeeze(err_arr(:,4,3)),'ks-','linewidth',1.)
-    line5 = loglog(dx,squeeze(err_arr(:,5,3)),'kd-','linewidth',1.);
-%     loglog(dx(1:4),(max(err_arr(:,3,3)/max(dx(1:4).^4)))*dx(1:4).^4,'ro--')
-%     loglog(dx(1:3),(max(err_arr(:,4,3)/max(dx(1:3).^5)))*dx(1:3).^5,'rs--')
-%     loglog(dx(1:2),(max(err_arr(:,5,3)/max(dx(1:2).^6)))*dx(1:2).^6,'rd--')
+    loglog(dx,squeeze(err_arr(:,4,3)),'ks-','linewidth',1.5)
+    line5 = loglog(dx,squeeze(err_arr(:,5,3)),'kd-','linewidth',1.5);
+    loglog(dx,(max(err_arr(1,3,3)/max(dx(1:4).^4)))*dx.^4,'r--')
+    loglog(dx,(max(err_arr(1,4,3)/max(dx(1:3).^5)))*dx.^5,'r--')
+    loglog(dx,(max(err_arr(1,5,3)/max(dx(1:2).^6)))*dx.^6,'r--')
     set(gca,'Fontsize',10)
     xlim([min(dx) max(dx)])
     xlabel('$\Delta x$','interpreter','latex')
