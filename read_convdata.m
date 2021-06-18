@@ -30,7 +30,7 @@ for jj=1:length(refine)
 %                 elseif ll==3
 %                     dir_path = '/Volumes/DATA/postdoc/mfem/convergence_tests/SLU/sovinec-NFpreprint/dgk100';
 %                 end
-                dir_path = '/Volumes/DATA/postdoc/mfem/benchmarking/sovinec_updatedint/AMG';
+                dir_path = '/Volumes/DATA/postdoc/mfem/benchmarking/sovinec_updatedint/SLU';
                 filepath = strcat(dir_path,'/chi1.0e',num2str(chiPara(ll)),'/r',...
                 num2str(refine(jj)),'_o',num2str(order(kk)),'/');
             elseif chiTest
