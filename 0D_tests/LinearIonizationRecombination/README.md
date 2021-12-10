@@ -25,8 +25,8 @@ Ionization Source = 1.5 * rho_n
 Recombination Source = 0.5 * rho_i
 
 These choices lead to the exact solutions:
-rho_n(t) = 0.5 + 0.5 * exp(-2*t)
-rho_i(t) = 1.5 - 0.5 * exp(-2*t)
+rho_n(t) = 0.5 + 0.5 * exp(-2 * t)
+rho_i(t) = 1.5 - 0.5 * exp(-2 * t)
 
 A suitable command line for this test problem would be:
 
