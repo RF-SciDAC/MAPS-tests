@@ -1,0 +1,24 @@
+set terminal png;
+
+set output 'test.png';
+test;
+
+rn(t) = 1.25 - 0.75 * tanh(1.5*t+0.346574);
+ri(t) = 0.75 + 0.75 * tanh(1.5*t+0.346574);
+
+set output "densities.png";
+set title 'Nonlinear Ionization/Recombination Test';
+set key at 10,1.4;
+plot 'transport2d_err_1e-7.out' using 1:(ri($1)) w l t 'Exact Ion Density', 'transport2d_err_1e-5.out' using 1:(4*$4) w p pt 12 lc 1 t 'Ion Density (tol = 1e-5)', 'transport2d_err_1e-7.out' using 1:(rn($1)) w l t 'Neutral Density', 'transport2d_err_1e-5.out' using 1:(4*$2) w p pt 12 lc 3 t 'Neutral Density (tol = 1e-5)';
+
+set output "neutral_density_err.png";
+set title 'Neutral Density Error in L^2 Norm (Nonlinear Case)';
+set key default;
+set xrange [0:4];
+plot 'transport2d_err_1e-3.out' using 1:($3/$2) w l t 'tol = 1e-3', 'transport2d_err_1e-4.out' using 1:($3/$2) w l t 'tol = 1e-4', 'transport2d_err_1e-5.out' using 1:($3/$2) w l t 'tol = 1e-5', 'transport2d_err_1e-6.out' using 1:($3/$2) w l t 'tol = 1e-6', 'transport2d_err_1e-7.out' using 1:($3/$2) w l t 'tol = 1e-7';
+
+set output "ion_density_err.png";
+set title 'Ion Density Error in L^2 Norm (Nonlinear Case)';
+set key default;
+set xrange [0:4];
+plot 'transport2d_err_1e-3.out' using 1:($5/$4) w l t 'tol = 1e-3', 'transport2d_err_1e-4.out' using 1:($5/$4) w l t 'tol = 1e-4', 'transport2d_err_1e-5.out' using 1:($5/$4) w l t 'tol = 1e-5', 'transport2d_err_1e-6.out' using 1:($5/$4) w l t 'tol = 1e-6', 'transport2d_err_1e-7.out' using 1:($5/$4) w l t 'tol = 1e-7';
