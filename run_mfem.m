@@ -1,6 +1,6 @@
 get_values = '~/mfem/miniapps/tools/get-values';
 transport = '~/mfem/miniapps/plasma/transport2d';
-input_dir = '~/Documents/git-repos/mfem-analysis/mom_test/';
+input_dir = '~/mfem-analysis/mom_test/';
 prefix = 'Transport2D-Parallel';
 
 [status,git_hash] = system('git rev-parse HEAD');
@@ -47,7 +47,7 @@ elseif mmsTest
         " -op 4 -l 1 -visit -dt 1.0e-12 -tf 1.0e-12 -eqn-w '1 1 1 1 1' -vs 1 -p 0 -es ",...
         strcat(input_dir,"/transport2d_ess.inp"),...
         " -term-flags '-1 -1 11 -1 -1' -natol 1e-12 -nrtol 1e-12 -latol 1e-12 ",...
-        "-lrtol 1e-12 -dza 0 -dzb 1e20 -fld-m '1 1 1 1 1' -no-amr > output.out");
+        "-lrtol 1e-12 -dza 0 -dzb 1e20 -fld-m '1 1 1 1 1' -no-amr > output.out")
 
         cd('../')
             
