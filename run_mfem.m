@@ -37,7 +37,7 @@ elseif mmsTest
 
         order = 3;
 
-        fprintf('Running transport2d for NP %d and order %d\n',npArray(ii),order)
+        fprintf('Running transport2d for NP %s and order %d\n',npArray(ii),order)
 
         mesh_path = '~/mfem-analysis/mom-test/';
 
@@ -48,6 +48,8 @@ elseif mmsTest
         strcat(input_dir,"/transport2d_ess.inp"),...
         " -term-flags '-1 -1 11 -1 -1' -natol 1e-12 -nrtol 1e-12 -latol 1e-12 ",...
         "-lrtol 1e-12 -dza 0 -dzb 1e20 -fld-m '1 1 1 1 1' -no-amr > output.out");
+
+        cd('../')
             
 %         system(command);
 %     [status,output] = system(command);
