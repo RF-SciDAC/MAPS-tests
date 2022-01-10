@@ -2,7 +2,6 @@ get_values = '~/mfem/miniapps/tools/get-values';
 transport = '~/mfem/miniapps/plasma/transport2d';
 input_dir = '~/mfem-analysis/mom-test/';
 prefix = 'Transport2D-Parallel';
-mesh_path = '~/Documents/MFEM/mfem/data/';
 
 [status,git_hash] = system('git rev-parse HEAD');
 s1 = '# Created from matlab git hash ';
@@ -37,6 +36,8 @@ elseif mmsTest
         npArray = ["032","064","128","256","512"];
 
         fprintf('Running transport2d for NP %d and order %d\n',npArray(ii),order)
+
+        mesh_path = '~/mfem-analysis/mom-test/';
 
         strcat(transport," -o ",num2str(order),...
         " -m ",strcat(mesh_path,'inline-quad.mesh')," -bc ",strcat(input_dir,"/transport2d_bcs.inp"),...
