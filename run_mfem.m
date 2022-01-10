@@ -11,6 +11,8 @@ header = [s1 s2];
 anisoTest = 0;
 mmsTest = 1;
 
+npArray = ["032","064","128","256","512"];
+
 if anisoTest
 
     mkdir(['/Volumes/DATA/postdoc/mfem/benchmarking/sovinec_' num2str(jj-1) '_' num2str(kk)])
@@ -33,7 +35,6 @@ elseif mmsTest
         cd(['O3_N' npArray(ii)])
 
         order = 3;
-        npArray = ["032","064","128","256","512"];
 
         fprintf('Running transport2d for NP %d and order %d\n',npArray(ii),order)
 
