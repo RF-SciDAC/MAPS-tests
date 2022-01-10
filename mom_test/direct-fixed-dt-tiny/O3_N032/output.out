@@ -1,0 +1,1578 @@
+Options used:
+   --mesh ../../slab_32.mesh
+   --bc-file ../../transport2d_bcs.inp
+   --ic-file ../../transport2d_ics.inp
+   --ec-file ../../transport2d_ecs.inp
+   --es-file ../../transport2d_ess.inp
+   --eqdsk-file 
+   --logging 1
+   --operator-test 4
+   --field-magnitudes '1 1 1 1 1'
+   --equation-weights '1 1 1 1 1'
+   --problem 4
+   --refine-serial 0
+   --refine-parallel 0
+   --disable-amr
+   --max-err -1
+   --hysteresis 0.25
+   --nc-limit 3
+   --amr-weights '1 1 1 1 1'
+   --order 3
+   --dg-sigma -1
+   --dg-kappa 16
+   --linear-abs-tolerance 1e-12
+   --linear-rel-tolerance 1e-12
+   --linear-max-iterations 1000
+   --linear-logging-level 3
+   --newton-abs-tolerance 1e-12
+   --newton-rel-tolerance 1e-12
+   --newton-max-iterations 10
+   --newton-logging-level 1
+   --steady-state-abs-tolerance 0
+   --steady-state-rel-tolerance -1
+   --prec-type 1
+   --prec-logging-level 0
+   --initial-tolerance 1e-05
+   --ode-tolerance 0.001
+   --ode-solver 2
+   --err-per-step
+   --ode-weights '1 1 1 1 1'
+   --kP 0
+   --kI 0.6
+   --kD 0
+   --dead-zone-min 0
+   --dead-zone-max 1e+20
+   --theta-max 2
+   --t-minimum 0
+   --t-final 1e-11
+   --time-step 1e-12
+   --cfl-number 0.3
+   --ion-charge 1
+   --ion-mass 1
+   --neutral-mass 2.0141018
+   --neutral-temp 3
+   --min-neutral-density 9e+14
+   --max-neutral-density 1e+15
+   --neutral-density-exp 0
+   --min-ion-density 1e+16
+   --max-ion-density 1e+18
+   --ion-density-exp 0
+   --min-ion-temp 1
+   --max-ion-temp 10
+   --ion-temp-exp 0
+   --min-electron-temp 10
+   --max-electron-temp 440
+   --electron-temp-exp 0
+   --total-B-magnitude 5
+   --poloidal-B-magnitude 0.5
+   --velocity 1000
+   --Di-perp 1
+   --Xi-perp 1
+   --Xe-perp 1
+   --equation-term-flags '-1 -1 11 -1 -1'
+   --visualization-flags '-1 -1 -1 -1 -1'
+   --visualization
+   --visit-datafiles
+   --ascii-datafiles
+   --no-check-gradient
+   --visualization-steps 1
+Device configuration: cpu
+Memory configuration: host-std
+Number of elements in initial mesh: 32
+Number of elements after serial refinement: 32
+0: Number of elements in parallel mesh: 32
+0: Number of elements after parallel refinement: 32
+Configuring initial conditions
+Reading initial conditions from ../../transport2d_ics.inp
+Found 'neutral_density' at position 63
+Found 'ion_density' at position 124
+Found 'ion_parallel_velocity' at position 215
+Found 'ion_temperature' at position 297
+Found 'electron_temperature' at position 385
+Configuring exact solutions
+Reading exact solutions from ../../transport2d_ess.inp
+Found 'neutral_density' at position 63
+Found 'ion_density' at position 124
+Found 'ion_parallel_velocity' at position 215
+Found 'ion_temperature' at position 297
+Found 'electron_temperature' at position 385
+Number of unknowns per field: 512
+Total number of unknowns:     2560
+SinXSqr1D::SetTime(0)
+SinXSqr1D::SetTime(0)
+Configuring boundary conditions
+Reading boundary conditions from ../../transport2d_bcs.inp
+Found 'neutral_density' at position 64
+Found 'ion_density' at position 113
+Found 'ion_parallel_velocity' at position 191
+Found 'ion_temperature' at position 301
+Found 'electron_temperature' at position 422
+Configuring equation coefficients
+Reading equation coefficients from ../../transport2d_ecs.inp
+Found 'neutral_density' at position 78
+Found 'ion_density' at position 125
+Found 'ion_parallel_momentum' at position 169
+Found 'ion_static_pressure' at position 406
+Found 'electron_static_pressure' at position 470
+Found 'common_coefs' at position 496
+Using B field from ../../transport2d_ecs.inp
+Ion Parallel Momentum: Adding time derivative term proportional to d n_i / dt
+Ion Parallel Momentum: Adding time derivative term proportional to d v_i / dt
+Ion Parallel Momentum: Adding advection-diffusion term
+Ion Parallel Momentum: Adding source term
+Opening GLVis sockets.
+Setting time: 0 in CombinedOp
+SinXSqr1D::SetTime(0)
+SinXSqr1DMMS::SetTime(0)
+Range of error estimates for initial condition: 3.323314e-11 < elem err < 2.4315803e-08
+
+Begin time stepping at t = 0
+Setting time: 2.5e-13 in CombinedOp
+SinXSqr1D::SetTime(2.5e-13)
+SinXSqr1DMMS::SetTime(2.5e-13)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34886
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.11311e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13684e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138477e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41385e-10, ||r||/||r_0|| = 1.82219e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28203e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.457762e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.45776e-14, ||r||/||r_0|| = 1.84563e-16
+Setting time: 7.5e-13 in CombinedOp
+SinXSqr1D::SetTime(7.5e-13)
+SinXSqr1DMMS::SetTime(7.5e-13)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34886
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.11311e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13695e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138335e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41383e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70877e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28203e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 4.1794666e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 4.17947e-14, ||r||/||r_0|| = 2.23085e-16
+Setting time: 5.5e-13 in CombinedOp
+SinXSqr1D::SetTime(5.5e-13)
+SinXSqr1DMMS::SetTime(5.5e-13)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34886
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.11311e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13703e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.413825e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41383e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28212e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.9979246e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.99792e-14, ||r||/||r_0|| = 2.13395e-16
+Setting time: 5e-13 in CombinedOp
+SinXSqr1D::SetTime(5e-13)
+SinXSqr1DMMS::SetTime(5e-13)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34886
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.11311e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13706e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138227e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41382e-10, ||r||/||r_0|| = 1.82217e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.282e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.5639529e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.56395e-14, ||r||/||r_0|| = 1.90231e-16
+Setting time: 1e-12 in CombinedOp
+SinXSqr1D::SetTime(1e-12)
+SinXSqr1DMMS::SetTime(1e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34886
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.11311e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13686e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138227e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41382e-10, ||r||/||r_0|| = 1.82217e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70876e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28215e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 4.1770096e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 4.17701e-14, ||r||/||r_0|| = 2.22954e-16
+Time stepping paused at t = 1e-12
+SinXSqr1D::SetTime(1e-12)
+
+Estimating errors.
+Range of error estimates at time 1e-12: 3.3234554e-11 < elem err < 2.4308892e-08
+Setting time: 1.25e-12 in CombinedOp
+SinXSqr1D::SetTime(1.25e-12)
+SinXSqr1DMMS::SetTime(1.25e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34886
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.11311e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13688e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138288e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41383e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70877e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28206e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.851963e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.85196e-14, ||r||/||r_0|| = 2.05604e-16
+Setting time: 1.75e-12 in CombinedOp
+SinXSqr1D::SetTime(1.75e-12)
+SinXSqr1DMMS::SetTime(1.75e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34886
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.11311e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13706e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138258e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41383e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70876e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28213e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 4.127259e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 4.12726e-14, ||r||/||r_0|| = 2.20298e-16
+Setting time: 1.55e-12 in CombinedOp
+SinXSqr1D::SetTime(1.55e-12)
+SinXSqr1DMMS::SetTime(1.55e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34886
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.11311e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.137e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138358e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41384e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70879e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.282e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 4.3177686e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 4.31777e-14, ||r||/||r_0|| = 2.30467e-16
+Setting time: 1.5e-12 in CombinedOp
+SinXSqr1D::SetTime(1.5e-12)
+SinXSqr1DMMS::SetTime(1.5e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34886
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.11311e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13685e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138508e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41385e-10, ||r||/||r_0|| = 1.82219e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28212e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.5864121e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.58641e-14, ||r||/||r_0|| = 1.9143e-16
+Setting time: 2e-12 in CombinedOp
+SinXSqr1D::SetTime(2e-12)
+SinXSqr1DMMS::SetTime(2e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34886
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13691e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4137981e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.4138e-10, ||r||/||r_0|| = 1.82216e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28206e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.9480989e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.9481e-14, ||r||/||r_0|| = 2.10735e-16
+Time stepping paused at t = 2e-12
+SinXSqr1D::SetTime(2e-12)
+
+Estimating errors.
+Range of error estimates at time 2e-12: 3.3235968e-11 < elem err < 2.4301982e-08
+Setting time: 2.25e-12 in CombinedOp
+SinXSqr1D::SetTime(2.25e-12)
+SinXSqr1DMMS::SetTime(2.25e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34886
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13684e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138335e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41383e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70877e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.282e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 4.0439551e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 4.04396e-14, ||r||/||r_0|| = 2.15852e-16
+Setting time: 2.75e-12 in CombinedOp
+SinXSqr1D::SetTime(2.75e-12)
+SinXSqr1DMMS::SetTime(2.75e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34885
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13685e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138244e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41382e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28208e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 4.1078261e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 4.10783e-14, ||r||/||r_0|| = 2.19261e-16
+Setting time: 2.55e-12 in CombinedOp
+SinXSqr1D::SetTime(2.55e-12)
+SinXSqr1DMMS::SetTime(2.55e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34885
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13698e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138245e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41382e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28201e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.967537e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.96754e-14, ||r||/||r_0|| = 2.11773e-16
+Setting time: 2.5e-12 in CombinedOp
+SinXSqr1D::SetTime(2.5e-12)
+SinXSqr1DMMS::SetTime(2.5e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34885
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13726e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138518e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41385e-10, ||r||/||r_0|| = 1.82219e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70877e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28205e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.790858e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.79086e-14, ||r||/||r_0|| = 2.02342e-16
+Setting time: 3e-12 in CombinedOp
+SinXSqr1D::SetTime(3e-12)
+SinXSqr1DMMS::SetTime(3e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34885
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13684e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138103e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41381e-10, ||r||/||r_0|| = 1.82217e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70876e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28208e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 4.3282089e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 4.32821e-14, ||r||/||r_0|| = 2.31024e-16
+Time stepping paused at t = 3e-12
+SinXSqr1D::SetTime(3e-12)
+
+Estimating errors.
+Range of error estimates at time 3e-12: 3.3237382e-11 < elem err < 2.4295071e-08
+Setting time: 3.25e-12 in CombinedOp
+SinXSqr1D::SetTime(3.25e-12)
+SinXSqr1DMMS::SetTime(3.25e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34885
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13695e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138113e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41381e-10, ||r||/||r_0|| = 1.82217e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28194e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 4.1143371e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 4.11434e-14, ||r||/||r_0|| = 2.19608e-16
+Setting time: 3.75e-12 in CombinedOp
+SinXSqr1D::SetTime(3.75e-12)
+SinXSqr1DMMS::SetTime(3.75e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34885
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13713e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138488e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41385e-10, ||r||/||r_0|| = 1.82219e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70877e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28204e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.9309652e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.93097e-14, ||r||/||r_0|| = 2.09821e-16
+Setting time: 3.55e-12 in CombinedOp
+SinXSqr1D::SetTime(3.55e-12)
+SinXSqr1DMMS::SetTime(3.55e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34885
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13705e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138537e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41385e-10, ||r||/||r_0|| = 1.82219e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70877e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.2821e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.8906349e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.89063e-14, ||r||/||r_0|| = 2.07668e-16
+Setting time: 3.5e-12 in CombinedOp
+SinXSqr1D::SetTime(3.5e-12)
+SinXSqr1DMMS::SetTime(3.5e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34885
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13686e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138397e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41384e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70877e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28207e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.9595433e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.95954e-14, ||r||/||r_0|| = 2.11346e-16
+Setting time: 4e-12 in CombinedOp
+SinXSqr1D::SetTime(4e-12)
+SinXSqr1DMMS::SetTime(4e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34885
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13684e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138114e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41381e-10, ||r||/||r_0|| = 1.82217e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70877e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28201e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.8160729e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.81607e-14, ||r||/||r_0|| = 2.03688e-16
+Time stepping paused at t = 4e-12
+SinXSqr1D::SetTime(4e-12)
+
+Estimating errors.
+Range of error estimates at time 4e-12: 3.3238796e-11 < elem err < 2.428816e-08
+Setting time: 4.25e-12 in CombinedOp
+SinXSqr1D::SetTime(4.25e-12)
+SinXSqr1DMMS::SetTime(4.25e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34885
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13686e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138094e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41381e-10, ||r||/||r_0|| = 1.82217e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70877e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28187e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 4.0848249e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 4.08482e-14, ||r||/||r_0|| = 2.18033e-16
+Setting time: 4.75e-12 in CombinedOp
+SinXSqr1D::SetTime(4.75e-12)
+SinXSqr1DMMS::SetTime(4.75e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34885
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13691e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138217e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41382e-10, ||r||/||r_0|| = 1.82217e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70876e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28194e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.7108279e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.71083e-14, ||r||/||r_0|| = 1.9807e-16
+Setting time: 4.55e-12 in CombinedOp
+SinXSqr1D::SetTime(4.55e-12)
+SinXSqr1DMMS::SetTime(4.55e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34885
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13686e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138175e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41382e-10, ||r||/||r_0|| = 1.82217e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70877e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28198e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.6247404e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.62474e-14, ||r||/||r_0|| = 1.93475e-16
+Setting time: 4.5e-12 in CombinedOp
+SinXSqr1D::SetTime(4.5e-12)
+SinXSqr1DMMS::SetTime(4.5e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34885
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13707e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138262e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41383e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28199e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.7242153e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.72422e-14, ||r||/||r_0|| = 1.98785e-16
+Setting time: 5e-12 in CombinedOp
+SinXSqr1D::SetTime(5e-12)
+SinXSqr1DMMS::SetTime(5e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34885
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13688e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.413822e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41382e-10, ||r||/||r_0|| = 1.82217e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28206e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.9254817e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.92548e-14, ||r||/||r_0|| = 2.09528e-16
+Time stepping paused at t = 5e-12
+SinXSqr1D::SetTime(5e-12)
+
+Estimating errors.
+Range of error estimates at time 5e-12: 3.324021e-11 < elem err < 2.428125e-08
+Setting time: 5.25e-12 in CombinedOp
+SinXSqr1D::SetTime(5.25e-12)
+SinXSqr1DMMS::SetTime(5.25e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34884
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.1369e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138301e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41383e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28204e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.8573528e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.85735e-14, ||r||/||r_0|| = 2.05891e-16
+Setting time: 5.75e-12 in CombinedOp
+SinXSqr1D::SetTime(5.75e-12)
+SinXSqr1DMMS::SetTime(5.75e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34884
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13701e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138378e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41384e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70875e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28206e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.7772004e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.7772e-14, ||r||/||r_0|| = 2.01613e-16
+Setting time: 5.55e-12 in CombinedOp
+SinXSqr1D::SetTime(5.55e-12)
+SinXSqr1DMMS::SetTime(5.55e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34884
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13684e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138179e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41382e-10, ||r||/||r_0|| = 1.82217e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28187e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 4.0860179e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 4.08602e-14, ||r||/||r_0|| = 2.18097e-16
+Setting time: 5.5e-12 in CombinedOp
+SinXSqr1D::SetTime(5.5e-12)
+SinXSqr1DMMS::SetTime(5.5e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34884
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13727e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4137893e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41379e-10, ||r||/||r_0|| = 1.82216e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70879e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28194e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.7862486e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.78625e-14, ||r||/||r_0|| = 2.02096e-16
+Setting time: 6e-12 in CombinedOp
+SinXSqr1D::SetTime(6e-12)
+SinXSqr1DMMS::SetTime(6e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34884
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13713e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138215e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41382e-10, ||r||/||r_0|| = 1.82217e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70879e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28208e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.8670216e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.86702e-14, ||r||/||r_0|| = 2.06408e-16
+Time stepping paused at t = 6e-12
+SinXSqr1D::SetTime(6e-12)
+
+Estimating errors.
+Range of error estimates at time 6e-12: 3.3241624e-11 < elem err < 2.4274339e-08
+Setting time: 6.25e-12 in CombinedOp
+SinXSqr1D::SetTime(6.25e-12)
+SinXSqr1DMMS::SetTime(6.25e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34884
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13689e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138362e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41384e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.2819e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.9834551e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.98346e-14, ||r||/||r_0|| = 2.12622e-16
+Setting time: 6.75e-12 in CombinedOp
+SinXSqr1D::SetTime(6.75e-12)
+SinXSqr1DMMS::SetTime(6.75e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34884
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13686e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138377e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41384e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70877e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28201e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.7116182e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.71162e-14, ||r||/||r_0|| = 1.98113e-16
+Setting time: 6.55e-12 in CombinedOp
+SinXSqr1D::SetTime(6.55e-12)
+SinXSqr1DMMS::SetTime(6.55e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34884
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13705e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138366e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41384e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70877e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28204e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.8116566e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.81166e-14, ||r||/||r_0|| = 2.03452e-16
+Setting time: 6.5e-12 in CombinedOp
+SinXSqr1D::SetTime(6.5e-12)
+SinXSqr1DMMS::SetTime(6.5e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34884
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13792e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138319e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41383e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70875e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28201e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.8344542e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.83445e-14, ||r||/||r_0|| = 2.04669e-16
+Setting time: 7e-12 in CombinedOp
+SinXSqr1D::SetTime(7e-12)
+SinXSqr1DMMS::SetTime(7e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34884
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.137e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.413819e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41382e-10, ||r||/||r_0|| = 1.82217e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28203e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 4.0165435e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 4.01654e-14, ||r||/||r_0|| = 2.14388e-16
+Time stepping paused at t = 7e-12
+SinXSqr1D::SetTime(7e-12)
+
+Estimating errors.
+Range of error estimates at time 7e-12: 3.3243038e-11 < elem err < 2.4267428e-08
+Setting time: 7.25e-12 in CombinedOp
+SinXSqr1D::SetTime(7.25e-12)
+SinXSqr1DMMS::SetTime(7.25e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34884
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13692e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138354e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41384e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70879e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28202e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.8789729e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.87897e-14, ||r||/||r_0|| = 2.07045e-16
+Setting time: 7.75e-12 in CombinedOp
+SinXSqr1D::SetTime(7.75e-12)
+SinXSqr1DMMS::SetTime(7.75e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34883
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13712e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138293e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41383e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70876e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28197e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.7476681e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.74767e-14, ||r||/||r_0|| = 2.00037e-16
+Setting time: 7.55e-12 in CombinedOp
+SinXSqr1D::SetTime(7.55e-12)
+SinXSqr1DMMS::SetTime(7.55e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34884
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13715e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138122e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41381e-10, ||r||/||r_0|| = 1.82217e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28201e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 4.1193408e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 4.11934e-14, ||r||/||r_0|| = 2.19875e-16
+Setting time: 7.5e-12 in CombinedOp
+SinXSqr1D::SetTime(7.5e-12)
+SinXSqr1DMMS::SetTime(7.5e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34884
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13685e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138476e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41385e-10, ||r||/||r_0|| = 1.82219e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70877e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28186e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.9443656e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.94437e-14, ||r||/||r_0|| = 2.10536e-16
+Setting time: 8e-12 in CombinedOp
+SinXSqr1D::SetTime(8e-12)
+SinXSqr1DMMS::SetTime(8e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34883
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13692e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138742e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41387e-10, ||r||/||r_0|| = 1.8222e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70877e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28208e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.6852939e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.68529e-14, ||r||/||r_0|| = 1.96708e-16
+Time stepping paused at t = 8e-12
+SinXSqr1D::SetTime(8e-12)
+
+Estimating errors.
+Range of error estimates at time 8e-12: 3.3244452e-11 < elem err < 2.4260518e-08
+Setting time: 8.25e-12 in CombinedOp
+SinXSqr1D::SetTime(8.25e-12)
+SinXSqr1DMMS::SetTime(8.25e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34883
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13684e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138398e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41384e-10, ||r||/||r_0|| = 1.82218e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28205e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.3988419e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.39884e-14, ||r||/||r_0|| = 1.81418e-16
+Setting time: 8.75e-12 in CombinedOp
+SinXSqr1D::SetTime(8.75e-12)
+SinXSqr1DMMS::SetTime(8.75e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34883
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13684e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4137988e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.4138e-10, ||r||/||r_0|| = 1.82216e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28208e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.5145374e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.51454e-14, ||r||/||r_0|| = 1.87593e-16
+Setting time: 8.55e-12 in CombinedOp
+SinXSqr1D::SetTime(8.55e-12)
+SinXSqr1DMMS::SetTime(8.55e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34883
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13685e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138461e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41385e-10, ||r||/||r_0|| = 1.82219e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70877e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28193e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 4.1006865e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 4.10069e-14, ||r||/||r_0|| = 2.1888e-16
+Setting time: 8.5e-12 in CombinedOp
+SinXSqr1D::SetTime(8.5e-12)
+SinXSqr1DMMS::SetTime(8.5e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34883
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.1369e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138456e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41385e-10, ||r||/||r_0|| = 1.82219e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70876e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28191e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4262674e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.42627e-14, ||r||/||r_0|| = 1.82882e-16
+Setting time: 9e-12 in CombinedOp
+SinXSqr1D::SetTime(9e-12)
+SinXSqr1DMMS::SetTime(9e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34883
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13707e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138081e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41381e-10, ||r||/||r_0|| = 1.82217e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28208e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.62384e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.62384e-14, ||r||/||r_0|| = 1.93427e-16
+Time stepping paused at t = 9e-12
+SinXSqr1D::SetTime(9e-12)
+
+Estimating errors.
+Range of error estimates at time 9e-12: 3.3245866e-11 < elem err < 2.4253607e-08
+Setting time: 9.25e-12 in CombinedOp
+SinXSqr1D::SetTime(9.25e-12)
+SinXSqr1DMMS::SetTime(9.25e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34883
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13723e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138229e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41382e-10, ||r||/||r_0|| = 1.82217e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70877e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28211e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.2965212e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.29652e-14, ||r||/||r_0|| = 1.75956e-16
+Setting time: 9.75e-12 in CombinedOp
+SinXSqr1D::SetTime(9.75e-12)
+SinXSqr1DMMS::SetTime(9.75e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34883
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13699e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138531e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41385e-10, ||r||/||r_0|| = 1.82219e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70877e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.282e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.8217397e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.82174e-14, ||r||/||r_0|| = 2.03991e-16
+Setting time: 9.55e-12 in CombinedOp
+SinXSqr1D::SetTime(9.55e-12)
+SinXSqr1DMMS::SetTime(9.55e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34883
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13716e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138595e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41386e-10, ||r||/||r_0|| = 1.82219e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70876e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28212e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.8946265e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.89463e-14, ||r||/||r_0|| = 2.07881e-16
+Setting time: 9.5e-12 in CombinedOp
+SinXSqr1D::SetTime(9.5e-12)
+SinXSqr1DMMS::SetTime(9.5e-12)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34883
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13684e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4138053e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.41381e-10, ||r||/||r_0|| = 1.82217e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70876e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28204e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.9317789e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 3.93178e-14, ||r||/||r_0|| = 2.09864e-16
+Setting time: 1e-11 in CombinedOp
+SinXSqr1D::SetTime(1e-11)
+SinXSqr1DMMS::SetTime(1e-11)
+Setting time step: 2.5e-13 in DGTransportTDO
+Setting time step: 2.5e-13 in CombinedOp
+Setting time step: 2.5e-13 in IonMomentumOp
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 187.34883
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  0 : ||r|| = 187.349
+   Pass :  1   Iteration :   0  ||B r|| = 2.1131e+06 ...
+   Pass :  1   Iteration :  10  ||B r|| = 1.13688e-07
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 3.4137992e-10
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  1 : ||r|| = 3.4138e-10, ||r||/||r_0|| = 1.82216e-12
+   Pass :  1   Iteration :   0  ||B r|| = 1.70878e-05 ...
+   Pass :  1   Iteration :   7  ||B r|| = 1.28201e-13
+norm(r_0) 0
+norm(r_1) 0
+norm(r_2) 4.3554551e-14
+norm(r_3) 0
+norm(r_4) 0
+Newton iteration  2 : ||r|| = 4.35546e-14, ||r||/||r_0|| = 2.32478e-16
+Time stepping paused at t = 1e-11
+SinXSqr1D::SetTime(1e-11)
+
+Time stepping done after 2.3455854s.
