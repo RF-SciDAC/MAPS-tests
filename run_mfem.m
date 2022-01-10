@@ -31,7 +31,7 @@ elseif mmsTest
 
     for ii=1:length(npArray)
 
-        dirName = strcat(input_dir,"O3_N",npArray(ii));
+        dirName = strcat(input_dir,"run-test/O3_N",npArray(ii));
         mkdir([dirName])
         cd([dirName])
 
