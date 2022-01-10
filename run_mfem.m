@@ -33,7 +33,7 @@ elseif mmsTest
 
         dirName = strcat("O3_N",npArray(ii));
         mkdir([dirName])
-        cd(['O3_N' npArray(ii)])
+        cd([dirName])
 
         order = 3;
 
