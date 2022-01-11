@@ -47,11 +47,12 @@ elseif mmsTest
         " -op 4 -l 1 -visit -dt 1.0e-12 -tf 1.0e-12 -eqn-w '1 1 1 1 1' -vs 1 -p 0 -es ",...
         strcat(input_dir,"/transport2d_ess.inp"),...
         " -term-flags '-1 -1 11 -1 -1' -natol 1e-12 -nrtol 1e-12 -latol 1e-12 ",...
-        "-lrtol 1e-12 -dza 0 -dzb 1e20 -fld-m '1 1 1 1 1' -no-amr > output.out");
-            
-        system(command);
+        "-lrtol 1e-12 -dza 0 -dzb 1e20 -fld-m '1 1 1 1 1' -no-amr");
+
+        [status,output] = system(command);
+        
         cd('../')
-%     [status,output] = system(command);
+
 
     end
 
