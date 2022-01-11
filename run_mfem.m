@@ -1,6 +1,6 @@
 get_values = '~/mfem/miniapps/tools/get-values';
 transport = '~/mfem/miniapps/plasma/transport2d';
-input_dir = '~/Documents/git-repos/mfem-analysis/mom_test/';
+input_dir = '~/mfem-analysis/mom_test/';
 prefix = 'Transport2D-Parallel';
 
 [status,git_hash] = system('git rev-parse HEAD');
