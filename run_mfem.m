@@ -11,7 +11,7 @@ header = [s1 s2];
 anisoTest = 0;
 mmsTest = 1;
 
-npArray = ["032","064","128","256","512"];
+npArray = [32,64,128,256,512];
 
 if anisoTest
 
@@ -31,25 +31,25 @@ elseif mmsTest
 
     for ii=1:length(npArray)
 
-        dirName = strcat(input_dir,"run-test/O3_N",npArray(ii));
+        dirName = strcat(input_dir,"run-test/O3_N",num2str(npArray(ii)));
         mkdir([dirName])
         cd([dirName])
 
         order = 3;
 
-        fprintf('Running transport2d for NP %s and order %d\n',npArray(ii),order)
+        fprintf('Running transport2d for NP %d and order %d\n',npArray(ii),order)
 
-        mesh_path = '~/mfem-analysis/mom_test/';
+        mesh_path = '~/mfem-analysis/mom_test/slab_';
 
         command = strcat(transport," -o ",num2str(order),...
-        " -m ",strcat(mesh_path,'inline-quad.mesh')," -bc ",strcat(input_dir,"/transport2d_bcs.inp"),...
+        " -m ",strcat(mesh_path,num2str(npArray(ii)),'.mesh')," -bc ",strcat(input_dir,"/transport2d_bcs.inp"),...
         " -ic ",strcat(input_dir,"/transport2d_ics.inp"), " -ec ",strcat(input_dir,"/transport2d_ecs.inp"),...
         " -op 4 -l 1 -visit -dt 1.0e-12 -tf 1.0e-12 -eqn-w '1 1 1 1 1' -vs 1 -p 0 -es ",...
         strcat(input_dir,"/transport2d_ess.inp"),...
         " -term-flags '-1 -1 11 -1 -1' -natol 1e-12 -nrtol 1e-12 -latol 1e-12 ",...
-        "-lrtol 1e-12 -dza 0 -dzb 1e20 -fld-m '1 1 1 1 1' -no-amr");
+        "-lrtol 1e-12 -dza 0 -dzb 1e20 -fld-m '1 1 1 1 1' -no-amr")
 
-        [status,output] = system(command);
+        [status,output] = system(command)
 
         writematrix(output,'output.dat','delimiter','tab');
         writematrix(status,'status.dat','delimiter','tab');
