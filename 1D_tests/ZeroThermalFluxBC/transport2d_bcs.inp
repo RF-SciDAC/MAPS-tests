@@ -1,0 +1,62 @@
+transport_bcs
+
+###############
+neutral_density
+###############
+scalar_bcs
+
+###########
+ion_density
+###########
+scalar_bcs
+
+#####################
+ion_parallel_velocity
+#####################
+scalar_bcs
+
+###############
+ion_temperature
+###############
+scalar_bcs
+
+robin
+1
+2
+StateVariableProductCoef
+StateVariableConstantCoef 512.0
+StateVariableGridFunctionCoef
+1 ion_density_gf
+ConstantCoefficient -1.0e23
+
+robin
+1
+4
+# a = 5/2 ni vi
+StateVariableProductCoef
+   StateVariableConstantCoef -2.5
+   StateVariableProductCoef
+      StateVariableGridFunctionCoef
+      1 ion_density_gf
+      StateVariableGridFunctionCoef
+      2 ion_para_velocity_gf
+
+# b = 1/2 mi ni vi^3
+StateVariableProductCoef
+   StateVariableConstantCoef 1.0437347e-8
+   StateVariableProductCoef
+   StateVariableGridFunctionCoef
+   1 ion_density_gf
+   StateVariablePowerCoef
+      StateVariableGridFunctionCoef
+      2 ion_para_velocity_gf
+      3
+
+####################
+electron_temperature
+####################
+scalar_bcs
+
+###########
+coupled_bcs
+###########

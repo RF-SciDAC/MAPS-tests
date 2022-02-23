@@ -1,26 +1,39 @@
-transport_ics
+transport_bcs
 
 ###############
 neutral_density
 ###############
-ConstantCoefficient 1.0e14
+scalar_bcs
 
 ###########
 ion_density
 ###########
-ConstantCoefficient 1.0e19
+scalar_bcs
 
 #####################
 ion_parallel_velocity
 #####################
-ConstantCoefficient 2.0e3
+scalar_bcs
 
 ###############
 ion_temperature
 ###############
-ConstantCoefficient 1.0
+scalar_bcs
+
+robin
+2
+2 4
+StateVariableProductCoef
+StateVariableConstantCoef 512.0
+StateVariableGridFunctionCoef
+1 ion_density_gf
+ConstantCoefficient -1.0e23
 
 ####################
 electron_temperature
 ####################
-ConstantCoefficient 10.0
+scalar_bcs
+
+###########
+coupled_bcs
+###########

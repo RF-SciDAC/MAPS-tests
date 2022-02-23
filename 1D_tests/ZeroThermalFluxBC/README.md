@@ -1,15 +1,17 @@
-##################################
-1D Tests: Robin Boundary Condition
-##################################
+###########################################################
+1D Tests: Zero Thermal Flux with a Robin Boundary Condition
+###########################################################
 
 This test is designed to verify the user-defined Robin boundary
 condition in the total energy equations.
 
 The problem consists of constant density, velocity, and electron
-energy with only the ion temperature allowed to vary. A homogeneous
-Neumann BC (insulating) is applied at x=0 and a Robin BC at x=1. The
-precise time evolution of the solution is unknown but we can compare
-to a known steady state.
+energy with only the ion temperature allowed to vary. Robin boundary
+conditions are applied at each end of the 1D domain. At x = 0 the
+Robin BC parameters are sleected to produce a temperature gradient
+equal to zero. At x = 1 arbitrary user-defined Robin BC parameters are
+used. The precise time evolution of the solution is unknown but we
+can compare to a known steady state.
 
 The Robin BC is defined as:
 

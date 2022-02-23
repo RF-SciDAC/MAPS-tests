@@ -1,15 +1,16 @@
-##################################
-1D Tests: Robin Boundary Condition
-##################################
+#############################################
+1D Tests: Symmetric Robin Boundary Conditions
+#############################################
 
 This test is designed to verify the user-defined Robin boundary
 condition in the total energy equations.
 
 The problem consists of constant density, velocity, and electron
-energy with only the ion temperature allowed to vary. A homogeneous
-Neumann BC (insulating) is applied at x=0 and a Robin BC at x=1. The
-precise time evolution of the solution is unknown but we can compare
-to a known steady state.
+energy with only the ion temperature allowed to vary. A symmetric
+Robin BC with the same constants is applied at both x=0 and x=1. A
+non-zero velocity breaks the symmetry of the problem leading to a
+non-symmetric steady state solution. The precise time evolution of the
+solution is unknown but we can compare to a known steady state.
 
 The Robin BC is defined as:
 
