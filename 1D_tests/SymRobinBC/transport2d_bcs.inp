@@ -1,0 +1,39 @@
+transport_bcs
+
+###############
+neutral_density
+###############
+scalar_bcs
+
+###########
+ion_density
+###########
+scalar_bcs
+
+#####################
+ion_parallel_velocity
+#####################
+scalar_bcs
+
+###############
+ion_temperature
+###############
+scalar_bcs
+
+robin
+2
+2 4
+StateVariableProductCoef
+StateVariableConstantCoef 512.0
+StateVariableGridFunctionCoef
+1 ion_density_gf
+ConstantCoefficient -1.0e23
+
+####################
+electron_temperature
+####################
+scalar_bcs
+
+###########
+coupled_bcs
+###########
