@@ -4,25 +4,25 @@ transport_coefs
 neutral_density
 ###############
 diffusion_coef
-ConstantCoefficient 1.0e2
+ConstantCoefficient 1.0
 
 ###########
 ion_density
 ###########
-perp_diffusion_coef
-ConstantCoefficient 1.0
-
 para_diffusion_coef
 ConstantCoefficient 0.0
+
+perp_diffusion_coef
+ConstantCoefficient 1.0
 
 #####################
 ion_parallel_momentum
 #####################
 para_diffusion_coef
-ConstantCoefficient 3.208342633876010e+20
+ConstantCoefficient 1.0e-5
 
 perp_diffusion_coef
-ConstantCoefficient 1.0
+ConstantCoefficient 0.0
 
 ###################
 ion_total_energy
@@ -35,26 +35,6 @@ electron_total_energy
 ############
 common_coefs
 ############
-
-ionization_coef
-StateVariableProductCoef
-StateVariableConstantCoef
-2.307692307692308e-15
-StateVariableProductCoef
-StateVariableGridFunctionCoef
-0 neutral_density_gf
-StateVariableGridFunctionCoef
-1 ion_density_gf
-
-recombination_coef
-StateVariableProductCoef
-StateVariableConstantCoef
-1.154469575172945e-19
-StateVariableProductCoef
-StateVariableGridFunctionCoef
-1 ion_density_gf
-StateVariableGridFunctionCoef
-1 ion_density_gf
 
 magnetic_field_coef
 VectorConstantCoefficient 3 1.0 0.0 0.0
