@@ -1,0 +1,51 @@
+transport_bcs
+
+###############
+neutral_density
+###############
+scalar_bcs
+
+###########
+ion_density
+###########
+scalar_bcs
+
+dirichlet
+1 2
+Gaussian1D 0.5 50.0 1.0 0.5 1.0 0
+
+dirichlet
+1 4
+Gaussian1D -0.5 50.0 1.0 0.5 -1.0 0
+
+#####################
+ion_parallel_velocity
+#####################
+scalar_bcs
+
+dirichlet
+1 2
+RatioCoefficient
+Gaussian1D 1.0 50.0 0.0 0.5 1.0 0
+Gaussian1D 1.0 50.0 2.0 0.5 1.0 0
+
+dirichlet
+1 4
+RatioCoefficient
+Gaussian1D 1.0 50.0 0.0 0.5 -1.0 0
+Gaussian1D -1.0 50.0 2.0 0.5 -1.0 0
+
+###############
+ion_temperature
+###############
+scalar_bcs
+
+####################
+electron_temperature
+####################
+scalar_bcs
+
+###########
+coupled_bcs
+###########
+scalar_bcs
